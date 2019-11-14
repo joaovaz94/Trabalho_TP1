@@ -254,8 +254,6 @@ int main()
     //!impressão de Cartão de Crédito
     cart.imprimeIngresso();
 
-    //LEMBRETES DE CÓDIGO
-    //cout << endl << endl << "==  FAZER VALIDAÇÃO DE DATA E HORÁRIO  ==" << endl << endl;
 
     return 0;
 }
