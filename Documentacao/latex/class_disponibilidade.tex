@@ -1,0 +1,75 @@
+\hypertarget{class_disponibilidade}{}\doxysection{ReferÃªncia da Classe Disponibilidade}
+\label{class_disponibilidade}\index{Disponibilidade@{Disponibilidade}}
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_disponibilidade_a284b8c6471e31ad719b01db24b0b74ab}{define\+Disp}} (int dsp)
+\begin{DoxyCompactList}\small\item\em Função para definir \mbox{\hyperlink{class_disponibilidade}{Disponibilidade}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_disponibilidade_acbdc9a768e0d444185332194b45fe131}{valida\+Disp}} (int \&dsp)  throw (std\+::invalid\+\_\+argument)
+\begin{DoxyCompactList}\small\item\em Função para validar \mbox{\hyperlink{class_disponibilidade}{Disponibilidade}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_disponibilidade_abecee51ff8b607b92fc81a31953f23a3}{pega\+Disp}} ()
+\begin{DoxyCompactList}\small\item\em Função para retornar \mbox{\hyperlink{class_disponibilidade}{Disponibilidade}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_disponibilidade_a284b8c6471e31ad719b01db24b0b74ab}\label{class_disponibilidade_a284b8c6471e31ad719b01db24b0b74ab}} 
+\index{Disponibilidade@{Disponibilidade}!defineDisp@{defineDisp}}
+\index{defineDisp@{defineDisp}!Disponibilidade@{Disponibilidade}}
+\doxysubsubsection{\texorpdfstring{defineDisp()}{defineDisp()}}
+{\footnotesize\ttfamily void Disponibilidade\+::define\+Disp (\begin{DoxyParamCaption}\item[{int}]{dsp }\end{DoxyParamCaption})}
+
+
+
+Função para definir \mbox{\hyperlink{class_disponibilidade}{Disponibilidade}}. 
+
+Definição de funções para a classe \mbox{\hyperlink{class_disponibilidade}{Disponibilidade}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{260                                         \{}
+\DoxyCodeLine{261     \mbox{\hyperlink{class_disponibilidade_acbdc9a768e0d444185332194b45fe131}{validaDisp}}(dsp);}
+\DoxyCodeLine{262     this-\/>disponibilidade = dsp;}
+\DoxyCodeLine{263 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_disponibilidade_abecee51ff8b607b92fc81a31953f23a3}\label{class_disponibilidade_abecee51ff8b607b92fc81a31953f23a3}} 
+\index{Disponibilidade@{Disponibilidade}!pegaDisp@{pegaDisp}}
+\index{pegaDisp@{pegaDisp}!Disponibilidade@{Disponibilidade}}
+\doxysubsubsection{\texorpdfstring{pegaDisp()}{pegaDisp()}}
+{\footnotesize\ttfamily int Disponibilidade\+::pega\+Disp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar \mbox{\hyperlink{class_disponibilidade}{Disponibilidade}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99 \{\textcolor{keywordflow}{return} disponibilidade;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_disponibilidade_acbdc9a768e0d444185332194b45fe131}\label{class_disponibilidade_acbdc9a768e0d444185332194b45fe131}} 
+\index{Disponibilidade@{Disponibilidade}!validaDisp@{validaDisp}}
+\index{validaDisp@{validaDisp}!Disponibilidade@{Disponibilidade}}
+\doxysubsubsection{\texorpdfstring{validaDisp()}{validaDisp()}}
+{\footnotesize\ttfamily void Disponibilidade\+::valida\+Disp (\begin{DoxyParamCaption}\item[{int \&}]{dsp }\end{DoxyParamCaption}) throw ( std\+::invalid\+\_\+argument) }
+
+
+
+Função para validar \mbox{\hyperlink{class_disponibilidade}{Disponibilidade}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{265                                                                   \{}
+\DoxyCodeLine{266     \textcolor{keywordflow}{if} (dsp < 0 || dsp > 300)}
+\DoxyCodeLine{267         \textcolor{keywordflow}{throw} invalid\_argument(\textcolor{stringliteral}{"Argumento Inválido: a disponibilidade deve ser um valor de 0 a 300"});}
+\DoxyCodeLine{268 \}}
+
+\end{DoxyCode}
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

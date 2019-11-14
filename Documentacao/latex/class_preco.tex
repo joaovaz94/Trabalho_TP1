@@ -1,0 +1,75 @@
+\hypertarget{class_preco}{}\doxysection{ReferÃªncia da Classe Preco}
+\label{class_preco}\index{Preco@{Preco}}
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_preco_a1cb3d1200baa722b00257bcd278a22c9}{define\+Preco}} (double prc)
+\begin{DoxyCompactList}\small\item\em Função para definir Preço \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_preco_a40172f56c6be924253a5ecc7f5f64690}{pega\+Preco}} ()
+\begin{DoxyCompactList}\small\item\em Função para retornar Preço \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_preco_aeeb035060d9dbd2b2e608d248fef64b1}{valida\+Preco}} (double \&prc)  throw (std\+::invalid\+\_\+argument)
+\begin{DoxyCompactList}\small\item\em Função para validar Preço \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_preco_a1cb3d1200baa722b00257bcd278a22c9}\label{class_preco_a1cb3d1200baa722b00257bcd278a22c9}} 
+\index{Preco@{Preco}!definePreco@{definePreco}}
+\index{definePreco@{definePreco}!Preco@{Preco}}
+\doxysubsubsection{\texorpdfstring{definePreco()}{definePreco()}}
+{\footnotesize\ttfamily void Preco\+::define\+Preco (\begin{DoxyParamCaption}\item[{double}]{prc }\end{DoxyParamCaption})}
+
+
+
+Função para definir Preço 
+
+Definição de funções para a classe Preço 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{246                                    \{}
+\DoxyCodeLine{247     \mbox{\hyperlink{class_preco_aeeb035060d9dbd2b2e608d248fef64b1}{validaPreco}}(prc);}
+\DoxyCodeLine{248     this-\/>preco = prc;}
+\DoxyCodeLine{249 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_preco_a40172f56c6be924253a5ecc7f5f64690}\label{class_preco_a40172f56c6be924253a5ecc7f5f64690}} 
+\index{Preco@{Preco}!pegaPreco@{pegaPreco}}
+\index{pegaPreco@{pegaPreco}!Preco@{Preco}}
+\doxysubsubsection{\texorpdfstring{pegaPreco()}{pegaPreco()}}
+{\footnotesize\ttfamily double Preco\+::pega\+Preco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar Preço 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{85 \{\textcolor{keywordflow}{return} preco;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_preco_aeeb035060d9dbd2b2e608d248fef64b1}\label{class_preco_aeeb035060d9dbd2b2e608d248fef64b1}} 
+\index{Preco@{Preco}!validaPreco@{validaPreco}}
+\index{validaPreco@{validaPreco}!Preco@{Preco}}
+\doxysubsubsection{\texorpdfstring{validaPreco()}{validaPreco()}}
+{\footnotesize\ttfamily void Preco\+::valida\+Preco (\begin{DoxyParamCaption}\item[{double \&}]{prc }\end{DoxyParamCaption}) throw ( std\+::invalid\+\_\+argument) }
+
+
+
+Função para validar Preço 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{251                                                             \{}
+\DoxyCodeLine{252     \textcolor{keywordflow}{if} (prc < 0.00 || prc > 3000.00)}
+\DoxyCodeLine{253         \textcolor{keywordflow}{throw} invalid\_argument(\textcolor{stringliteral}{"Argumento Inválido: os valores de preço excederam os limites que são de 0.00 a 3000.00"});}
+\DoxyCodeLine{254 \}}
+
+\end{DoxyCode}
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

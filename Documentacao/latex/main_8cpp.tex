@@ -1,0 +1,289 @@
+\hypertarget{main_8cpp}{}\doxysection{ReferÃªncia do Arquivo C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/main.cpp}
+\label{main_8cpp}\index{C:/Users/Joao Paulo/Documents/TP1/Trabalho\_TP1/main.cpp@{C:/Users/Joao Paulo/Documents/TP1/Trabalho\_TP1/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}entidades.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dominios.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}testes.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+\doxysubsection*{FunÃ§Ãµes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{FunÃ§Ãµes}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+permitir a impressão de caracteres em português
+
+Declaração dos Testes de Unidade dos Domínios
+
+Execução dos Testes de Unidade dos Domínios
+
+Declaração de objetos dos Dompinios
+
+Declaração de objetos das Entidades
+
+definições dos domínios
+
+definições de uma partida
+
+definições de um usuário
+
+Definição de \mbox{\hyperlink{class_jogo}{Jogo}}
+
+Definição de \mbox{\hyperlink{class_ingresso}{Ingresso}}
+
+Definição de Cartão de Crédito
+
+Impressão de domínios
+
+Impressão de \mbox{\hyperlink{class_partida}{Partida}}
+
+Impressão de Usuário
+
+Impressão de \mbox{\hyperlink{class_jogo}{Jogo}}
+
+impressão de \mbox{\hyperlink{class_ingresso}{Ingresso}}
+
+impressão de Cartão de Crédito
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     setlocale(LC\_ALL,\textcolor{stringliteral}{"portuguese"});}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{20     \mbox{\hyperlink{class_t_u_data}{TUData}} testeData;}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_t_u_cpf}{TUCpf}} testeCpf;}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_t_u_horario}{TUHorario}} testeHorario;}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_t_u_codigo}{TUCodigo}} testeCodigo;}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_t_u_preco}{TUPreco}} testePreco;}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_t_u_disp}{TUDisp}} testeDisp;}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_t_u_senha}{TUSenha}} testeSenha;}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_t_u_cod_ver}{TUCodVer}} testeCodVer;}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_t_u_cod_jogo}{TUCodJogo}} testeCodJogo;}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_t_u_cod_ing}{TUCodIng}} testeCodIng;}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_t_u_estado}{TUEstado}} testeEstado;}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_t_u_num_cartao}{TUNumCartao}} testeNumCartao;}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_t_u_validade}{TUValidade}} testeValidade;}
+\DoxyCodeLine{33     \mbox{\hyperlink{class_t_u_nome_jogo}{TUNomeJogo}} testeNomeJogo;}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_t_u_cidade}{TUCidade}} testeCidade;}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_t_u_tipo}{TUTipo}} testeTipo;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     cout << endl << endl;}
+\DoxyCodeLine{39     \textcolor{keywordflow}{switch}(testeData.\mbox{\hyperlink{class_t_u_data_a9655b81c10d9963d2ccbbf2678493a90}{executar}}())\{}
+\DoxyCodeLine{40         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_data_a59be2c38007b733030111a5aadfb4517}{TUData::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE DATA: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{41                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{42         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_data_a691cfac8c7fc4b3da149ef868de44f35}{TUData::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE DATA: FALHA =="} << endl << endl;}
+\DoxyCodeLine{43                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45     \textcolor{keywordflow}{switch}(testeCpf.\mbox{\hyperlink{class_t_u_cpf_a92842028999e85ef8c37cfe80da2e8a1}{executar}}())\{}
+\DoxyCodeLine{46         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cpf_a45ffa24fac5ae33e60a0957054e0706c}{TUCpf::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CPF: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{47                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{48         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cpf_a87c63e17615b7343afcf7d12734db208}{TUCpf::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CPF: FALHA =="} << endl << endl;}
+\DoxyCodeLine{49                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51     \textcolor{keywordflow}{switch}(testeHorario.\mbox{\hyperlink{class_t_u_horario_ad25bbd2212af6162d5618a4529a51836}{executar}}())\{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_horario_a58974951411c48a2ef16b505b65ee991}{TUHorario::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE HORÁRIO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{53                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{54         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_horario_a93d6fabcab04d0ac3bc695bbf2e4cf1b}{TUHorario::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE HORÁRIO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{55                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57     \textcolor{keywordflow}{switch}(testeCodigo.\mbox{\hyperlink{class_t_u_codigo_ae43294d199a4317627b415800c37c25f}{executar}}())\{}
+\DoxyCodeLine{58         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_codigo_ae74fd939ebced94047b47878406f53d1}{TUCodigo::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CÓDIGO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{59                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{60         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_codigo_abff6dd7b04006df40462c76f8b769123}{TUCodigo::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CÓDIGO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{61                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63     \textcolor{keywordflow}{switch}(testePreco.\mbox{\hyperlink{class_t_u_preco_afbc5e91c5597ec847d562e560bf4cb33}{executar}}())\{}
+\DoxyCodeLine{64         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_preco_a57bdb7bbef3d8d3865b202440fee5eec}{TUPreco::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE PREÇO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{65                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{66         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_preco_aff6da2ec1cc7d7c79fb8753d0035e5c8}{TUPreco::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE PREÇO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{67                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69     \textcolor{keywordflow}{switch}(testeDisp.\mbox{\hyperlink{class_t_u_disp_a06171e6d4d64381bb2f50a67369744e1}{executar}}())\{}
+\DoxyCodeLine{70         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_disp_abbadff3f0f10cb3e40ad8ea871d3b11b}{TUDisp::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE DISPONIBILIDADE: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{71                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{72         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_disp_abc574a6b32004d410d82d658455a96d4}{TUDisp::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE DISPONIBILIDADE: FALHA =="} << endl << endl;}
+\DoxyCodeLine{73                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{switch}(testeSenha.\mbox{\hyperlink{class_t_u_senha_afff12cd67c99e5eb6c2699501d88711a}{executar}}())\{}
+\DoxyCodeLine{76         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_senha_a1a1dabe034b25a899150c95acbc0684c}{TUSenha::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE SENHA: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{77                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{78         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_senha_a71eb0d9005b2d36da6a8530c0dd31842}{TUSenha::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE SENHA: FALHA =="} << endl << endl;}
+\DoxyCodeLine{79                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81     \textcolor{keywordflow}{switch}(testeCodVer.\mbox{\hyperlink{class_t_u_cod_ver_a2c72bceb9b0147461c7856a0b93cf6a6}{executar}}())\{}
+\DoxyCodeLine{82         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cod_ver_a9edacd6b3e01ff7f871197699e4d3b5e}{TUCodVer::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CÓDIGO DE VERIFICAÇÃO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{83                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{84         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cod_ver_ac7608f6ddfbbc7cd487e155b74096595}{TUCodVer::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CÓDIGO DE VERIFICAÇÃO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{85                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87     \textcolor{keywordflow}{switch}(testeCodJogo.\mbox{\hyperlink{class_t_u_cod_jogo_a851ce5e6df5fa6db3bb4e938cb86aa93}{executar}}())\{}
+\DoxyCodeLine{88         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cod_jogo_a18e15f67da26ef654e3054ff447e21cc}{TUCodJogo::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CÓDIGO DE JOGO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{89                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{90         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cod_jogo_a089071e329beeb8b1a92f1018304e6d9}{TUCodJogo::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CÓDIGO DE JOGO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{91                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93     \textcolor{keywordflow}{switch}(testeCodIng.\mbox{\hyperlink{class_t_u_cod_ing_a49242e84c6092c725ef279701b6e467c}{executar}}())\{}
+\DoxyCodeLine{94         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cod_ing_ae58a9ae9510427edad592e88333dd448}{TUCodIng::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CÓDIGO DE INGRESSO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{95                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{96         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cod_ing_ac1622f4bd5f1357b14b1970ece1cc172}{TUCodIng::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE CÓDIGO DE INGRESSO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{97                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{98     \}}
+\DoxyCodeLine{99     \textcolor{keywordflow}{switch}(testeEstado.\mbox{\hyperlink{class_t_u_estado_aa75f3b51ea47df540615d0f4c10c4296}{executar}}())\{}
+\DoxyCodeLine{100         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_estado_a6e8779cb4421926ecf36abe673e685a8}{TUEstado::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE ESTADO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{101                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{102         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_estado_abaa25c39bec7de39e56f56dfae0b8c6a}{TUEstado::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE ESTADO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{103                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105     \textcolor{keywordflow}{switch}(testeNumCartao.\mbox{\hyperlink{class_t_u_num_cartao_a3110d673cdeb182305fce4f467c07cc3}{executar}}())\{}
+\DoxyCodeLine{106         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_num_cartao_a697cb0c3631caeafcf87d858a87c96db}{TUNumCartao::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE NÚMERO DO CARTÃO DE CRÉDITO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{107                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{108         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_num_cartao_a6b4714cd1b726bc392c1f478143c8169}{TUNumCartao::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DE NÚMERO DO CARTÃO DE CRÉDITO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{109                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111     \textcolor{keywordflow}{switch}(testeValidade.\mbox{\hyperlink{class_t_u_validade_ab1eddca6538a4da90f184642e1eb4853}{executar}}())\{}
+\DoxyCodeLine{112         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_validade_abf863d264ff7fd2794a71aa158d4c416}{TUValidade::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DA DATA DE VALIDADE: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{113                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{114         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_validade_ac399b349f40406b166c871d9ed435a21}{TUValidade::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DA DATA DE VALIDADE: FALHA =="} << endl << endl;}
+\DoxyCodeLine{115                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117     \textcolor{keywordflow}{switch}(testeNomeJogo.\mbox{\hyperlink{class_t_u_nome_jogo_a87c6d953a265fc0b6253bcf198eea2b8}{executar}}())\{}
+\DoxyCodeLine{118         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_nome_jogo_ae1d6d731987eddaa94f08af23d8f803f}{TUNomeJogo::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DO NOME DO JOGO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{119                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{120         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_nome_jogo_a08f251374f035b45c2b94b7269b5b48d}{TUNomeJogo::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DO NOME DO JOGO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{121                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123     \textcolor{keywordflow}{switch}(testeCidade.\mbox{\hyperlink{class_t_u_cidade_a14f03f80c3eab1fb24011c210054360a}{executar}}())\{}
+\DoxyCodeLine{124         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cidade_a5bee37572dc0760c056629292f621348}{TUCidade::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DA CIDADE: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{125                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{126         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_cidade_aeb6cec6a69cbc2c2e1c7d2df6a9c5803}{TUCidade::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DA CIDADE: FALHA =="} << endl << endl;}
+\DoxyCodeLine{127                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129     \textcolor{keywordflow}{switch}(testeTipo.\mbox{\hyperlink{class_t_u_tipo_acaffe5b49949071fd2c1e1b152c3ef52}{executar}}())\{}
+\DoxyCodeLine{130         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_tipo_a8631ebe13af1b8c0381019fb721eaaf6}{TUTipo::SUCESSO}}: cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DO TIPO: SUCESSO =="} << endl << endl;}
+\DoxyCodeLine{131                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{132         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_t_u_tipo_a870d70988878e0659e469458dca85687}{TUTipo::FALHA}}  : cout << \textcolor{stringliteral}{"==  TESTE DE UNIDADE DO TIPO: FALHA =="} << endl << endl;}
+\DoxyCodeLine{133                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{134     \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{137     \mbox{\hyperlink{class_data}{Data}} d1;}
+\DoxyCodeLine{138     \mbox{\hyperlink{class_cpf}{Cpf}} c1;}
+\DoxyCodeLine{139     \mbox{\hyperlink{class_horario}{Horario}} h1;}
+\DoxyCodeLine{140     \mbox{\hyperlink{class_codigo}{Codigo}} cd1;}
+\DoxyCodeLine{141     \mbox{\hyperlink{class_preco}{Preco}} p1;}
+\DoxyCodeLine{142     \mbox{\hyperlink{class_disponibilidade}{Disponibilidade}} dp1;}
+\DoxyCodeLine{143     \mbox{\hyperlink{class_senha}{Senha}} s1;}
+\DoxyCodeLine{144     \mbox{\hyperlink{class_codigo_verificacao}{CodigoVerificacao}} cv1;}
+\DoxyCodeLine{145     \mbox{\hyperlink{class_codigo_jogo}{CodigoJogo}} cj1;}
+\DoxyCodeLine{146     \mbox{\hyperlink{class_codigo_ingresso}{CodigoIngresso}} ci1;}
+\DoxyCodeLine{147     \mbox{\hyperlink{class_estado}{Estado}} e1;}
+\DoxyCodeLine{148     \mbox{\hyperlink{class_num_cartao}{NumCartao}} nc1;}
+\DoxyCodeLine{149     \mbox{\hyperlink{class_validade}{Validade}} v1;}
+\DoxyCodeLine{150     \mbox{\hyperlink{class_nome_jogo}{NomeJogo}} nj1;}
+\DoxyCodeLine{151     \mbox{\hyperlink{class_cidade}{Cidade}} cdd1;}
+\DoxyCodeLine{152     \mbox{\hyperlink{class_tipo}{Tipo}} t1;}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{155     \mbox{\hyperlink{class_partida}{Partida}} part;}
+\DoxyCodeLine{156     \mbox{\hyperlink{class_usuario}{Usuario}} usr;}
+\DoxyCodeLine{157     \mbox{\hyperlink{class_jogo}{Jogo}} jog;}
+\DoxyCodeLine{158     \mbox{\hyperlink{class_ingresso}{Ingresso}} ing;}
+\DoxyCodeLine{159     \mbox{\hyperlink{class_cartao_credito}{CartaoCredito}} cart;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{keywordtype}{string} cpf = \textcolor{stringliteral}{"23261322110"};}
+\DoxyCodeLine{162     \textcolor{keywordtype}{string} cod = \textcolor{stringliteral}{"01030"};}
+\DoxyCodeLine{163     \textcolor{keywordtype}{string} dt = \textcolor{stringliteral}{"23/10/1917"};}
+\DoxyCodeLine{164     \textcolor{keywordtype}{string} hrr = \textcolor{stringliteral}{"21:47"};}
+\DoxyCodeLine{165     \textcolor{keywordtype}{string} sn = \textcolor{stringliteral}{"11aA1"};}
+\DoxyCodeLine{166     \textcolor{keywordtype}{string} cvc = \textcolor{stringliteral}{"123"};}
+\DoxyCodeLine{167     \textcolor{keywordtype}{string} cjg = \textcolor{stringliteral}{"460"};}
+\DoxyCodeLine{168     \textcolor{keywordtype}{string} cdi = \textcolor{stringliteral}{"00539"};}
+\DoxyCodeLine{169     \textcolor{keywordtype}{string} est = \textcolor{stringliteral}{"AP"};}
+\DoxyCodeLine{170     \textcolor{keywordtype}{string} num = \textcolor{stringliteral}{"4545419514929815"};}
+\DoxyCodeLine{171     \textcolor{keywordtype}{string} val = \textcolor{stringliteral}{"01/23"};}
+\DoxyCodeLine{172     \textcolor{keywordtype}{string} njo = \textcolor{stringliteral}{"Corinthians x Botafogo"};}
+\DoxyCodeLine{173     \textcolor{keywordtype}{string} cid = \textcolor{stringliteral}{"Brasilia"};}
+\DoxyCodeLine{174     \textcolor{keywordtype}{int} tip = 1;}
+\DoxyCodeLine{175     \textcolor{keywordtype}{double} prc=30.05;}
+\DoxyCodeLine{176     \textcolor{keywordtype}{int} dsp=30;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{179     c1.\mbox{\hyperlink{class_cpf_a59019f05408af843eef2400518d7dc70}{defineCpf}}(cpf);}
+\DoxyCodeLine{180     cd1.\mbox{\hyperlink{class_codigo_a76d36047bd63b705d1fa34da5e69d22b}{defineCodigo}}(cod);}
+\DoxyCodeLine{181     p1.\mbox{\hyperlink{class_preco_a1cb3d1200baa722b00257bcd278a22c9}{definePreco}}(prc);}
+\DoxyCodeLine{182     dp1.\mbox{\hyperlink{class_disponibilidade_a284b8c6471e31ad719b01db24b0b74ab}{defineDisp}}(dsp);}
+\DoxyCodeLine{183     d1.\mbox{\hyperlink{class_data_a2914ac60d7b01ba28a17a59de0c720f3}{defineData}}(dt);}
+\DoxyCodeLine{184     h1.\mbox{\hyperlink{class_horario_ad9de626bc0f27c907213951fd2cb7ccf}{defineHorario}}(hrr);}
+\DoxyCodeLine{185     s1.\mbox{\hyperlink{class_senha_a366d7c6a6cb5f62d136abcebc9ccc453}{defineSenha}}(sn);}
+\DoxyCodeLine{186     cv1.\mbox{\hyperlink{class_codigo_verificacao_a93d0ad1c62aa1dbd5263288a3df4800e}{defineCodVer}}(cvc);}
+\DoxyCodeLine{187     cj1.\mbox{\hyperlink{class_codigo_jogo_a7777335f7a326ef714c61e0c8259d210}{defineCodJogo}}(cjg);}
+\DoxyCodeLine{188     ci1.\mbox{\hyperlink{class_codigo_ingresso_a4f1c0f7042f020a455dcb5d000ae617e}{defineCodIng}}(cdi);}
+\DoxyCodeLine{189     e1.\mbox{\hyperlink{class_estado_a05cafb80fe4c01cb707e4e5a895dee39}{defineEstado}}(est);}
+\DoxyCodeLine{190     nc1.\mbox{\hyperlink{class_num_cartao_acd22a6c6ec5bd7ae2396b8158d3d2898}{defineNumCartao}}(num);}
+\DoxyCodeLine{191     v1.\mbox{\hyperlink{class_validade_ab545964018df969675602519b039bd26}{defineValidade}}(val);}
+\DoxyCodeLine{192     nj1.\mbox{\hyperlink{class_nome_ad75d4d2a6dcc1d64c92f9209f44b89bb}{defineNome}}(njo);}
+\DoxyCodeLine{193     cdd1.\mbox{\hyperlink{class_nome_ad75d4d2a6dcc1d64c92f9209f44b89bb}{defineNome}}(cid);}
+\DoxyCodeLine{194     t1.\mbox{\hyperlink{class_tipo_a45f969dfbf46b8c8be1a4c208a53c91d}{defineTipo}}(tip);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{197     part.\mbox{\hyperlink{class_partida_a3e5d557a5f3eb4effce5e379af5e8f39}{defineCodigo}}(cd1);}
+\DoxyCodeLine{198     part.\mbox{\hyperlink{class_partida_a8ec0e58c8be414cf4fbe315ef7a736f1}{defineData}}(d1);}
+\DoxyCodeLine{199     part.\mbox{\hyperlink{class_partida_afef51c8a459a0397e732a680854bb539}{defineDisp}}(dp1);}
+\DoxyCodeLine{200     part.\mbox{\hyperlink{class_partida_aa28ae39963a2da17e59bcffec3612a48}{defineHorario}}(h1);}
+\DoxyCodeLine{201     part.\mbox{\hyperlink{class_partida_a509708a0c9dacf6d9ddecab1b93b7a10}{definePreco}}(p1);}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{204     usr.\mbox{\hyperlink{class_usuario_a5632bc2710082302253bc11cd6309286}{defineCpf}}(c1);}
+\DoxyCodeLine{205     usr.\mbox{\hyperlink{class_usuario_a818599773637dcd85b2f5db83257e9b2}{defineSenha}}(s1);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{208     jog.\mbox{\hyperlink{class_jogo_a82c605de89f3ff2cabaf373c12eb0461}{defineCodJogo}}(cj1);}
+\DoxyCodeLine{209     jog.\mbox{\hyperlink{class_jogo_ada22aa5115e728a7ec826651fc279d6f}{defineNomeJogo}}(nj1);}
+\DoxyCodeLine{210     jog.\mbox{\hyperlink{class_jogo_a659f2bd65bff0b665ea1dd04d2f9f65e}{defineCidade}}(cdd1);}
+\DoxyCodeLine{211     jog.\mbox{\hyperlink{class_jogo_a0d5472c6af5f032b6fc756df810551a1}{defineEstado}}(e1);}
+\DoxyCodeLine{212     jog.\mbox{\hyperlink{class_jogo_a3a1beb724778e2360e4947c157eccb26}{defineTipo}}(t1);}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{215     ing.\mbox{\hyperlink{class_ingresso_adcaca313bc74f18ba6f546cf3084ebbe}{defineCodIng}}(ci1);}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{218     cart.\mbox{\hyperlink{class_cartao_credito_a0d3c723e5966abd06fc6cf8d46d6344f}{defineNumCartao}}(nc1);}
+\DoxyCodeLine{219     cart.\mbox{\hyperlink{class_cartao_credito_a9c99d8295118496e258cc337d0a68c83}{defineCodVer}}(cv1);}
+\DoxyCodeLine{220     cart.\mbox{\hyperlink{class_cartao_credito_a76de9e8c968999aba240e898d43ab588}{defineValidade}}(v1);}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{223     cout << \textcolor{stringliteral}{"CPF: "} << c1.\mbox{\hyperlink{class_cpf_a80dfa8463711ef2fd8473eaa9223720a}{pegaCpf}}() << endl;}
+\DoxyCodeLine{224     cout << \textcolor{stringliteral}{"Data: "} << d1.\mbox{\hyperlink{class_data_ac28b1798c57f52d4ff1d63fba0c79113}{viraString}}() << endl;}
+\DoxyCodeLine{225     cout << \textcolor{stringliteral}{"Horário: "} << h1.\mbox{\hyperlink{class_horario_ab7376787b0d1d5637c952d641e9f0e7c}{viraString}}() << endl;}
+\DoxyCodeLine{226     cout << \textcolor{stringliteral}{"Código: "} << cd1.\mbox{\hyperlink{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}{pegaCodigo}}() << endl;}
+\DoxyCodeLine{227     cout << \textcolor{stringliteral}{"Preço: "} << p1.\mbox{\hyperlink{class_preco_a40172f56c6be924253a5ecc7f5f64690}{pegaPreco}}() << endl;}
+\DoxyCodeLine{228     cout << \textcolor{stringliteral}{"Disponibilidade: "} << dp1.\mbox{\hyperlink{class_disponibilidade_abecee51ff8b607b92fc81a31953f23a3}{pegaDisp}}() << endl;}
+\DoxyCodeLine{229     cout << \textcolor{stringliteral}{"Senha: "} << s1.\mbox{\hyperlink{class_senha_a1b0d46031e51cc2de97d491d4ac12817}{pegaSenha}}() << endl;}
+\DoxyCodeLine{230     cout << \textcolor{stringliteral}{"Código de Verificação do Cartão: "} << cv1.\mbox{\hyperlink{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}{pegaCodigo}}() << endl;}
+\DoxyCodeLine{231     cout << \textcolor{stringliteral}{"Código do Jogo: "} << cj1.\mbox{\hyperlink{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}{pegaCodigo}}() << endl;}
+\DoxyCodeLine{232     cout << \textcolor{stringliteral}{"Código do Ingresso: "} << ci1.\mbox{\hyperlink{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}{pegaCodigo}}() << endl;}
+\DoxyCodeLine{233     cout << \textcolor{stringliteral}{"Estado: "} << e1.\mbox{\hyperlink{class_estado_aa698502b0dfa0846182546738c71a572}{pegaEstado}}() << endl;}
+\DoxyCodeLine{234     cout << \textcolor{stringliteral}{"Número do Cartão de Crédito: "} << nc1.\mbox{\hyperlink{class_num_cartao_abafbaa88141200f093dffe28b02e810b}{pegaNumCartao}}() << endl;}
+\DoxyCodeLine{235     cout << \textcolor{stringliteral}{"Validade: "} << v1.\mbox{\hyperlink{class_validade_a477b062b4056bec131452391562a3309}{pegaValidade}}() << endl;}
+\DoxyCodeLine{236     cout << \textcolor{stringliteral}{"Nome do Jogo: "} << nj1.\mbox{\hyperlink{class_nome_aeced97221b04c4c7001bf4ed4d7d2996}{pegaNome}}() << endl;}
+\DoxyCodeLine{237     cout << \textcolor{stringliteral}{"Cidade: "} << cdd1.\mbox{\hyperlink{class_nome_aeced97221b04c4c7001bf4ed4d7d2996}{pegaNome}}() << endl;}
+\DoxyCodeLine{238     cout << \textcolor{stringliteral}{"Tipo: "} << t1.\mbox{\hyperlink{class_tipo_a868871c72b6d6f37017df032c526d618}{stringTipo}}() << endl;}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     cout << endl << endl;}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{243     part.\mbox{\hyperlink{class_partida_ae3f4f81acc88af1a72c96a7652aff6ac}{imprimePartida}}();}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{246     usr.\mbox{\hyperlink{class_usuario_a2a4ee729a3f6928a40b5d8fa0386efb1}{imprimeUsuario}}();}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{249     jog.\mbox{\hyperlink{class_jogo_a41507caf36f2accebf642d96eb83056c}{imprimeJogo}}();}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{252     ing.\mbox{\hyperlink{class_ingresso_acf8954e3a4d7034f3aacdcead23333e6}{imprimeIngresso}}();}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{255     cart.\mbox{\hyperlink{class_cartao_credito_a0e5d58efa4196c69835574939e897155}{imprimeIngresso}}();}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     \textcolor{comment}{//LEMBRETES DE CÓDIGO}}
+\DoxyCodeLine{258     \textcolor{comment}{//cout << endl << endl << "==  FAZER VALIDAÇÃO DE DATA E HORÁRIO  ==" << endl << endl;}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{261 \}}
+
+\end{DoxyCode}

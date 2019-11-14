@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho TP1: CÃ³digo-Fonte de C:/Users/Joao Paulo/Documents/TP1/Trabalho_TP1/dominios.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho TP1
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_e67f0806ea09c99fb3e5800bb5f6a1fd.html">Joao Paulo</a></li><li class="navelem"><a class="el" href="dir_21ae382d00f3cdf65f41560b8b421aa5.html">Documents</a></li><li class="navelem"><a class="el" href="dir_cfbad5ce4612c1ff866783447ab60bf5.html">TP1</a></li><li class="navelem"><a class="el" href="dir_cba8caa2cfc6de436c0b49f4ad860fec.html">Trabalho_TP1</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dominios.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="dominios_8h.html">VÃ¡ para a documentaÃ§Ã£o desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef DOMINIOS_H_INCLUDED</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define DOMINIOS_H_INCLUDED</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_data.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_data.html">Data</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="class_data.html#a8c9ac577e1bec82ca45ff940814c4a1f">Data</a> (<span class="keywordtype">int</span> d=1,<span class="keywordtype">int</span> m=1,<span class="keywordtype">int</span> a=2000);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        std::string <a class="code" href="class_data.html#ac28b1798c57f52d4ff1d63fba0c79113">viraString</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_data.html#a2914ac60d7b01ba28a17a59de0c720f3">defineData</a>(<span class="keywordtype">int</span> d,<span class="keywordtype">int</span> m,<span class="keywordtype">int</span> a);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_data.html#a2914ac60d7b01ba28a17a59de0c720f3">defineData</a>(std::string dt);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::string  <a class="code" href="class_data.html#a9863187ae5067b4f8ac6c2bdb6d2f8f4">trataNum</a>(<span class="keywordtype">int</span> num);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_data.html#aae2f6d9091295f9846b55729326aa056">validaData</a> (<span class="keywordtype">int</span>&amp; d,<span class="keywordtype">int</span>&amp; m,<span class="keywordtype">int</span>&amp; a) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_data.html#aae2f6d9091295f9846b55729326aa056">validaData</a> (std::string&amp; dt) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">int</span> dia, mes, ano;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        std::string data;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_cpf.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cpf.html">Cpf</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::string codigo;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> validaCpf (std::string&amp; cod) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_cpf.html#a59019f05408af843eef2400518d7dc70">defineCpf</a>(std::string cod);</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_cpf.html#a80dfa8463711ef2fd8473eaa9223720a">   42</a></span>&#160;        std::string <a class="code" href="class_cpf.html#a80dfa8463711ef2fd8473eaa9223720a">pegaCpf</a>() {<span class="keywordflow">return</span> codigo;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_horario.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_horario.html">Horario</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">int</span> hora,minuto;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::string horario;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_horario.html#a781ff29576ec8da8e4fbe55735b24bd1">Horario</a> (<span class="keywordtype">int</span> h=12,<span class="keywordtype">int</span> m=0);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_horario.html#ad9de626bc0f27c907213951fd2cb7ccf">defineHorario</a> (<span class="keywordtype">int</span> h,<span class="keywordtype">int</span> m);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_horario.html#ad9de626bc0f27c907213951fd2cb7ccf">defineHorario</a>(std::string hrr);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::string <a class="code" href="class_horario.html#ab7376787b0d1d5637c952d641e9f0e7c">viraString</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::string  <a class="code" href="class_horario.html#a2045933d35e7b5511e91e6c551cfa041">trataNum</a>(<span class="keywordtype">int</span>&amp; num);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_horario.html#aed1f2e25bbd1f9ab4afcf97ee8f7c718">validaHorario</a> (<span class="keywordtype">int</span>&amp; h,<span class="keywordtype">int</span>&amp; m) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_horario.html#aed1f2e25bbd1f9ab4afcf97ee8f7c718">validaHorario</a> (std::string&amp; hrr) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_codigo.html">   66</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_codigo.html">Codigo</a> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_codigo.html#ac1061ea131d1ebbcf5d9552f6c984225">   68</a></span>&#160;        std::string <a class="code" href="class_codigo.html#ac1061ea131d1ebbcf5d9552f6c984225">codigo</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_codigo.html#af15aedcd486365c769aa2243dbe39ed9">validaCodigo</a> (std::string&amp; cod) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_codigo.html#a76d36047bd63b705d1fa34da5e69d22b">defineCodigo</a> (std::string cod);</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_codigo.html#abba7ed4990391b757fd3302ae03fe0e0">   75</a></span>&#160;        std::string <a class="code" href="class_codigo.html#abba7ed4990391b757fd3302ae03fe0e0">pegaCodigo</a>() {<span class="keywordflow">return</span> <a class="code" href="class_codigo.html#ac1061ea131d1ebbcf5d9552f6c984225">codigo</a>;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_preco.html">   78</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_preco.html">Preco</a> {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">double</span> preco;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_preco.html#a1cb3d1200baa722b00257bcd278a22c9">definePreco</a> (<span class="keywordtype">double</span> prc);</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_preco.html#a40172f56c6be924253a5ecc7f5f64690">   85</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_preco.html#a40172f56c6be924253a5ecc7f5f64690">pegaPreco</a>() {<span class="keywordflow">return</span> preco;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_preco.html#aeeb035060d9dbd2b2e608d248fef64b1">validaPreco</a> (<span class="keywordtype">double</span>&amp; prc) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_disponibilidade.html">   90</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_disponibilidade.html">Disponibilidade</a> {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">int</span> disponibilidade;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_disponibilidade.html#a284b8c6471e31ad719b01db24b0b74ab">defineDisp</a> (<span class="keywordtype">int</span> dsp);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_disponibilidade.html#acbdc9a768e0d444185332194b45fe131">validaDisp</a> (<span class="keywordtype">int</span>&amp; dsp) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_disponibilidade.html#abecee51ff8b607b92fc81a31953f23a3">   99</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_disponibilidade.html#abecee51ff8b607b92fc81a31953f23a3">pegaDisp</a>() {<span class="keywordflow">return</span> disponibilidade;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_senha.html">  102</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_senha.html">Senha</a> {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        std::string senha;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">void</span> validaSenha (std::string&amp; sn) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_senha.html#a366d7c6a6cb5f62d136abcebc9ccc453">defineSenha</a> (std::string sn);</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_senha.html#a1b0d46031e51cc2de97d491d4ac12817">  111</a></span>&#160;        std::string <a class="code" href="class_senha.html#a1b0d46031e51cc2de97d491d4ac12817">pegaSenha</a>() {<span class="keywordflow">return</span> senha;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_codigo_verificacao.html">  114</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_codigo_verificacao.html">CodigoVerificacao</a>: <span class="keyword">public</span> <a class="code" href="class_codigo.html">Codigo</a> { </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">void</span> validaCodVer (std::string&amp; cod) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_codigo_verificacao.html#a93d0ad1c62aa1dbd5263288a3df4800e">defineCodVer</a> (std::string cod);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_codigo_jogo.html">  125</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_codigo_jogo.html">CodigoJogo</a>: <span class="keyword">public</span> <a class="code" href="class_codigo.html">Codigo</a> {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">void</span> validaCodJogo (std::string&amp; cod) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_codigo_jogo.html#a7777335f7a326ef714c61e0c8259d210">defineCodJogo</a> (std::string cod);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_codigo_ingresso.html">  134</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_codigo_ingresso.html">CodigoIngresso</a>: <span class="keyword">public</span> <a class="code" href="class_codigo.html">Codigo</a> {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">void</span> validaCodIng (std::string&amp; cod) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_codigo_ingresso.html#a4f1c0f7042f020a455dcb5d000ae617e">defineCodIng</a> (std::string cod);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;};</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_estado.html">  143</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_estado.html">Estado</a> {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        std::string estado;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> std::string estados[];</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">void</span> validaEstado (std::string&amp; est) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_estado.html#a05cafb80fe4c01cb707e4e5a895dee39">defineEstado</a> (std::string est);</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="class_estado.html#aa698502b0dfa0846182546738c71a572">  154</a></span>&#160;        std::string <a class="code" href="class_estado.html#aa698502b0dfa0846182546738c71a572">pegaEstado</a> () {<span class="keywordflow">return</span> estado;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;};</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="class_num_cartao.html">  157</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_num_cartao.html">NumCartao</a> {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        std::string numero;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordtype">void</span> validaNumCartao (std::string&amp; num) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_num_cartao.html#acd22a6c6ec5bd7ae2396b8158d3d2898">defineNumCartao</a> (std::string num);</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="class_num_cartao.html#abafbaa88141200f093dffe28b02e810b">  166</a></span>&#160;        std::string <a class="code" href="class_num_cartao.html#abafbaa88141200f093dffe28b02e810b">pegaNumCartao</a> () {<span class="keywordflow">return</span> numero;}</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;};</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="class_validade.html">  169</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_validade.html">Validade</a> {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        std::string validade;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordtype">void</span> validaValidade (std::string&amp; val) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_validade.html#ab545964018df969675602519b039bd26">defineValidade</a> (std::string val);</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="class_validade.html#a477b062b4056bec131452391562a3309">  178</a></span>&#160;        std::string <a class="code" href="class_validade.html#a477b062b4056bec131452391562a3309">pegaValidade</a>() {<span class="keywordflow">return</span> validade;}</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="class_nome.html">  181</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nome.html">Nome</a> {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="class_nome.html#ad75d4d2a6dcc1d64c92f9209f44b89bb">  184</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_nome.html#ad75d4d2a6dcc1d64c92f9209f44b89bb">defineNome</a>(std::string n){</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <a class="code" href="class_nome.html#ad2dffc8660cfc24b1066016075c70b74">validaNome</a>(n);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            this-&gt;<a class="code" href="class_nome.html#a8395ef4648c8c2deb6d9ea54466ab3de">nome</a>=n;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_nome.html#ad2dffc8660cfc24b1066016075c70b74">validaNome</a>(std::string) <span class="keywordflow">throw</span> (std::invalid_argument) = 0;</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="class_nome.html#aeced97221b04c4c7001bf4ed4d7d2996">  191</a></span>&#160;        std::string <a class="code" href="class_nome.html#aeced97221b04c4c7001bf4ed4d7d2996">pegaNome</a>() {<span class="keywordflow">return</span> <a class="code" href="class_nome.html#a8395ef4648c8c2deb6d9ea54466ab3de">nome</a>;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="class_nome.html#a8395ef4648c8c2deb6d9ea54466ab3de">  193</a></span>&#160;        std::string <a class="code" href="class_nome.html#a8395ef4648c8c2deb6d9ea54466ab3de">nome</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;};</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="class_nome_jogo.html">  196</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nome_jogo.html">NomeJogo</a>: <span class="keyword">public</span> <a class="code" href="class_nome.html">Nome</a>{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordtype">void</span> validaNome(std::string) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="class_nome_jogo.html#a0fdbbcf3db5c9748f4047cbde801e2aa">  202</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_nome_jogo.html#a0fdbbcf3db5c9748f4047cbde801e2aa">~NomeJogo</a>() {}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;};</div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="class_cidade.html">  205</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cidade.html">Cidade</a>: <span class="keyword">public</span> <a class="code" href="class_nome.html">Nome</a>{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordtype">void</span> validaNome(std::string) <span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="class_cidade.html#aa12738aff98f9f4c717f464eef19a064">  211</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_cidade.html#aa12738aff98f9f4c717f464eef19a064">~Cidade</a>() {}</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;};</div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11a276ece6ff2840eb9525523a78e1d74d2">  214</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11">Id</a>{<a class="code" href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11ad0ef00e708ed18ba004480dceb79ecfb">LOCAL</a>=1, <a class="code" href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11a5271d2c44e06fa0127b22cb277552767">ESTADUAL</a>, <a class="code" href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11a276ece6ff2840eb9525523a78e1d74d2">NACIONAL</a>, <a class="code" href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11a1445014a76210a9fd8db211614b688c7">INTERNACIONAL</a>};</div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="class_tipo.html">  216</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tipo.html">Tipo</a>{</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_tipo.html#a45f969dfbf46b8c8be1a4c208a53c91d">defineTipo</a>(<span class="keywordtype">int</span> d);</div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="class_tipo.html#aa7a064dc76b1192839dd93649aa6b03d">  221</a></span>&#160;        <a class="code" href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11">Id</a> <a class="code" href="class_tipo.html#aa7a064dc76b1192839dd93649aa6b03d">pegaTipo</a>() {<span class="keywordflow">return</span> tp;}</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        std::string <a class="code" href="class_tipo.html#a868871c72b6d6f37017df032c526d618">stringTipo</a>();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordtype">void</span> validaDigito(<span class="keywordtype">int</span>)<span class="keywordflow">throw</span> (std::invalid_argument);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11">Id</a>  tp;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordtype">int</span> digito;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;};</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#endif // DOMINIOS_H_INCLUDED</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_codigo_html_af15aedcd486365c769aa2243dbe39ed9"><div class="ttname"><a href="class_codigo.html#af15aedcd486365c769aa2243dbe39ed9">Codigo::validaCodigo</a></div><div class="ttdeci">void validaCodigo(std::string &amp;cod)</div><div class="ttdoc">Função para validar Código.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:233</div></div>
+<div class="ttc" id="aclass_tipo_html_a868871c72b6d6f37017df032c526d618"><div class="ttname"><a href="class_tipo.html#a868871c72b6d6f37017df032c526d618">Tipo::stringTipo</a></div><div class="ttdeci">std::string stringTipo()</div><div class="ttdoc">Função para imprimir tipo.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:560</div></div>
+<div class="ttc" id="aclass_codigo_jogo_html_a7777335f7a326ef714c61e0c8259d210"><div class="ttname"><a href="class_codigo_jogo.html#a7777335f7a326ef714c61e0c8259d210">CodigoJogo::defineCodJogo</a></div><div class="ttdeci">void defineCodJogo(std::string cod)</div><div class="ttdoc">Função para definir o Código do Jogo.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:342</div></div>
+<div class="ttc" id="aclass_nome_html_aeced97221b04c4c7001bf4ed4d7d2996"><div class="ttname"><a href="class_nome.html#aeced97221b04c4c7001bf4ed4d7d2996">Nome::pegaNome</a></div><div class="ttdeci">std::string pegaNome()</div><div class="ttdoc">Função para retornar Nome.</div><div class="ttdef"><b>Definition:</b> dominios.h:191</div></div>
+<div class="ttc" id="aclass_nome_jogo_html"><div class="ttname"><a href="class_nome_jogo.html">NomeJogo</a></div><div class="ttdoc">Classe do domínio Nome de Jogo que herda da classe Nome.</div><div class="ttdef"><b>Definition:</b> dominios.h:196</div></div>
+<div class="ttc" id="aclass_preco_html_a1cb3d1200baa722b00257bcd278a22c9"><div class="ttname"><a href="class_preco.html#a1cb3d1200baa722b00257bcd278a22c9">Preco::definePreco</a></div><div class="ttdeci">void definePreco(double prc)</div><div class="ttdoc">Função para definir Preço</div><div class="ttdef"><b>Definition:</b> dominios.cpp:246</div></div>
+<div class="ttc" id="aclass_disponibilidade_html"><div class="ttname"><a href="class_disponibilidade.html">Disponibilidade</a></div><div class="ttdef"><b>Definition:</b> dominios.h:90</div></div>
+<div class="ttc" id="aclass_disponibilidade_html_a284b8c6471e31ad719b01db24b0b74ab"><div class="ttname"><a href="class_disponibilidade.html#a284b8c6471e31ad719b01db24b0b74ab">Disponibilidade::defineDisp</a></div><div class="ttdeci">void defineDisp(int dsp)</div><div class="ttdoc">Função para definir Disponibilidade.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:260</div></div>
+<div class="ttc" id="aclass_cidade_html_aa12738aff98f9f4c717f464eef19a064"><div class="ttname"><a href="class_cidade.html#aa12738aff98f9f4c717f464eef19a064">Cidade::~Cidade</a></div><div class="ttdeci">virtual ~Cidade()</div><div class="ttdoc">Destrutor virtual para excluir objeto da classe sem problema no polimorphismo.</div><div class="ttdef"><b>Definition:</b> dominios.h:211</div></div>
+<div class="ttc" id="aclass_data_html_aae2f6d9091295f9846b55729326aa056"><div class="ttname"><a href="class_data.html#aae2f6d9091295f9846b55729326aa056">Data::validaData</a></div><div class="ttdeci">void validaData(int &amp;d, int &amp;m, int &amp;a)</div><div class="ttdoc">Função para validar data a partir dos atributos int.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:67</div></div>
+<div class="ttc" id="aclass_data_html_a9863187ae5067b4f8ac6c2bdb6d2f8f4"><div class="ttname"><a href="class_data.html#a9863187ae5067b4f8ac6c2bdb6d2f8f4">Data::trataNum</a></div><div class="ttdeci">std::string trataNum(int num)</div><div class="ttdoc">Função para tratar números de dia e mês</div><div class="ttdef"><b>Definition:</b> dominios.cpp:58</div></div>
+<div class="ttc" id="aclass_num_cartao_html"><div class="ttname"><a href="class_num_cartao.html">NumCartao</a></div><div class="ttdoc">Classe do Domínio Número de Cartão de Crédito.</div><div class="ttdef"><b>Definition:</b> dominios.h:157</div></div>
+<div class="ttc" id="aclass_cidade_html"><div class="ttname"><a href="class_cidade.html">Cidade</a></div><div class="ttdoc">Classe do domínio Cidade que herda da classe Nome.</div><div class="ttdef"><b>Definition:</b> dominios.h:205</div></div>
+<div class="ttc" id="aclass_num_cartao_html_abafbaa88141200f093dffe28b02e810b"><div class="ttname"><a href="class_num_cartao.html#abafbaa88141200f093dffe28b02e810b">NumCartao::pegaNumCartao</a></div><div class="ttdeci">std::string pegaNumCartao()</div><div class="ttdoc">Função para retornar número do cartão de crédito.</div><div class="ttdef"><b>Definition:</b> dominios.h:166</div></div>
+<div class="ttc" id="aclass_horario_html"><div class="ttname"><a href="class_horario.html">Horario</a></div><div class="ttdef"><b>Definition:</b> dominios.h:45</div></div>
+<div class="ttc" id="aclass_senha_html"><div class="ttname"><a href="class_senha.html">Senha</a></div><div class="ttdef"><b>Definition:</b> dominios.h:102</div></div>
+<div class="ttc" id="aclass_codigo_html"><div class="ttname"><a href="class_codigo.html">Codigo</a></div><div class="ttdef"><b>Definition:</b> dominios.h:66</div></div>
+<div class="ttc" id="aclass_validade_html_a477b062b4056bec131452391562a3309"><div class="ttname"><a href="class_validade.html#a477b062b4056bec131452391562a3309">Validade::pegaValidade</a></div><div class="ttdeci">std::string pegaValidade()</div><div class="ttdoc">Função para retornar a data de validade.</div><div class="ttdef"><b>Definition:</b> dominios.h:178</div></div>
+<div class="ttc" id="aclass_codigo_html_abba7ed4990391b757fd3302ae03fe0e0"><div class="ttname"><a href="class_codigo.html#abba7ed4990391b757fd3302ae03fe0e0">Codigo::pegaCodigo</a></div><div class="ttdeci">std::string pegaCodigo()</div><div class="ttdoc">Função para retornar Código.</div><div class="ttdef"><b>Definition:</b> dominios.h:75</div></div>
+<div class="ttc" id="aclass_codigo_ingresso_html"><div class="ttname"><a href="class_codigo_ingresso.html">CodigoIngresso</a></div><div class="ttdoc">Classe do código do Ingresso.</div><div class="ttdef"><b>Definition:</b> dominios.h:134</div></div>
+<div class="ttc" id="adominios_8h_html_a4e7b349a05a558fa6792c71c11a6bf11a276ece6ff2840eb9525523a78e1d74d2"><div class="ttname"><a href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11a276ece6ff2840eb9525523a78e1d74d2">NACIONAL</a></div><div class="ttdef"><b>Definition:</b> dominios.h:214</div></div>
+<div class="ttc" id="aclass_horario_html_a2045933d35e7b5511e91e6c551cfa041"><div class="ttname"><a href="class_horario.html#a2045933d35e7b5511e91e6c551cfa041">Horario::trataNum</a></div><div class="ttdeci">std::string trataNum(int &amp;num)</div><div class="ttdoc">Função para tratar números de hora e minuto.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:193</div></div>
+<div class="ttc" id="aclass_horario_html_a781ff29576ec8da8e4fbe55735b24bd1"><div class="ttname"><a href="class_horario.html#a781ff29576ec8da8e4fbe55735b24bd1">Horario::Horario</a></div><div class="ttdeci">Horario(int h=12, int m=0)</div><div class="ttdoc">Construtor da classe.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:158</div></div>
+<div class="ttc" id="aclass_disponibilidade_html_acbdc9a768e0d444185332194b45fe131"><div class="ttname"><a href="class_disponibilidade.html#acbdc9a768e0d444185332194b45fe131">Disponibilidade::validaDisp</a></div><div class="ttdeci">void validaDisp(int &amp;dsp)</div><div class="ttdoc">Função para validar Disponibilidade.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:265</div></div>
+<div class="ttc" id="aclass_nome_html"><div class="ttname"><a href="class_nome.html">Nome</a></div><div class="ttdoc">Classe Genérica Nome.</div><div class="ttdef"><b>Definition:</b> dominios.h:181</div></div>
+<div class="ttc" id="adominios_8h_html_a4e7b349a05a558fa6792c71c11a6bf11ad0ef00e708ed18ba004480dceb79ecfb"><div class="ttname"><a href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11ad0ef00e708ed18ba004480dceb79ecfb">LOCAL</a></div><div class="ttdef"><b>Definition:</b> dominios.h:214</div></div>
+<div class="ttc" id="aclass_data_html_ac28b1798c57f52d4ff1d63fba0c79113"><div class="ttname"><a href="class_data.html#ac28b1798c57f52d4ff1d63fba0c79113">Data::viraString</a></div><div class="ttdeci">std::string viraString()</div><div class="ttdoc">função para retornar data como string</div><div class="ttdef"><b>Definition:</b> dominios.cpp:51</div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> dominios.h:12</div></div>
+<div class="ttc" id="aclass_estado_html_a05cafb80fe4c01cb707e4e5a895dee39"><div class="ttname"><a href="class_estado.html#a05cafb80fe4c01cb707e4e5a895dee39">Estado::defineEstado</a></div><div class="ttdeci">void defineEstado(std::string est)</div><div class="ttdoc">Função para definir o estado.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:373</div></div>
+<div class="ttc" id="aclass_preco_html_aeeb035060d9dbd2b2e608d248fef64b1"><div class="ttname"><a href="class_preco.html#aeeb035060d9dbd2b2e608d248fef64b1">Preco::validaPreco</a></div><div class="ttdeci">void validaPreco(double &amp;prc)</div><div class="ttdoc">Função para validar Preço</div><div class="ttdef"><b>Definition:</b> dominios.cpp:251</div></div>
+<div class="ttc" id="aclass_tipo_html_aa7a064dc76b1192839dd93649aa6b03d"><div class="ttname"><a href="class_tipo.html#aa7a064dc76b1192839dd93649aa6b03d">Tipo::pegaTipo</a></div><div class="ttdeci">Id pegaTipo()</div><div class="ttdoc">Função para retornar tipo.</div><div class="ttdef"><b>Definition:</b> dominios.h:221</div></div>
+<div class="ttc" id="aclass_tipo_html"><div class="ttname"><a href="class_tipo.html">Tipo</a></div><div class="ttdoc">Classe do domínio Tipo.</div><div class="ttdef"><b>Definition:</b> dominios.h:216</div></div>
+<div class="ttc" id="aclass_validade_html"><div class="ttname"><a href="class_validade.html">Validade</a></div><div class="ttdoc">Classe do Domínio Data de Validade.</div><div class="ttdef"><b>Definition:</b> dominios.h:169</div></div>
+<div class="ttc" id="aclass_estado_html_aa698502b0dfa0846182546738c71a572"><div class="ttname"><a href="class_estado.html#aa698502b0dfa0846182546738c71a572">Estado::pegaEstado</a></div><div class="ttdeci">std::string pegaEstado()</div><div class="ttdoc">Função para retornar estado.</div><div class="ttdef"><b>Definition:</b> dominios.h:154</div></div>
+<div class="ttc" id="aclass_estado_html"><div class="ttname"><a href="class_estado.html">Estado</a></div><div class="ttdoc">classe do Estado</div><div class="ttdef"><b>Definition:</b> dominios.h:143</div></div>
+<div class="ttc" id="adominios_8h_html_a4e7b349a05a558fa6792c71c11a6bf11a5271d2c44e06fa0127b22cb277552767"><div class="ttname"><a href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11a5271d2c44e06fa0127b22cb277552767">ESTADUAL</a></div><div class="ttdef"><b>Definition:</b> dominios.h:214</div></div>
+<div class="ttc" id="aclass_num_cartao_html_acd22a6c6ec5bd7ae2396b8158d3d2898"><div class="ttname"><a href="class_num_cartao.html#acd22a6c6ec5bd7ae2396b8158d3d2898">NumCartao::defineNumCartao</a></div><div class="ttdeci">void defineNumCartao(std::string num)</div><div class="ttdoc">Função para definir número de cartão de crédito.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:406</div></div>
+<div class="ttc" id="aclass_senha_html_a1b0d46031e51cc2de97d491d4ac12817"><div class="ttname"><a href="class_senha.html#a1b0d46031e51cc2de97d491d4ac12817">Senha::pegaSenha</a></div><div class="ttdeci">std::string pegaSenha()</div><div class="ttdoc">Função para retornar Senha.</div><div class="ttdef"><b>Definition:</b> dominios.h:111</div></div>
+<div class="ttc" id="aclass_preco_html"><div class="ttname"><a href="class_preco.html">Preco</a></div><div class="ttdef"><b>Definition:</b> dominios.h:78</div></div>
+<div class="ttc" id="aclass_nome_html_ad2dffc8660cfc24b1066016075c70b74"><div class="ttname"><a href="class_nome.html#ad2dffc8660cfc24b1066016075c70b74">Nome::validaNome</a></div><div class="ttdeci">virtual void validaNome(std::string)=0</div><div class="ttdoc">Definição genérica de validação do nome.</div></div>
+<div class="ttc" id="aclass_horario_html_ab7376787b0d1d5637c952d641e9f0e7c"><div class="ttname"><a href="class_horario.html#ab7376787b0d1d5637c952d641e9f0e7c">Horario::viraString</a></div><div class="ttdeci">std::string viraString()</div><div class="ttdoc">Função para retornar o Horário como string.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:187</div></div>
+<div class="ttc" id="aclass_horario_html_ad9de626bc0f27c907213951fd2cb7ccf"><div class="ttname"><a href="class_horario.html#ad9de626bc0f27c907213951fd2cb7ccf">Horario::defineHorario</a></div><div class="ttdeci">void defineHorario(int h, int m)</div><div class="ttdoc">Função para definir os valores do objeto.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:162</div></div>
+<div class="ttc" id="aclass_tipo_html_a45f969dfbf46b8c8be1a4c208a53c91d"><div class="ttname"><a href="class_tipo.html#a45f969dfbf46b8c8be1a4c208a53c91d">Tipo::defineTipo</a></div><div class="ttdeci">void defineTipo(int d)</div><div class="ttdoc">Função de definição do tipo.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:554</div></div>
+<div class="ttc" id="aclass_data_html_a8c9ac577e1bec82ca45ff940814c4a1f"><div class="ttname"><a href="class_data.html#a8c9ac577e1bec82ca45ff940814c4a1f">Data::Data</a></div><div class="ttdeci">Data(int d=1, int m=1, int a=2000)</div><div class="ttdoc">construtor da classe Data</div><div class="ttdef"><b>Definition:</b> dominios.cpp:17</div></div>
+<div class="ttc" id="aclass_nome_html_a8395ef4648c8c2deb6d9ea54466ab3de"><div class="ttname"><a href="class_nome.html#a8395ef4648c8c2deb6d9ea54466ab3de">Nome::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdef"><b>Definition:</b> dominios.h:193</div></div>
+<div class="ttc" id="adominios_8h_html_a4e7b349a05a558fa6792c71c11a6bf11a1445014a76210a9fd8db211614b688c7"><div class="ttname"><a href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11a1445014a76210a9fd8db211614b688c7">INTERNACIONAL</a></div><div class="ttdef"><b>Definition:</b> dominios.h:214</div></div>
+<div class="ttc" id="aclass_codigo_verificacao_html_a93d0ad1c62aa1dbd5263288a3df4800e"><div class="ttname"><a href="class_codigo_verificacao.html#a93d0ad1c62aa1dbd5263288a3df4800e">CodigoVerificacao::defineCodVer</a></div><div class="ttdeci">void defineCodVer(std::string cod)</div><div class="ttdoc">Função para definir CVC.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:326</div></div>
+<div class="ttc" id="aclass_codigo_jogo_html"><div class="ttname"><a href="class_codigo_jogo.html">CodigoJogo</a></div><div class="ttdoc">Classe do código do Jogo.</div><div class="ttdef"><b>Definition:</b> dominios.h:125</div></div>
+<div class="ttc" id="aclass_validade_html_ab545964018df969675602519b039bd26"><div class="ttname"><a href="class_validade.html#ab545964018df969675602519b039bd26">Validade::defineValidade</a></div><div class="ttdeci">void defineValidade(std::string val)</div><div class="ttdoc">Função para definir a data de validade.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:477</div></div>
+<div class="ttc" id="aclass_cpf_html_a59019f05408af843eef2400518d7dc70"><div class="ttname"><a href="class_cpf.html#a59019f05408af843eef2400518d7dc70">Cpf::defineCpf</a></div><div class="ttdeci">void defineCpf(std::string cod)</div><div class="ttdoc">Função para definir o número do cpf.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:97</div></div>
+<div class="ttc" id="aclass_disponibilidade_html_abecee51ff8b607b92fc81a31953f23a3"><div class="ttname"><a href="class_disponibilidade.html#abecee51ff8b607b92fc81a31953f23a3">Disponibilidade::pegaDisp</a></div><div class="ttdeci">int pegaDisp()</div><div class="ttdoc">Função para retornar Disponibilidade.</div><div class="ttdef"><b>Definition:</b> dominios.h:99</div></div>
+<div class="ttc" id="aclass_preco_html_a40172f56c6be924253a5ecc7f5f64690"><div class="ttname"><a href="class_preco.html#a40172f56c6be924253a5ecc7f5f64690">Preco::pegaPreco</a></div><div class="ttdeci">double pegaPreco()</div><div class="ttdoc">Função para retornar Preço</div><div class="ttdef"><b>Definition:</b> dominios.h:85</div></div>
+<div class="ttc" id="aclass_cpf_html"><div class="ttname"><a href="class_cpf.html">Cpf</a></div><div class="ttdef"><b>Definition:</b> dominios.h:33</div></div>
+<div class="ttc" id="aclass_codigo_ingresso_html_a4f1c0f7042f020a455dcb5d000ae617e"><div class="ttname"><a href="class_codigo_ingresso.html#a4f1c0f7042f020a455dcb5d000ae617e">CodigoIngresso::defineCodIng</a></div><div class="ttdeci">void defineCodIng(std::string cod)</div><div class="ttdoc">Função para validar o Código do Ingresso.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:358</div></div>
+<div class="ttc" id="aclass_cpf_html_a80dfa8463711ef2fd8473eaa9223720a"><div class="ttname"><a href="class_cpf.html#a80dfa8463711ef2fd8473eaa9223720a">Cpf::pegaCpf</a></div><div class="ttdeci">std::string pegaCpf()</div><div class="ttdoc">função para retornar o CPF</div><div class="ttdef"><b>Definition:</b> dominios.h:42</div></div>
+<div class="ttc" id="aclass_senha_html_a366d7c6a6cb5f62d136abcebc9ccc453"><div class="ttname"><a href="class_senha.html#a366d7c6a6cb5f62d136abcebc9ccc453">Senha::defineSenha</a></div><div class="ttdeci">void defineSenha(std::string sn)</div><div class="ttdoc">Função para definir Senha.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:310</div></div>
+<div class="ttc" id="aclass_nome_jogo_html_a0fdbbcf3db5c9748f4047cbde801e2aa"><div class="ttname"><a href="class_nome_jogo.html#a0fdbbcf3db5c9748f4047cbde801e2aa">NomeJogo::~NomeJogo</a></div><div class="ttdeci">virtual ~NomeJogo()</div><div class="ttdoc">Destrutor virtual para excluir objeto da classe sem problema no polimorphismo.</div><div class="ttdef"><b>Definition:</b> dominios.h:202</div></div>
+<div class="ttc" id="aclass_codigo_html_ac1061ea131d1ebbcf5d9552f6c984225"><div class="ttname"><a href="class_codigo.html#ac1061ea131d1ebbcf5d9552f6c984225">Codigo::codigo</a></div><div class="ttdeci">std::string codigo</div><div class="ttdef"><b>Definition:</b> dominios.h:68</div></div>
+<div class="ttc" id="adominios_8h_html_a4e7b349a05a558fa6792c71c11a6bf11"><div class="ttname"><a href="dominios_8h.html#a4e7b349a05a558fa6792c71c11a6bf11">Id</a></div><div class="ttdeci">Id</div><div class="ttdoc">Definição de tipos enum dos tipos da classe Tipo.</div><div class="ttdef"><b>Definition:</b> dominios.h:214</div></div>
+<div class="ttc" id="aclass_data_html_a2914ac60d7b01ba28a17a59de0c720f3"><div class="ttname"><a href="class_data.html#a2914ac60d7b01ba28a17a59de0c720f3">Data::defineData</a></div><div class="ttdeci">void defineData(int d, int m, int a)</div><div class="ttdoc">função para definir os valores de data</div><div class="ttdef"><b>Definition:</b> dominios.cpp:21</div></div>
+<div class="ttc" id="aclass_codigo_html_a76d36047bd63b705d1fa34da5e69d22b"><div class="ttname"><a href="class_codigo.html#a76d36047bd63b705d1fa34da5e69d22b">Codigo::defineCodigo</a></div><div class="ttdeci">void defineCodigo(std::string cod)</div><div class="ttdoc">Função para definir Código.</div><div class="ttdef"><b>Definition:</b> dominios.cpp:228</div></div>
+<div class="ttc" id="aclass_horario_html_aed1f2e25bbd1f9ab4afcf97ee8f7c718"><div class="ttname"><a href="class_horario.html#aed1f2e25bbd1f9ab4afcf97ee8f7c718">Horario::validaHorario</a></div><div class="ttdeci">void validaHorario(int &amp;h, int &amp;m)</div><div class="ttdoc">função para validar horário dentro dos limites necessários</div><div class="ttdef"><b>Definition:</b> dominios.cpp:202</div></div>
+<div class="ttc" id="aclass_codigo_verificacao_html"><div class="ttname"><a href="class_codigo_verificacao.html">CodigoVerificacao</a></div><div class="ttdoc">Classe do Código de verificação do cartão CVC.</div><div class="ttdef"><b>Definition:</b> dominios.h:114</div></div>
+<div class="ttc" id="aclass_nome_html_ad75d4d2a6dcc1d64c92f9209f44b89bb"><div class="ttname"><a href="class_nome.html#ad75d4d2a6dcc1d64c92f9209f44b89bb">Nome::defineNome</a></div><div class="ttdeci">void defineNome(std::string n)</div><div class="ttdoc">Função para definir Nome.</div><div class="ttdef"><b>Definition:</b> dominios.h:184</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

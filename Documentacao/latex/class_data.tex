@@ -1,0 +1,161 @@
+\hypertarget{class_data}{}\doxysection{ReferÃªncia da Classe Data}
+\label{class_data}\index{Data@{Data}}
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_a8c9ac577e1bec82ca45ff940814c4a1f}{Data}} (int d=1, int m=1, int a=2000)
+\begin{DoxyCompactList}\small\item\em construtor da classe \mbox{\hyperlink{class_data}{Data}} \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_data_ac28b1798c57f52d4ff1d63fba0c79113}{vira\+String}} ()
+\begin{DoxyCompactList}\small\item\em função para retornar data como string \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a2914ac60d7b01ba28a17a59de0c720f3}{define\+Data}} (int d, int m, int a)
+\begin{DoxyCompactList}\small\item\em função para definir os valores de data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_a61549b1a54316b4935f3ab2ee56e2a42}{define\+Data}} (std\+::string dt)
+\begin{DoxyCompactList}\small\item\em função para definir data a partir de string \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_data_a9863187ae5067b4f8ac6c2bdb6d2f8f4}{trata\+Num}} (int num)
+\begin{DoxyCompactList}\small\item\em Função para tratar números de dia e mês \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_aae2f6d9091295f9846b55729326aa056}{valida\+Data}} (int \&d, int \&m, int \&a)  throw (std\+::invalid\+\_\+argument)
+\begin{DoxyCompactList}\small\item\em Função para validar data a partir dos atributos int. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_ae67bac1a41ba72c7a1b6fb490931eebe}{valida\+Data}} (std\+::string \&dt)  throw (std\+::invalid\+\_\+argument)
+\begin{DoxyCompactList}\small\item\em Função para validar data a partir do atributo string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescriÃ§Ã£o detalhada}
+Trabalho desenvolvido por\+: João Paulo Vaz Mendes -\/ Matrícula\+: 170002934 Lucas de Moura Quadros -\/ Matrícula\+: 140150668 
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_data_a8c9ac577e1bec82ca45ff940814c4a1f}\label{class_data_a8c9ac577e1bec82ca45ff940814c4a1f}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{int}]{d = {\ttfamily 1},  }\item[{int}]{m = {\ttfamily 1},  }\item[{int}]{a = {\ttfamily 2000} }\end{DoxyParamCaption})}
+
+
+
+construtor da classe \mbox{\hyperlink{class_data}{Data}} 
+
+construtor de data
+
+Definição de Funções da classe \mbox{\hyperlink{class_data}{Data}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                             \{}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_data_a2914ac60d7b01ba28a17a59de0c720f3}{defineData}}(d,m,a);}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_data_a2914ac60d7b01ba28a17a59de0c720f3}\label{class_data_a2914ac60d7b01ba28a17a59de0c720f3}} 
+\index{Data@{Data}!defineData@{defineData}}
+\index{defineData@{defineData}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{defineData()}{defineData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Data\+::define\+Data (\begin{DoxyParamCaption}\item[{int}]{d,  }\item[{int}]{m,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+
+função para definir os valores de data 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21                                        \{}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_data_aae2f6d9091295f9846b55729326aa056}{validaData}}(d,m,a);}
+\DoxyCodeLine{23     this-\/>dia = d;}
+\DoxyCodeLine{24     this-\/>mes = m;}
+\DoxyCodeLine{25     this-\/>ano = a;}
+\DoxyCodeLine{26     this-\/>data = this-\/>\mbox{\hyperlink{class_data_ac28b1798c57f52d4ff1d63fba0c79113}{viraString}}();}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_data_a61549b1a54316b4935f3ab2ee56e2a42}\label{class_data_a61549b1a54316b4935f3ab2ee56e2a42}} 
+\index{Data@{Data}!defineData@{defineData}}
+\index{defineData@{defineData}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{defineData()}{defineData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Data\+::define\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{dt }\end{DoxyParamCaption})}
+
+
+
+função para definir data a partir de string 
+
+\mbox{\Hypertarget{class_data_a9863187ae5067b4f8ac6c2bdb6d2f8f4}\label{class_data_a9863187ae5067b4f8ac6c2bdb6d2f8f4}} 
+\index{Data@{Data}!trataNum@{trataNum}}
+\index{trataNum@{trataNum}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{trataNum()}{trataNum()}}
+{\footnotesize\ttfamily string Data\+::trata\+Num (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Função para tratar números de dia e mês 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58                               \{}
+\DoxyCodeLine{59     ostringstream aux;}
+\DoxyCodeLine{60     \textcolor{keywordflow}{if}(num < 10)}
+\DoxyCodeLine{61         aux << \textcolor{stringliteral}{"0"} << num;}
+\DoxyCodeLine{62     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{63         aux << num;}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} aux.str();}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_data_aae2f6d9091295f9846b55729326aa056}\label{class_data_aae2f6d9091295f9846b55729326aa056}} 
+\index{Data@{Data}!validaData@{validaData}}
+\index{validaData@{validaData}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{validaData()}{validaData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Data\+::valida\+Data (\begin{DoxyParamCaption}\item[{int \&}]{d,  }\item[{int \&}]{m,  }\item[{int \&}]{a }\end{DoxyParamCaption}) throw ( std\+::invalid\+\_\+argument) }
+
+
+
+Função para validar data a partir dos atributos int. 
+
+lança exceções no caso de números que superem o escopo de data
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67                                                                       \{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{if}(d < 1 || d > 31)}
+\DoxyCodeLine{70        \textcolor{keywordflow}{throw} invalid\_argument(\textcolor{stringliteral}{"Argumento Inválido: o dia deve ser um número de 1 a 31"});}
+\DoxyCodeLine{71     \textcolor{keywordflow}{if}(m < 1 || m > 12)}
+\DoxyCodeLine{72         \textcolor{keywordflow}{throw} invalid\_argument(\textcolor{stringliteral}{"Argumento Inválido: o mes deve ser um número de 1 a 12"});}
+\DoxyCodeLine{73     \textcolor{keywordflow}{if}(a < 1900 || a > 3000)}
+\DoxyCodeLine{74         \textcolor{keywordflow}{throw} invalid\_argument(\textcolor{stringliteral}{"Argumento Inválido: o ano deve ser um número de 1900 a 3000"});}
+\DoxyCodeLine{75 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_data_ae67bac1a41ba72c7a1b6fb490931eebe}\label{class_data_ae67bac1a41ba72c7a1b6fb490931eebe}} 
+\index{Data@{Data}!validaData@{validaData}}
+\index{validaData@{validaData}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{validaData()}{validaData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Data\+::valida\+Data (\begin{DoxyParamCaption}\item[{std\+::string \&}]{dt }\end{DoxyParamCaption}) throw ( std\+::invalid\+\_\+argument) }
+
+
+
+Função para validar data a partir do atributo string. 
+
+\mbox{\Hypertarget{class_data_ac28b1798c57f52d4ff1d63fba0c79113}\label{class_data_ac28b1798c57f52d4ff1d63fba0c79113}} 
+\index{Data@{Data}!viraString@{viraString}}
+\index{viraString@{viraString}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{viraString()}{viraString()}}
+{\footnotesize\ttfamily string Data\+::vira\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+função para retornar data como string 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                         \{}
+\DoxyCodeLine{52     ostringstream aux;}
+\DoxyCodeLine{53     aux << \mbox{\hyperlink{class_data_a9863187ae5067b4f8ac6c2bdb6d2f8f4}{trataNum}}(dia) << \textcolor{stringliteral}{"/"} << \mbox{\hyperlink{class_data_a9863187ae5067b4f8ac6c2bdb6d2f8f4}{trataNum}}(mes) << \textcolor{stringliteral}{"/"} << ano;}
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} aux.str();}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

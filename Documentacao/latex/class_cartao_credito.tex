@@ -1,0 +1,156 @@
+\hypertarget{class_cartao_credito}{}\doxysection{ReferÃªncia da Classe Cartao\+Credito}
+\label{class_cartao_credito}\index{CartaoCredito@{CartaoCredito}}
+
+
+{\ttfamily \#include $<$entidades.\+h$>$}
+
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cartao_credito_a0d3c723e5966abd06fc6cf8d46d6344f}{define\+Num\+Cartao}} (const \mbox{\hyperlink{class_num_cartao}{Num\+Cartao}} \&num)
+\begin{DoxyCompactList}\small\item\em Função para definir número do cartão \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_num_cartao}{Num\+Cartao}} \mbox{\hyperlink{class_cartao_credito_a5924dc6bf0a76a79354adaaebcae38a4}{pega\+Num\+Cartao}} () const
+\begin{DoxyCompactList}\small\item\em Função para retornar número do cartão \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cartao_credito_a9c99d8295118496e258cc337d0a68c83}{define\+Cod\+Ver}} (const \mbox{\hyperlink{class_codigo_verificacao}{Codigo\+Verificacao}} \&cod)
+\begin{DoxyCompactList}\small\item\em Função para definir código de verificação do cartão \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_codigo_verificacao}{Codigo\+Verificacao}} \mbox{\hyperlink{class_cartao_credito_aa1825b8e0d177b225b6bc490d5ec8e5b}{pega\+Cod\+Ver}} () const
+\begin{DoxyCompactList}\small\item\em Função para retornar codigo de verificação do cartão \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cartao_credito_a76de9e8c968999aba240e898d43ab588}{define\+Validade}} (const \mbox{\hyperlink{class_validade}{Validade}} \&val)
+\begin{DoxyCompactList}\small\item\em Função para definir validade do cartão \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_validade}{Validade}} \mbox{\hyperlink{class_cartao_credito_ac69f891bdb9bb73ea4238e240e8dc7a4}{pega\+Validade}} () const
+\begin{DoxyCompactList}\small\item\em Função para retornar validade do cartão \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cartao_credito_a0e5d58efa4196c69835574939e897155}{imprime\+Ingresso}} ()
+\begin{DoxyCompactList}\small\item\em Função para imprimir informações de cartão de crédito. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescriÃ§Ã£o detalhada}
+Definição de entidade Cartao de Crédito 
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_cartao_credito_a9c99d8295118496e258cc337d0a68c83}\label{class_cartao_credito_a9c99d8295118496e258cc337d0a68c83}} 
+\index{CartaoCredito@{CartaoCredito}!defineCodVer@{defineCodVer}}
+\index{defineCodVer@{defineCodVer}!CartaoCredito@{CartaoCredito}}
+\doxysubsubsection{\texorpdfstring{defineCodVer()}{defineCodVer()}}
+{\footnotesize\ttfamily void Cartao\+Credito\+::define\+Cod\+Ver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_codigo_verificacao}{Codigo\+Verificacao}} \&}]{cod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para definir código de verificação do cartão 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{137                                                         \{}
+\DoxyCodeLine{138             this-\/>codigo = cod;}
+\DoxyCodeLine{139         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_credito_a0d3c723e5966abd06fc6cf8d46d6344f}\label{class_cartao_credito_a0d3c723e5966abd06fc6cf8d46d6344f}} 
+\index{CartaoCredito@{CartaoCredito}!defineNumCartao@{defineNumCartao}}
+\index{defineNumCartao@{defineNumCartao}!CartaoCredito@{CartaoCredito}}
+\doxysubsubsection{\texorpdfstring{defineNumCartao()}{defineNumCartao()}}
+{\footnotesize\ttfamily void Cartao\+Credito\+::define\+Num\+Cartao (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_num_cartao}{Num\+Cartao}} \&}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para definir número do cartão 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129                                                    \{}
+\DoxyCodeLine{130             this-\/>numero = num;}
+\DoxyCodeLine{131         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_credito_a76de9e8c968999aba240e898d43ab588}\label{class_cartao_credito_a76de9e8c968999aba240e898d43ab588}} 
+\index{CartaoCredito@{CartaoCredito}!defineValidade@{defineValidade}}
+\index{defineValidade@{defineValidade}!CartaoCredito@{CartaoCredito}}
+\doxysubsubsection{\texorpdfstring{defineValidade()}{defineValidade()}}
+{\footnotesize\ttfamily void Cartao\+Credito\+::define\+Validade (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_validade}{Validade}} \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para definir validade do cartão 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145                                                  \{}
+\DoxyCodeLine{146             this-\/>validade = val;}
+\DoxyCodeLine{147         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_credito_a0e5d58efa4196c69835574939e897155}\label{class_cartao_credito_a0e5d58efa4196c69835574939e897155}} 
+\index{CartaoCredito@{CartaoCredito}!imprimeIngresso@{imprimeIngresso}}
+\index{imprimeIngresso@{imprimeIngresso}!CartaoCredito@{CartaoCredito}}
+\doxysubsubsection{\texorpdfstring{imprimeIngresso()}{imprimeIngresso()}}
+{\footnotesize\ttfamily void Cartao\+Credito\+::imprime\+Ingresso (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para imprimir informações de cartão de crédito. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{153                                \{}
+\DoxyCodeLine{154             std::cout <<\textcolor{stringliteral}{"\(\backslash\)t== Cartão de crédito Definido =="} << std::endl;}
+\DoxyCodeLine{155             std::cout << \textcolor{stringliteral}{"Nuúmero do Cartão: "} << this-\/>\mbox{\hyperlink{class_cartao_credito_a5924dc6bf0a76a79354adaaebcae38a4}{pegaNumCartao}}().\mbox{\hyperlink{class_num_cartao_abafbaa88141200f093dffe28b02e810b}{pegaNumCartao}}() << std::endl;}
+\DoxyCodeLine{156             std::cout << \textcolor{stringliteral}{"Código de verificação do Cartão: "} << this-\/>\mbox{\hyperlink{class_cartao_credito_aa1825b8e0d177b225b6bc490d5ec8e5b}{pegaCodVer}}().\mbox{\hyperlink{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}{pegaCodigo}}() << std::endl;}
+\DoxyCodeLine{157             std::cout << \textcolor{stringliteral}{"Validade do Cartão: "} << this-\/>\mbox{\hyperlink{class_cartao_credito_ac69f891bdb9bb73ea4238e240e8dc7a4}{pegaValidade}}().\mbox{\hyperlink{class_validade_a477b062b4056bec131452391562a3309}{pegaValidade}}() << std::endl;}
+\DoxyCodeLine{158         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_credito_aa1825b8e0d177b225b6bc490d5ec8e5b}\label{class_cartao_credito_aa1825b8e0d177b225b6bc490d5ec8e5b}} 
+\index{CartaoCredito@{CartaoCredito}!pegaCodVer@{pegaCodVer}}
+\index{pegaCodVer@{pegaCodVer}!CartaoCredito@{CartaoCredito}}
+\doxysubsubsection{\texorpdfstring{pegaCodVer()}{pegaCodVer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_codigo_verificacao}{Codigo\+Verificacao}} Cartao\+Credito\+::pega\+Cod\+Ver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar codigo de verificação do cartão 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{141                                              \{}
+\DoxyCodeLine{142             \textcolor{keywordflow}{return} codigo;}
+\DoxyCodeLine{143         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_credito_a5924dc6bf0a76a79354adaaebcae38a4}\label{class_cartao_credito_a5924dc6bf0a76a79354adaaebcae38a4}} 
+\index{CartaoCredito@{CartaoCredito}!pegaNumCartao@{pegaNumCartao}}
+\index{pegaNumCartao@{pegaNumCartao}!CartaoCredito@{CartaoCredito}}
+\doxysubsubsection{\texorpdfstring{pegaNumCartao()}{pegaNumCartao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_num_cartao}{Num\+Cartao}} Cartao\+Credito\+::pega\+Num\+Cartao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar número do cartão 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{133                                         \{}
+\DoxyCodeLine{134             \textcolor{keywordflow}{return} numero;}
+\DoxyCodeLine{135         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_credito_ac69f891bdb9bb73ea4238e240e8dc7a4}\label{class_cartao_credito_ac69f891bdb9bb73ea4238e240e8dc7a4}} 
+\index{CartaoCredito@{CartaoCredito}!pegaValidade@{pegaValidade}}
+\index{pegaValidade@{pegaValidade}!CartaoCredito@{CartaoCredito}}
+\doxysubsubsection{\texorpdfstring{pegaValidade()}{pegaValidade()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_validade}{Validade}} Cartao\+Credito\+::pega\+Validade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar validade do cartão 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149                                       \{}
+\DoxyCodeLine{150             \textcolor{keywordflow}{return} validade;}
+\DoxyCodeLine{151         \}}
+
+\end{DoxyCode}
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\end{DoxyCompactItemize}

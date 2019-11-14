@@ -1,0 +1,118 @@
+\hypertarget{class_usuario}{}\doxysection{ReferÃªncia da Classe Usuario}
+\label{class_usuario}\index{Usuario@{Usuario}}
+
+
+{\ttfamily \#include $<$entidades.\+h$>$}
+
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_usuario_a5632bc2710082302253bc11cd6309286}{define\+Cpf}} (const \mbox{\hyperlink{class_cpf}{Cpf}} \&c)
+\begin{DoxyCompactList}\small\item\em Função para definir C\+PF de Usuário. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cpf}{Cpf}} \mbox{\hyperlink{class_usuario_a621d6df4f9aa205794db4e558ac7051a}{pega\+Cpf}} () const
+\begin{DoxyCompactList}\small\item\em Função para retornar C\+PF do Usuário. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_usuario_a818599773637dcd85b2f5db83257e9b2}{define\+Senha}} (const \mbox{\hyperlink{class_senha}{Senha}} \&sn)
+\begin{DoxyCompactList}\small\item\em Função para definir \mbox{\hyperlink{class_senha}{Senha}} do Usuário. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_senha}{Senha}} \mbox{\hyperlink{class_usuario_a85d0cecfbdfbc11e51110dba9f0569cb}{pega\+Senha}} () const
+\begin{DoxyCompactList}\small\item\em Função para retornar \mbox{\hyperlink{class_senha}{Senha}} do Usuário. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_usuario_a2a4ee729a3f6928a40b5d8fa0386efb1}{imprime\+Usuario}} ()
+\begin{DoxyCompactList}\small\item\em Função para imprimir informações de Usuário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescriÃ§Ã£o detalhada}
+Trabalho desenvolvido por\+: João Paulo Vaz Mendes -\/ Matrícula\+: 170002934 Lucas de Moura Quadros -\/ Matrícula\+: 140150668 Funções da entidade \mbox{\hyperlink{class_usuario}{Usuario}} 
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_usuario_a5632bc2710082302253bc11cd6309286}\label{class_usuario_a5632bc2710082302253bc11cd6309286}} 
+\index{Usuario@{Usuario}!defineCpf@{defineCpf}}
+\index{defineCpf@{defineCpf}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{defineCpf()}{defineCpf()}}
+{\footnotesize\ttfamily void Usuario\+::define\+Cpf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cpf}{Cpf}} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para definir C\+PF de Usuário. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19                                    \{}
+\DoxyCodeLine{20         this-\/>cpf = c;}
+\DoxyCodeLine{21      \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a818599773637dcd85b2f5db83257e9b2}\label{class_usuario_a818599773637dcd85b2f5db83257e9b2}} 
+\index{Usuario@{Usuario}!defineSenha@{defineSenha}}
+\index{defineSenha@{defineSenha}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{defineSenha()}{defineSenha()}}
+{\footnotesize\ttfamily void Usuario\+::define\+Senha (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_senha}{Senha}} \&}]{sn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para definir \mbox{\hyperlink{class_senha}{Senha}} do Usuário. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27                                         \{}
+\DoxyCodeLine{28         this-\/>senha = sn;}
+\DoxyCodeLine{29      \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a2a4ee729a3f6928a40b5d8fa0386efb1}\label{class_usuario_a2a4ee729a3f6928a40b5d8fa0386efb1}} 
+\index{Usuario@{Usuario}!imprimeUsuario@{imprimeUsuario}}
+\index{imprimeUsuario@{imprimeUsuario}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{imprimeUsuario()}{imprimeUsuario()}}
+{\footnotesize\ttfamily void Usuario\+::imprime\+Usuario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para imprimir informações de Usuário. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35                            \{}
+\DoxyCodeLine{36         std::cout <<\textcolor{stringliteral}{"\(\backslash\)t== Usuário Definido =="} << std::endl;}
+\DoxyCodeLine{37         std::cout << \textcolor{stringliteral}{"Cpf: "} << this-\/>\mbox{\hyperlink{class_usuario_a621d6df4f9aa205794db4e558ac7051a}{pegaCpf}}().\mbox{\hyperlink{class_cpf_a80dfa8463711ef2fd8473eaa9223720a}{pegaCpf}}() << std::endl;}
+\DoxyCodeLine{38         std::cout << \textcolor{stringliteral}{"Senha: "} << this-\/>\mbox{\hyperlink{class_usuario_a85d0cecfbdfbc11e51110dba9f0569cb}{pegaSenha}}().\mbox{\hyperlink{class_senha_a1b0d46031e51cc2de97d491d4ac12817}{pegaSenha}}() << std::endl;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40      \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a621d6df4f9aa205794db4e558ac7051a}\label{class_usuario_a621d6df4f9aa205794db4e558ac7051a}} 
+\index{Usuario@{Usuario}!pegaCpf@{pegaCpf}}
+\index{pegaCpf@{pegaCpf}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{pegaCpf()}{pegaCpf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cpf}{Cpf}} Usuario\+::pega\+Cpf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar C\+PF do Usuário. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                          \{}
+\DoxyCodeLine{24         \textcolor{keywordflow}{return} cpf;}
+\DoxyCodeLine{25      \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a85d0cecfbdfbc11e51110dba9f0569cb}\label{class_usuario_a85d0cecfbdfbc11e51110dba9f0569cb}} 
+\index{Usuario@{Usuario}!pegaSenha@{pegaSenha}}
+\index{pegaSenha@{pegaSenha}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{pegaSenha()}{pegaSenha()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_senha}{Senha}} Usuario\+::pega\+Senha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar \mbox{\hyperlink{class_senha}{Senha}} do Usuário. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31                              \{}
+\DoxyCodeLine{32         \textcolor{keywordflow}{return} senha;}
+\DoxyCodeLine{33      \}}
+
+\end{DoxyCode}
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\end{DoxyCompactItemize}

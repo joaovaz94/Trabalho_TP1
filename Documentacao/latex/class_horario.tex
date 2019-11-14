@@ -1,0 +1,153 @@
+\hypertarget{class_horario}{}\doxysection{ReferÃªncia da Classe Horario}
+\label{class_horario}\index{Horario@{Horario}}
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horario_a781ff29576ec8da8e4fbe55735b24bd1}{Horario}} (int h=12, int m=0)
+\begin{DoxyCompactList}\small\item\em Construtor da classe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horario_ad9de626bc0f27c907213951fd2cb7ccf}{define\+Horario}} (int h, int m)
+\begin{DoxyCompactList}\small\item\em Função para definir os valores do objeto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horario_aa74e2d220bc4082203e050d6b6b4c281}{define\+Horario}} (std\+::string hrr)
+\begin{DoxyCompactList}\small\item\em Função para defninir horário a partir de string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_horario_ab7376787b0d1d5637c952d641e9f0e7c}{vira\+String}} ()
+\begin{DoxyCompactList}\small\item\em Função para retornar o Horário como string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_horario_a2045933d35e7b5511e91e6c551cfa041}{trata\+Num}} (int \&num)
+\begin{DoxyCompactList}\small\item\em Função para tratar números de hora e minuto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horario_aed1f2e25bbd1f9ab4afcf97ee8f7c718}{valida\+Horario}} (int \&h, int \&m)  throw (std\+::invalid\+\_\+argument)
+\begin{DoxyCompactList}\small\item\em função para validar horário dentro dos limites necessários \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horario_a7da56238fb3867c7ddabb8728dc6b8d1}{valida\+Horario}} (std\+::string \&hrr)  throw (std\+::invalid\+\_\+argument)
+\begin{DoxyCompactList}\small\item\em função para validar a string horário para q seja válida \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_horario_a781ff29576ec8da8e4fbe55735b24bd1}\label{class_horario_a781ff29576ec8da8e4fbe55735b24bd1}} 
+\index{Horario@{Horario}!Horario@{Horario}}
+\index{Horario@{Horario}!Horario@{Horario}}
+\doxysubsubsection{\texorpdfstring{Horario()}{Horario()}}
+{\footnotesize\ttfamily Horario\+::\+Horario (\begin{DoxyParamCaption}\item[{int}]{h = {\ttfamily 12},  }\item[{int}]{m = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe. 
+
+Definição de funções para a classe \mbox{\hyperlink{class_horario}{Horario}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158                             \{}
+\DoxyCodeLine{159     \mbox{\hyperlink{class_horario_ad9de626bc0f27c907213951fd2cb7ccf}{defineHorario}}(h,m);}
+\DoxyCodeLine{160 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_horario_ad9de626bc0f27c907213951fd2cb7ccf}\label{class_horario_ad9de626bc0f27c907213951fd2cb7ccf}} 
+\index{Horario@{Horario}!defineHorario@{defineHorario}}
+\index{defineHorario@{defineHorario}!Horario@{Horario}}
+\doxysubsubsection{\texorpdfstring{defineHorario()}{defineHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Horario\+::define\+Horario (\begin{DoxyParamCaption}\item[{int}]{h,  }\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+Função para definir os valores do objeto. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{162                                         \{}
+\DoxyCodeLine{163     \mbox{\hyperlink{class_horario_aed1f2e25bbd1f9ab4afcf97ee8f7c718}{validaHorario}}(h,m);}
+\DoxyCodeLine{164     this-\/>hora = h;}
+\DoxyCodeLine{165     this-\/>minuto = m;}
+\DoxyCodeLine{166     this-\/>horario = this-\/>\mbox{\hyperlink{class_horario_ab7376787b0d1d5637c952d641e9f0e7c}{viraString}}();}
+\DoxyCodeLine{167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_horario_aa74e2d220bc4082203e050d6b6b4c281}\label{class_horario_aa74e2d220bc4082203e050d6b6b4c281}} 
+\index{Horario@{Horario}!defineHorario@{defineHorario}}
+\index{defineHorario@{defineHorario}!Horario@{Horario}}
+\doxysubsubsection{\texorpdfstring{defineHorario()}{defineHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Horario\+::define\+Horario (\begin{DoxyParamCaption}\item[{std\+::string}]{hrr }\end{DoxyParamCaption})}
+
+
+
+Função para defninir horário a partir de string. 
+
+\mbox{\Hypertarget{class_horario_a2045933d35e7b5511e91e6c551cfa041}\label{class_horario_a2045933d35e7b5511e91e6c551cfa041}} 
+\index{Horario@{Horario}!trataNum@{trataNum}}
+\index{trataNum@{trataNum}!Horario@{Horario}}
+\doxysubsubsection{\texorpdfstring{trataNum()}{trataNum()}}
+{\footnotesize\ttfamily string Horario\+::trata\+Num (\begin{DoxyParamCaption}\item[{int \&}]{num }\end{DoxyParamCaption})}
+
+
+
+Função para tratar números de hora e minuto. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{193                                   \{}
+\DoxyCodeLine{194     ostringstream aux;}
+\DoxyCodeLine{195     \textcolor{keywordflow}{if}(num < 10)}
+\DoxyCodeLine{196         aux << \textcolor{stringliteral}{"0"} << num;}
+\DoxyCodeLine{197     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{198         aux << num;}
+\DoxyCodeLine{199     \textcolor{keywordflow}{return} aux.str();}
+\DoxyCodeLine{200 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_horario_aed1f2e25bbd1f9ab4afcf97ee8f7c718}\label{class_horario_aed1f2e25bbd1f9ab4afcf97ee8f7c718}} 
+\index{Horario@{Horario}!validaHorario@{validaHorario}}
+\index{validaHorario@{validaHorario}!Horario@{Horario}}
+\doxysubsubsection{\texorpdfstring{validaHorario()}{validaHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Horario\+::valida\+Horario (\begin{DoxyParamCaption}\item[{int \&}]{h,  }\item[{int \&}]{m }\end{DoxyParamCaption}) throw ( std\+::invalid\+\_\+argument) }
+
+
+
+função para validar horário dentro dos limites necessários 
+
+função para validar horário dentro dos limites necessários dos atributos int lança exceções no caso de números que superem o escopo de horário
+\begin{DoxyCode}{0}
+\DoxyCodeLine{202                                                                       \{}
+\DoxyCodeLine{204     \textcolor{keywordflow}{if}(h < 0 || h > 23)}
+\DoxyCodeLine{205        \textcolor{keywordflow}{throw} invalid\_argument(\textcolor{stringliteral}{"Argumento Inválido: as horas devem ser um número de 0 a 23"});}
+\DoxyCodeLine{206     \textcolor{keywordflow}{if}(m < 0 || m > 60)}
+\DoxyCodeLine{207         \textcolor{keywordflow}{throw} invalid\_argument(\textcolor{stringliteral}{"Argumento Inválido: os minutos devem ser um número de 0 a 60"});}
+\DoxyCodeLine{208 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_horario_a7da56238fb3867c7ddabb8728dc6b8d1}\label{class_horario_a7da56238fb3867c7ddabb8728dc6b8d1}} 
+\index{Horario@{Horario}!validaHorario@{validaHorario}}
+\index{validaHorario@{validaHorario}!Horario@{Horario}}
+\doxysubsubsection{\texorpdfstring{validaHorario()}{validaHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Horario\+::valida\+Horario (\begin{DoxyParamCaption}\item[{std\+::string \&}]{hrr }\end{DoxyParamCaption}) throw ( std\+::invalid\+\_\+argument) }
+
+
+
+função para validar a string horário para q seja válida 
+
+\mbox{\Hypertarget{class_horario_ab7376787b0d1d5637c952d641e9f0e7c}\label{class_horario_ab7376787b0d1d5637c952d641e9f0e7c}} 
+\index{Horario@{Horario}!viraString@{viraString}}
+\index{viraString@{viraString}!Horario@{Horario}}
+\doxysubsubsection{\texorpdfstring{viraString()}{viraString()}}
+{\footnotesize\ttfamily string Horario\+::vira\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para retornar o Horário como string. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{187                            \{}
+\DoxyCodeLine{188     ostringstream aux;}
+\DoxyCodeLine{189     aux << \mbox{\hyperlink{class_horario_a2045933d35e7b5511e91e6c551cfa041}{trataNum}}(hora) << \textcolor{stringliteral}{":"} << \mbox{\hyperlink{class_horario_a2045933d35e7b5511e91e6c551cfa041}{trataNum}}(minuto);}
+\DoxyCodeLine{190     \textcolor{keywordflow}{return} aux.str();}
+\DoxyCodeLine{191 \}}
+
+\end{DoxyCode}
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

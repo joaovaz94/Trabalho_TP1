@@ -1,0 +1,78 @@
+\hypertarget{class_ingresso}{}\doxysection{ReferÃªncia da Classe Ingresso}
+\label{class_ingresso}\index{Ingresso@{Ingresso}}
+
+
+{\ttfamily \#include $<$entidades.\+h$>$}
+
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ingresso_adcaca313bc74f18ba6f546cf3084ebbe}{define\+Cod\+Ing}} (const \mbox{\hyperlink{class_codigo_ingresso}{Codigo\+Ingresso}} \&cod)
+\begin{DoxyCompactList}\small\item\em Função para definir codigo do ingresso. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_codigo_ingresso}{Codigo\+Ingresso}} \mbox{\hyperlink{class_ingresso_afb44d4eb95c918282748b0c9afc4b68c}{pega\+Cod\+Ing}} () const
+\begin{DoxyCompactList}\small\item\em Função para retornar codigo do ingresso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ingresso_acf8954e3a4d7034f3aacdcead23333e6}{imprime\+Ingresso}} ()
+\begin{DoxyCompactList}\small\item\em Função para imprimir informações de \mbox{\hyperlink{class_ingresso}{Ingresso}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescriÃ§Ã£o detalhada}
+Definição de entidade \mbox{\hyperlink{class_ingresso}{Ingresso}} 
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_ingresso_adcaca313bc74f18ba6f546cf3084ebbe}\label{class_ingresso_adcaca313bc74f18ba6f546cf3084ebbe}} 
+\index{Ingresso@{Ingresso}!defineCodIng@{defineCodIng}}
+\index{defineCodIng@{defineCodIng}!Ingresso@{Ingresso}}
+\doxysubsubsection{\texorpdfstring{defineCodIng()}{defineCodIng()}}
+{\footnotesize\ttfamily void Ingresso\+::define\+Cod\+Ing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_codigo_ingresso}{Codigo\+Ingresso}} \&}]{cod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para definir codigo do ingresso. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108                                                       \{}
+\DoxyCodeLine{109             this-\/>codigo = cod;}
+\DoxyCodeLine{110         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ingresso_acf8954e3a4d7034f3aacdcead23333e6}\label{class_ingresso_acf8954e3a4d7034f3aacdcead23333e6}} 
+\index{Ingresso@{Ingresso}!imprimeIngresso@{imprimeIngresso}}
+\index{imprimeIngresso@{imprimeIngresso}!Ingresso@{Ingresso}}
+\doxysubsubsection{\texorpdfstring{imprimeIngresso()}{imprimeIngresso()}}
+{\footnotesize\ttfamily void Ingresso\+::imprime\+Ingresso (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para imprimir informações de \mbox{\hyperlink{class_ingresso}{Ingresso}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{116                                \{}
+\DoxyCodeLine{117             std::cout <<\textcolor{stringliteral}{"\(\backslash\)t== Ingresso Definido =="} << std::endl;}
+\DoxyCodeLine{118             std::cout << \textcolor{stringliteral}{"Código do Ingresso: "} << this-\/>\mbox{\hyperlink{class_ingresso_afb44d4eb95c918282748b0c9afc4b68c}{pegaCodIng}}().\mbox{\hyperlink{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}{pegaCodigo}}() << std::endl;}
+\DoxyCodeLine{119         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_ingresso_afb44d4eb95c918282748b0c9afc4b68c}\label{class_ingresso_afb44d4eb95c918282748b0c9afc4b68c}} 
+\index{Ingresso@{Ingresso}!pegaCodIng@{pegaCodIng}}
+\index{pegaCodIng@{pegaCodIng}!Ingresso@{Ingresso}}
+\doxysubsubsection{\texorpdfstring{pegaCodIng()}{pegaCodIng()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_codigo_ingresso}{Codigo\+Ingresso}} Ingresso\+::pega\+Cod\+Ing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar codigo do ingresso. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                                           \{}
+\DoxyCodeLine{113             \textcolor{keywordflow}{return} codigo;}
+\DoxyCodeLine{114         \}}
+
+\end{DoxyCode}
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\end{DoxyCompactItemize}

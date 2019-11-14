@@ -1,0 +1,101 @@
+\hypertarget{class_codigo}{}\doxysection{ReferÃªncia da Classe Codigo}
+\label{class_codigo}\index{Codigo@{Codigo}}
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+Diagrama de hierarquia para Codigo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_codigo}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_codigo_a76d36047bd63b705d1fa34da5e69d22b}{define\+Codigo}} (std\+::string cod)
+\begin{DoxyCompactList}\small\item\em Função para definir Código. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}{pega\+Codigo}} ()
+\begin{DoxyCompactList}\small\item\em Função para retornar Código. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_codigo_af15aedcd486365c769aa2243dbe39ed9}{valida\+Codigo}} (std\+::string \&cod)  throw (std\+::invalid\+\_\+argument)
+\begin{DoxyCompactList}\small\item\em Função para validar Código. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_codigo_ac1061ea131d1ebbcf5d9552f6c984225}{codigo}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_codigo_a76d36047bd63b705d1fa34da5e69d22b}\label{class_codigo_a76d36047bd63b705d1fa34da5e69d22b}} 
+\index{Codigo@{Codigo}!defineCodigo@{defineCodigo}}
+\index{defineCodigo@{defineCodigo}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{defineCodigo()}{defineCodigo()}}
+{\footnotesize\ttfamily void Codigo\+::define\+Codigo (\begin{DoxyParamCaption}\item[{std\+::string}]{cod }\end{DoxyParamCaption})}
+
+
+
+Função para definir Código. 
+
+Definição de Funções da classe Código 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{228                                     \{}
+\DoxyCodeLine{229     \mbox{\hyperlink{class_codigo_af15aedcd486365c769aa2243dbe39ed9}{validaCodigo}}(cod);}
+\DoxyCodeLine{230     this-\/>\mbox{\hyperlink{class_codigo_ac1061ea131d1ebbcf5d9552f6c984225}{codigo}} = cod;}
+\DoxyCodeLine{231 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}\label{class_codigo_abba7ed4990391b757fd3302ae03fe0e0}} 
+\index{Codigo@{Codigo}!pegaCodigo@{pegaCodigo}}
+\index{pegaCodigo@{pegaCodigo}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{pegaCodigo()}{pegaCodigo()}}
+{\footnotesize\ttfamily std\+::string Codigo\+::pega\+Codigo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar Código. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_codigo_ac1061ea131d1ebbcf5d9552f6c984225}{codigo}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_codigo_af15aedcd486365c769aa2243dbe39ed9}\label{class_codigo_af15aedcd486365c769aa2243dbe39ed9}} 
+\index{Codigo@{Codigo}!validaCodigo@{validaCodigo}}
+\index{validaCodigo@{validaCodigo}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{validaCodigo()}{validaCodigo()}}
+{\footnotesize\ttfamily void Codigo\+::valida\+Codigo (\begin{DoxyParamCaption}\item[{std\+::string \&}]{cod }\end{DoxyParamCaption}) throw ( std\+::invalid\+\_\+argument) \hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Função para validar Código. 
+
+lança exceção se algum dígito não for um número
+\begin{DoxyCode}{0}
+\DoxyCodeLine{233                                                               \{}
+\DoxyCodeLine{234     \textcolor{keywordtype}{int} i,comp = cod.length();}
+\DoxyCodeLine{236     \textcolor{keywordflow}{for} (i=0;i<comp;i++) \{}
+\DoxyCodeLine{237         \textcolor{keywordflow}{if}(isdigit(cod[i]) == \textcolor{keyword}{false})}
+\DoxyCodeLine{238             \textcolor{keywordflow}{throw} invalid\_argument(\textcolor{stringliteral}{"Argumento Inválido: o Código deve ter exclusivamente números"});}
+\DoxyCodeLine{239     \}}
+\DoxyCodeLine{240 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_codigo_ac1061ea131d1ebbcf5d9552f6c984225}\label{class_codigo_ac1061ea131d1ebbcf5d9552f6c984225}} 
+\index{Codigo@{Codigo}!codigo@{codigo}}
+\index{codigo@{codigo}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{codigo}{codigo}}
+{\footnotesize\ttfamily std\+::string Codigo\+::codigo\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

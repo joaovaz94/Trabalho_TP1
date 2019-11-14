@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['testes_2ecpp_76',['testes.cpp',['../testes_8cpp.html',1,'']]],
+  ['testes_2eh_77',['testes.h',['../testes_8h.html',1,'']]],
+  ['tipo_78',['Tipo',['../class_tipo.html',1,'']]],
+  ['tratanum_79',['trataNum',['../class_data.html#a9863187ae5067b4f8ac6c2bdb6d2f8f4',1,'Data::trataNum()'],['../class_horario.html#a2045933d35e7b5511e91e6c551cfa041',1,'Horario::trataNum()']]],
+  ['tucidade_80',['TUCidade',['../class_t_u_cidade.html',1,'']]],
+  ['tucodigo_81',['TUCodigo',['../class_t_u_codigo.html',1,'']]],
+  ['tucoding_82',['TUCodIng',['../class_t_u_cod_ing.html',1,'']]],
+  ['tucodjogo_83',['TUCodJogo',['../class_t_u_cod_jogo.html',1,'']]],
+  ['tucodver_84',['TUCodVer',['../class_t_u_cod_ver.html',1,'']]],
+  ['tucpf_85',['TUCpf',['../class_t_u_cpf.html',1,'']]],
+  ['tudata_86',['TUData',['../class_t_u_data.html',1,'']]],
+  ['tudisp_87',['TUDisp',['../class_t_u_disp.html',1,'']]],
+  ['tuestado_88',['TUEstado',['../class_t_u_estado.html',1,'']]],
+  ['tuhorario_89',['TUHorario',['../class_t_u_horario.html',1,'']]],
+  ['tunomejogo_90',['TUNomeJogo',['../class_t_u_nome_jogo.html',1,'']]],
+  ['tunumcartao_91',['TUNumCartao',['../class_t_u_num_cartao.html',1,'']]],
+  ['tupreco_92',['TUPreco',['../class_t_u_preco.html',1,'']]],
+  ['tusenha_93',['TUSenha',['../class_t_u_senha.html',1,'']]],
+  ['tutipo_94',['TUTipo',['../class_t_u_tipo.html',1,'']]],
+  ['tuvalidade_95',['TUValidade',['../class_t_u_validade.html',1,'']]]
+];

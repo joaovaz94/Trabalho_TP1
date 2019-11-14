@@ -1,0 +1,94 @@
+\hypertarget{class_tipo}{}\doxysection{ReferÃªncia da Classe Tipo}
+\label{class_tipo}\index{Tipo@{Tipo}}
+
+
+Classe do domínio \mbox{\hyperlink{class_tipo}{Tipo}}.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsection*{Membros PÃºblicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tipo_a45f969dfbf46b8c8be1a4c208a53c91d}{define\+Tipo}} (int d)
+\begin{DoxyCompactList}\small\item\em Função de definição do tipo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{dominios_8h_a4e7b349a05a558fa6792c71c11a6bf11}{Id}} \mbox{\hyperlink{class_tipo_aa7a064dc76b1192839dd93649aa6b03d}{pega\+Tipo}} ()
+\begin{DoxyCompactList}\small\item\em Função para retornar tipo. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_tipo_a868871c72b6d6f37017df032c526d618}{string\+Tipo}} ()
+\begin{DoxyCompactList}\small\item\em Função para imprimir tipo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{DescriÃ§Ã£o detalhada}
+Classe do domínio \mbox{\hyperlink{class_tipo}{Tipo}}. 
+
+\doxysubsection{FunÃ§Ãµes membros}
+\mbox{\Hypertarget{class_tipo_a45f969dfbf46b8c8be1a4c208a53c91d}\label{class_tipo_a45f969dfbf46b8c8be1a4c208a53c91d}} 
+\index{Tipo@{Tipo}!defineTipo@{defineTipo}}
+\index{defineTipo@{defineTipo}!Tipo@{Tipo}}
+\doxysubsubsection{\texorpdfstring{defineTipo()}{defineTipo()}}
+{\footnotesize\ttfamily void Tipo\+::define\+Tipo (\begin{DoxyParamCaption}\item[{int}]{d }\end{DoxyParamCaption})}
+
+
+
+Função de definição do tipo. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{554                            \{}
+\DoxyCodeLine{555     validaDigito(d);}
+\DoxyCodeLine{556     this-\/>digito=d;}
+\DoxyCodeLine{557     this-\/>tp=\mbox{\hyperlink{dominios_8h_a4e7b349a05a558fa6792c71c11a6bf11}{Id}}(d);}
+\DoxyCodeLine{558 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tipo_aa7a064dc76b1192839dd93649aa6b03d}\label{class_tipo_aa7a064dc76b1192839dd93649aa6b03d}} 
+\index{Tipo@{Tipo}!pegaTipo@{pegaTipo}}
+\index{pegaTipo@{pegaTipo}!Tipo@{Tipo}}
+\doxysubsubsection{\texorpdfstring{pegaTipo()}{pegaTipo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dominios_8h_a4e7b349a05a558fa6792c71c11a6bf11}{Id}} Tipo\+::pega\+Tipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Função para retornar tipo. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{221 \{\textcolor{keywordflow}{return} tp;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_tipo_a868871c72b6d6f37017df032c526d618}\label{class_tipo_a868871c72b6d6f37017df032c526d618}} 
+\index{Tipo@{Tipo}!stringTipo@{stringTipo}}
+\index{stringTipo@{stringTipo}!Tipo@{Tipo}}
+\doxysubsubsection{\texorpdfstring{stringTipo()}{stringTipo()}}
+{\footnotesize\ttfamily string Tipo\+::string\+Tipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para imprimir tipo. 
+
+Função para imprimir o tipo. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{560                          \{}
+\DoxyCodeLine{561     \textcolor{keywordtype}{string} tipo;}
+\DoxyCodeLine{562     \textcolor{keywordflow}{switch}(this-\/>\mbox{\hyperlink{class_tipo_aa7a064dc76b1192839dd93649aa6b03d}{pegaTipo}}()) \{}
+\DoxyCodeLine{563             \textcolor{keywordflow}{case} 1: tipo=\textcolor{stringliteral}{"LOCAL"};}
+\DoxyCodeLine{564                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{565             \textcolor{keywordflow}{case} 2: tipo=\textcolor{stringliteral}{"ESTADUAL"};}
+\DoxyCodeLine{566                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{567             \textcolor{keywordflow}{case} 3: tipo=\textcolor{stringliteral}{"NACIONAL"};}
+\DoxyCodeLine{568                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{569             \textcolor{keywordflow}{case} 4: tipo=\textcolor{stringliteral}{"INTERNACIONAL"};}
+\DoxyCodeLine{570                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{571     \}}
+\DoxyCodeLine{572     \textcolor{keywordflow}{return} tipo;}
+\DoxyCodeLine{573 \}}
+
+\end{DoxyCode}
+
+
+A documentaÃ§Ã£o para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Joao Paulo/\+Documents/\+T\+P1/\+Trabalho\+\_\+\+T\+P1/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}
