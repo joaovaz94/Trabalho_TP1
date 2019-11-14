@@ -350,7 +350,7 @@ void CodigoJogo::defineCodJogo (string cod){
 //!Função para validar Codigo do Ingresso
 void CodigoIngresso::validaCodIng (string& cod) throw (invalid_argument){
     validaCodigo(cod);
-    //!lança exceção se o Código do jogo não tiver 3 dígitos
+    //!lança exceção se o Código do ingresso não tiver 5 dígitos
     if ( cod.length() != 5)
       throw invalid_argument("Argumento Inválido: o Código do Ingresso deve ter 5 dígitos");
 }
