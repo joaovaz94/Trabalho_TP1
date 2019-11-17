@@ -176,6 +176,10 @@ int main(int argc, char** argv)
     double prc=30.05;
     int dsp=30;
 
+    //!Gestão de Banco de Dados
+    SGBD bancoDeDados;
+    bancoDeDados.criarTabelas();
+
     //!definições dos domínios
     c1.defineCpf(cpf);
     cd1.defineCodigo(cod);
@@ -245,6 +249,8 @@ int main(int argc, char** argv)
 
     //!Impressão de Usuário
     usr.imprimeUsuario();
+    //!Inserçao dos dados de usuário no Banco de dados
+    bancoDeDados.insereDado(bancoDeDados.queryInsertUsuario(usr));
 
     //!Impressão de Jogo
     jog.imprimeJogo();
@@ -256,7 +262,8 @@ int main(int argc, char** argv)
     cart.imprimeIngresso();
 
     //LEMBRETES DE CÓDIGO
-    //cout << endl << endl << "==  FAZER VALIDAÇÃO DE DATA E HORÁRIO  ==" << endl << endl;
 
+
+    bancoDeDados.fechaBD(); //! Comando para fechar a conexão do programa com o banco de dados antes de fechar o programa
     return 0;
 }

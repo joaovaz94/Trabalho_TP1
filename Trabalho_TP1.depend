@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1574020402 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
+1574026019 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
 	<iostream>
 	"entidades.h"
 	"dominios.h"
 	"testes.h"
 	<string>
 	<locale.h>
-	"sqlite3.h"
+	"SGBD.h"
 
 1569608447 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\testes.cpp
 	"testes.h"
@@ -118,4 +118,14 @@
 	<unicode/ubrk.h>
 	<unicode/utf16.h>
 	<math.h>
+
+1574027259 c:\users\joao paulo\documents\tp1\trabalho_tp1\sgbd.h
+	<iostream>
+	<stdio.h>
+	<string>
+	"sqlite3.h"
+	"entidades.h"
+
+1574027150 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\sgbd.cpp
+	"SGBD.h"
 

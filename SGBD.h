@@ -6,6 +6,7 @@
 #include <string>
 //#include "sqlite3ext.h"
 #include "sqlite3.h"
+#include "entidades.h"
 
 
 class SGBD
@@ -68,7 +69,7 @@ class SGBD
     void criarTabelas() {
         //! Salvar sql de cria��o das tabelas (s� ocorre se a tabela n�o existir antes)
         //sql = "CREATE TABLE IF NOT EXISTS PESSOAS(ID INT PRIMARY KEY NOT NULL, NOME TEXT NOT NULL);";
-        sql = ("CREATE TABLE IF NOT EXISTS Usuario ( "
+        sql = ("CREATE TABLE IF NOT EXISTS Usuarios ( "
                "cpf char(11) NOT NULL, "
                "senha varchar(6) NOT NULL, "
                "PRIMARY KEY(cpf)); "
@@ -79,9 +80,9 @@ class SGBD
                     "validade char(5) NOT NULL, "
                     "usuario_cpf char(11) REFERENCES Usuario NOT NULL, "
                     "PRIMARY KEY(numcartao), "
-                    "FOREIGN KEY(usuario_cpf) REFERENCES Usuario(cpf)); "
+                    "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf)); "
 
-                "CREATE TABLE IF NOT EXISTS Jogo( "
+                "CREATE TABLE IF NOT EXISTS Jogos( "
                     "codigojogo char(3) NOT NULL, "
                     "nomejogo varchar(40) NOT NULL, "
                     "pais varchar(15) NOT NULL, "
@@ -91,25 +92,25 @@ class SGBD
                     "tipo integer NOT NULL, "
                     "usuario_cpf char(11) NOT NULL, "
                     "PRIMARY KEY(codigojogo), "
-                    "FOREIGN KEY(usuario_cpf) REFERENCES Usuario(cpf)); "
+                    "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf)); "
 
-                "CREATE TABLE IF NOT EXISTS Partida( "
+                "CREATE TABLE IF NOT EXISTS Partidas( "
                     "codigopartida char(5) NOT NULL, "
-                   "data char(10) NOT NULL, "
+                    "data char(10) NOT NULL, "
                     "horario CHAR NOT NULL, "
                     "preco double precision NOT NULL, "
                     "disponibilidade integer NOT NULL, "
                     "jogo_codigojogo char(3) NOT NULL, "
                     "PRIMARY KEY(codigopartida), "
-                    "FOREIGN KEY(jogo_codigojogo) REFERENCES Jogo(codigojogo)); "
+                    "FOREIGN KEY(jogo_codigojogo) REFERENCES Jogos(codigojogo)); "
 
-                "CREATE TABLE IF NOT EXISTS Ingresso( "
+                "CREATE TABLE IF NOT EXISTS Ingressos( "
                     "codigoingresso char(5) NOT NULL, "
                     "partida_codigopartida char(5) NOT NULL, "
                     "usuario_cpf char(11) NOT NULL, "
                     "PRIMARY KEY(codigoingresso), "
-                    "FOREIGN KEY(usuario_cpf) REFERENCES Usuario(cpf), "
-                    "FOREIGN KEY(partida_codigopartida) REFERENCES Partida(codigopartida)); "
+                    "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf), "
+                    "FOREIGN KEY(partida_codigopartida) REFERENCES Partidas(codigopartida)); "
         );
 
         //! Executar opera��o de criar tabela
@@ -119,16 +120,16 @@ class SGBD
     }
 
     //!M�todo para inserir dados no Banco
-    void insereDado(std::string ID, std::string nome) {
-
-        //! Contru��o de string usando asprinf()
-        std::string query = ("INSERT INTO PESSOAS ('ID', 'NOME') VALUES ('" + ID + "', '" + nome + "');");
+    void insereDado(std::string query) {
 
         //! Execu��o da opera��o do query no sqlite
         sqlite3_exec(bd, query.c_str(), NULL, 0, &cMenssagemErro);
 
         confereErroBD();
     }
+
+    //!Método pra criar queria de insert na tabela usuario
+    std::string queryInsertUsuario (Usuario usuario);
 
     //!M�todo para mostrar tabela
     void mostraTabela() {
