@@ -8,6 +8,7 @@
 #include "testes.h" //!inclusão dos testes de unidade no programa
 #include <string>
 #include <locale.h>
+#include "sqlite3.h"
 
 using namespace std;
 
