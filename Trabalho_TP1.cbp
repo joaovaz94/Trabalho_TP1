@@ -39,6 +39,11 @@
 		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="sqlite3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sqlite3.h" />
+		<Unit filename="sqlite3ext.h" />
 		<Unit filename="testes.cpp" />
 		<Unit filename="testes.h" />
 		<Extensions>

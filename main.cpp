@@ -8,11 +8,11 @@
 #include "testes.h" //!inclusão dos testes de unidade no programa
 #include <string>
 #include <locale.h>
-#include "sqlite3.h"
+#include "SGBD.h"
 
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
     setlocale(LC_ALL,"portuguese");//!permitir a impressão de caracteres em português
 
