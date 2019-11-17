@@ -36,3 +36,5 @@
 *.depend
 bin/
 obj/
+
+*.cbp
