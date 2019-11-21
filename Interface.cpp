@@ -60,7 +60,7 @@ void Interface::iniciar() {
         cout << "-----------------------------------------------------------" << endl;
         cout << "--- LogIn: Digite '1'" << endl;
         cout << "-----------------------------------------------------------" << endl;
-        cout << "--- Cadastrar: Digite '2'" << endl;
+        cout << "--- Cadastrar Usuário: Digite '2'" << endl;
         cout << "-----------------------------------------------------------" << endl;
         cout << "--- Fechar Programa: Digite '0'" << endl;
         cout << "-----------------------------------------------------------" << endl;
