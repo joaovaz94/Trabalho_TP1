@@ -8,6 +8,7 @@
 #include "testes.h" //!inclusão dos testes de unidade no programa
 #include <string>
 #include <locale.h>
+#include "Interface.h"
 
 using namespace std;
 
@@ -54,6 +55,7 @@ int main()
     testeCidade.executar();
     testeTipo.executar();
 
+    /*
     //!Declaração de objetos dos Dompinios
     Data d1;
     Cpf c1;
@@ -71,13 +73,20 @@ int main()
     NomeJogo nj1;
     Cidade cdd1;
     Tipo t1;
+    */
 
+    /*
     //!Declaração de objetos das Entidades
     Partida part;
     Usuario usr;
     Jogo jog;
     Ingresso ing;
     CartaoCredito cart;
+    */
+
+    Interface tui;
+
+    tui.iniciar();
 
     /*
     string cpf = "23261322110";
