@@ -3,7 +3,6 @@
 
 
 #include <iostream>
-//#include "Interface.h"
 
 class Apresentacao
 {

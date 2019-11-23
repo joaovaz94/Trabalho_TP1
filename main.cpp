@@ -3,14 +3,14 @@
 //!Lucas de Moura Quadros - Matr�cula: 140150668
 
 //#include <iostream>
-#include "entidades.h"
-#include "dominios.h"
+//#include "entidades.h"
+//#include "dominios.h"
 #include "testes.h" //!inclus�o dos testes de unidade no programa
 //#include <string>
 #include <locale.h>
-#include "SGBD.h"
+//#include "SGBD.h"
 #include "Interface.h"
-#include "Apresentacao.h"
+//#include "Apresentacao.h"
 
 
 using namespace std;
@@ -34,6 +34,7 @@ int main(int argc, char** argv)
     //! Definição e execução da Interface do programa
     Interface interface;
     interface.iniciarPrograma();
+    interface.fecharPrograma();
 
     /*
     //!Declara��o de objetos dos Dompinios

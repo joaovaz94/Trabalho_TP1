@@ -3,7 +3,7 @@
 
 #include "Apresentacao.h"
 #include "SGBD.h"
-#include "service.h"
+//#include "service.h"
 
 class Interface
 {
@@ -14,6 +14,7 @@ class Interface
     public:
         Interface() {}
         void iniciarPrograma();
+        void fecharPrograma();
 };
 
 #endif // INTERFACE_H
