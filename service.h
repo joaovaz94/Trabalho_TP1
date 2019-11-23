@@ -23,8 +23,7 @@ class LidarUsuario{
     public:
         void CadastrarUsuario(Usuario usuario, CartaoCredito cartao);
         void AutenticarUsuario(Usuario usuario);
-        void DescadastrarUsuario(Usuario usuario, std::vector <Jogo> jogosUsuario);
-        std::vector <Jogo> PesquisarJogos(Data inicio, Data termino, Cidade, Estado);
+        void DescadastrarUsuario(Usuario, std::vector <Jogo> jogosUsuario);
 
 };
 
@@ -35,8 +34,12 @@ class Sistema{
         std::vector <Partida> partidasJogo;
 
     public:
-
-
+        std::vector <Ingresso> ComprarIngresso(Partida, int qtdIngComp);
+        std::vector <Jogo> ConsultaJogos(Data inicio, Data termino, Cidade, Estado);
+        void CadastrarJogo(Jogo jogo, Partida partida);
+        void EditarJogo(Jogo jogo);
+        void DescadastrarJogo(Jogo jogo);
+        void InfoVenda(Jogo jogo, Partida* partida, Usuario* usuario);
 
 };
 
