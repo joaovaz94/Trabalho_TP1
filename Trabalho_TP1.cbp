@@ -34,13 +34,24 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Apresentacao.cpp" />
+		<Unit filename="Apresentacao.h" />
 		<Unit filename="Interface.cpp" />
 		<Unit filename="Interface.h" />
+		<Unit filename="SGBD.cpp" />
+		<Unit filename="SGBD.h" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h" />
 		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="service.cpp" />
+		<Unit filename="service.h" />
+		<Unit filename="sqlite3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sqlite3.h" />
+		<Unit filename="sqlite3ext.h" />
 		<Unit filename="testes.cpp" />
 		<Unit filename="testes.h" />
 		<Extensions>

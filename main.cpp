@@ -1,62 +1,35 @@
 //!Trabalho desenvolvido por:
-//!João Paulo Vaz Mendes - Matrícula: 170002934
-//!Lucas de Moura Quadros - Matrícula: 140150668
+//!Joï¿½o Paulo Vaz Mendes - Matrï¿½cula: 170002934
+//!Lucas de Moura Quadros - Matrï¿½cula: 140150668
 
-#include <iostream>
+//#include <iostream>
 #include "entidades.h"
 #include "dominios.h"
-#include "testes.h" //!inclusão dos testes de unidade no programa
-#include <string>
+#include "testes.h" //!inclusï¿½o dos testes de unidade no programa
+//#include <string>
 #include <locale.h>
+#include "SGBD.h"
 #include "Interface.h"
+#include "Apresentacao.h"
+
 
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
-    setlocale(LC_ALL,"portuguese");//!permitir a impressão de caracteres em português
+    setlocale(LC_ALL,"portuguese");//!permitir a impressï¿½o de caracteres em portuguï¿½s
 
+    //!Definiï¿½ï¿½o e realizaï¿½ï¿½o dos testes de Unidade no programa
+    TestesUnidade testes;
+    testes.executaTestesUnidade();
 
-    //!Declaração dos Testes de Unidade dos Domínios
-    TUData testeData;
-    TUCpf testeCpf;
-    TUHorario testeHorario;
-    TUCodigo testeCodigo;
-    TUPreco testePreco;
-    TUDisp testeDisp;
-    TUSenha testeSenha;
-    TUCodVer testeCodVer;
-    TUCodJogo testeCodJogo;
-    TUCodIng testeCodIng;
-    TUEstado testeEstado;
-    TUNumCartao testeNumCartao;
-    TUValidade testeValidade;
-    TUNomeJogo testeNomeJogo;
-    TUCidade testeCidade;
-    TUTipo testeTipo;
+    //! Definiï¿½ï¿½o e execuï¿½ï¿½o da interface do programa
+    Apresentacao tui;
 
-    cout << endl << endl;
-
-    //!Execução dos Testes de Unidade dos Domínios
-    testeData.executar();
-    testeCpf.executar();
-    testeHorario.executar();
-    testeCodigo.executar();
-    testePreco.executar();
-    testeDisp.executar();
-    testeSenha.executar();
-    testeCodVer.executar();
-    testeCodJogo.executar();
-    testeCodIng.executar();
-    testeEstado.executar();
-    testeNumCartao.executar();
-    testeValidade.executar();
-    testeNomeJogo.executar();
-    testeCidade.executar();
-    testeTipo.executar();
+    tui.tela_inicial();
 
     /*
-    //!Declaração de objetos dos Dompinios
+    //!Declaraï¿½ï¿½o de objetos dos Dompinios
     Data d1;
     Cpf c1;
     Horario h1;
@@ -76,17 +49,13 @@ int main()
     */
 
     /*
-    //!Declaração de objetos das Entidades
+    //!Declaraï¿½ï¿½o de objetos das Entidades
     Partida part;
     Usuario usr;
     Jogo jog;
     Ingresso ing;
     CartaoCredito cart;
     */
-
-    Interface tui;
-
-    tui.iniciar();
 
     /*
     string cpf = "23261322110";
@@ -107,8 +76,12 @@ int main()
     int dsp=30;
     */
 
+    //!Gestï¿½o de Banco de Dados
+    SGBD bancoDeDados;
+    bancoDeDados.criarTabelas();
+
     /*
-    //!definições dos domínios
+    //!definiï¿½ï¿½es dos domï¿½nios
     c1.defineCpf(cpf);
     cd1.defineCodigo(cod);
     p1.definePreco(prc);
@@ -128,28 +101,28 @@ int main()
     */
 
     /*
-    //!definições de uma partida
+    //!definiï¿½ï¿½es de uma partida
     part.defineCodigo(cd1);
     part.defineData(d1);
     part.defineDisp(dp1);
     part.defineHorario(h1);
     part.definePreco(p1);
 
-    //!definições de um usuário
+    //!definiï¿½ï¿½es de um usuï¿½rio
     usr.defineCpf(c1);
     usr.defineSenha(s1);
 
-    //!Definição de Jogo
+    //!Definiï¿½ï¿½o de Jogo
     jog.defineCodJogo(cj1);
     jog.defineNomeJogo(nj1);
     jog.defineCidade(cdd1);
     jog.defineEstado(e1);
     jog.defineTipo(t1);
 
-    //!Definição de Ingresso
+    //!Definiï¿½ï¿½o de Ingresso
     ing.defineCodIng(ci1);
 
-    //!Definição de Cartão de Crédito
+    //!Definiï¿½ï¿½o de Cartï¿½o de Crï¿½dito
     cart.defineNumCartao(nc1);
     cart.defineCodVer(cv1);
     cart.defineValidade(v1);
@@ -157,19 +130,19 @@ int main()
     */
 
     /*
-    //!Impressão de domínios
+    //!Impressï¿½o de domï¿½nios
     cout << "CPF: " << c1.pegaCpf() << endl;
     cout << "Data: " << d1.viraString() << endl;
-    cout << "Horário: " << h1.viraString() << endl;
-    cout << "Código: " << cd1.pegaCodigo() << endl;
-    cout << "Preço: " << p1.pegaPreco() << endl;
+    cout << "Horï¿½rio: " << h1.viraString() << endl;
+    cout << "Cï¿½digo: " << cd1.pegaCodigo() << endl;
+    cout << "Preï¿½o: " << p1.pegaPreco() << endl;
     cout << "Disponibilidade: " << dp1.pegaDisp() << endl;
     cout << "Senha: " << s1.pegaSenha() << endl;
-    cout << "Código de Verificação do Cartão: " << cv1.pegaCodigo() << endl;
-    cout << "Código do Jogo: " << cj1.pegaCodigo() << endl;
-    cout << "Código do Ingresso: " << ci1.pegaCodigo() << endl;
+    cout << "Cï¿½digo de Verificaï¿½ï¿½o do Cartï¿½o: " << cv1.pegaCodigo() << endl;
+    cout << "Cï¿½digo do Jogo: " << cj1.pegaCodigo() << endl;
+    cout << "Cï¿½digo do Ingresso: " << ci1.pegaCodigo() << endl;
     cout << "Estado: " << e1.pegaEstado() << endl;
-    cout << "Número do Cartão de Crédito: " << nc1.pegaNumCartao() << endl;
+    cout << "Nï¿½mero do Cartï¿½o de Crï¿½dito: " << nc1.pegaNumCartao() << endl;
     cout << "Validade: " << v1.pegaValidade() << endl;
     cout << "Nome do Jogo: " << nj1.pegaNome() << endl;
     cout << "Cidade: " << cdd1.pegaNome() << endl;
@@ -179,21 +152,27 @@ int main()
     //cout << endl << endl;
 
     /*
-    //!Impressão de Partida
+    //!Impressï¿½o de Partida
     part.imprimePartida();
 
-    //!Impressão de Usuário
+    //!Impressï¿½o de Usuï¿½rio
     usr.imprimeUsuario();
+    //!Inserï¿½ao dos dados de usuï¿½rio no Banco de dados
+    bancoDeDados.insereDado(bancoDeDados.queryInsertUsuario(usr));
 
-    //!Impressão de Jogo
+    //!Impressï¿½o de Jogo
     jog.imprimeJogo();
 
-    //!impressão de Ingresso
+    //!impressï¿½o de Ingresso
     ing.imprimeIngresso();
 
-    //!impressão de Cartão de Crédito
+    //!impressï¿½o de Cartï¿½o de Crï¿½dito
     cart.imprimeIngresso();
     */
 
+    //LEMBRETES DE Cï¿½DIGO
+
+
+    bancoDeDados.fechaBD(); //! Comando para fechar a conexï¿½o do programa com o banco de dados antes de fechar o programa
     return 0;
 }

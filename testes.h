@@ -7,6 +7,7 @@
 
 #include "dominios.h"
 #include <string>
+#include <iostream>
 
 
 /**Teste de Unidade da Classe do Domínio Data*/
@@ -360,6 +361,31 @@ class TUTipo {
     const static int FALHA   = -1;
     //!Método que para executar o teste
     int executar();
+};
+
+/** Execução de todos os Teste de Unidade do Programa */
+class TestesUnidade {
+ private:
+    //!Declaração dos Testes de Unidade dos Domínios
+    TUData testeData;
+    TUCpf testeCpf;
+    TUHorario testeHorario;
+    TUCodigo testeCodigo;
+    TUPreco testePreco;
+    TUDisp testeDisp;
+    TUSenha testeSenha;
+    TUCodVer testeCodVer;
+    TUCodJogo testeCodJogo;
+    TUCodIng testeCodIng;
+    TUEstado testeEstado;
+    TUNumCartao testeNumCartao;
+    TUValidade testeValidade;
+    TUNomeJogo testeNomeJogo;
+    TUCidade testeCidade;
+    TUTipo testeTipo;
+ public:
+     void executaTestesUnidade();
+     void imprimeExecutaTestesUnidade();
 };
 
 #endif // TESTES_H_INCLUDED
