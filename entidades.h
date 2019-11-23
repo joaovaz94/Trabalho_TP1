@@ -165,6 +165,7 @@ class Jogo {
         Cidade cidade;
         Estado estado;
         Tipo tipo;
+        Estadio estadio;
  public:
     //!Função para definir Código do Jogo
     void defineCodJogo (const CodigoJogo& cod) {

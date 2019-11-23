@@ -66,3 +66,46 @@
 1574284021 c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.h
 	<iostream>
 
+1574466414 source:c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\dominios.cpp
+	"dominios.h"
+	<sstream>
+	<stdlib.h>
+	<iostream>
+
+1574466359 c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\dominios.h
+	<string>
+	<stdexcept>
+
+1573735865 source:c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\entidades.cpp
+	"entidades.h"
+
+1573735865 c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\entidades.h
+	"dominios.h"
+	<iostream>
+
+1573735865 source:c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\testes.cpp
+	"testes.h"
+
+1573735865 c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\testes.h
+	"dominios.h"
+	<string>
+
+1574379550 source:c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\interface.cpp
+	"Interface.h"
+	<windows.h>
+	<conio.h>
+	<ctype.h>
+	<stdlib.h>
+
+1574379550 c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\interface.h
+	<iostream>
+
+1574379550 source:c:\unb\estudo\cic\técnicas de programação 1\t1\trabalho_tp1\main.cpp
+	<iostream>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
+	<string>
+	<locale.h>
+	"Interface.h"
+

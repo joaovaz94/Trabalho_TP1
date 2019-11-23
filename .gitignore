@@ -38,3 +38,5 @@ bin/
 obj/
 
 *.cbp
+
+vector_stl_modifiers.cpp
