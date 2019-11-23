@@ -40,10 +40,9 @@
 		<Unit filename="dominios.h" />
 		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.h" />
-		<Unit filename="include/Apresentacao.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="service.cpp" />
-		<Unit filename="src/Apresentacao.cpp" />
+		<Unit filename="service.h" />
 		<Unit filename="testes.cpp" />
 		<Unit filename="testes.h" />
 		<Extensions>

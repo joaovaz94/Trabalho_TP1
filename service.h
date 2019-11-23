@@ -9,6 +9,8 @@ std::vector <CartaoCredito> cartoes;
 std::vector <Jogo> jogos;
 std::vector <Partida> partidas;
 
+class Sistema;
+
 class LidarUsuario{
 
     friend class Sistema;
@@ -22,7 +24,7 @@ class LidarUsuario{
         void CadastrarUsuario(Usuario usuario, CartaoCredito cartao);
         void AutenticarUsuario(Usuario usuario);
         void DescadastrarUsuario(Usuario usuario, std::vector <Jogo> jogosUsuario);
-        Sistema.partidasJogo PesquisarJogos(Data inicio, Data termino, Cidade, Estado);
+        std::vector <Jogo> PesquisarJogos(Data inicio, Data termino, Cidade, Estado);
 
 };
 
