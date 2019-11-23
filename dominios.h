@@ -228,5 +228,12 @@ class Tipo{
         int digito;
 };
 
+class Estadio{
+    int capacidade;
+    std::string nome;
+    void validaCapacidade(int capacidade) throw(std::invalid_argument);
+
+};
+
 
 #endif // DOMINIOS_H_INCLUDED

@@ -263,8 +263,8 @@ void Disponibilidade::defineDisp (int dsp){
 }
 //!Função para validar Disponibilidade
 void Disponibilidade::validaDisp (int& dsp) throw (invalid_argument){
-    if (dsp < 0 || dsp > 300)
-        throw invalid_argument("Argumento Inválido: a disponibilidade deve ser um valor de 0 a 300");
+    if (dsp < 1000 || dsp > 100000)
+        throw invalid_argument("Argumento Inválido: a disponibilidade deve ser um valor de 1000 a 100000");
 }
 
 /**
@@ -570,4 +570,11 @@ string Tipo::stringTipo () {
                     break;
     }
     return tipo;
+}
+
+void Estadio::validaCapacidade (int capacidade) throw(std::invalid_argument){
+    if( (capacidade<1000) || (capacidade>100000) ){
+        throw(invalid_argument)("\n\n Capacidade inválida: deve ser um número entre 1000 e 100000 pessoas \n\n");
+    }
+
 }
