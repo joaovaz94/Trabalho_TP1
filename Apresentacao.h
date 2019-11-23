@@ -30,7 +30,7 @@ class Apresentacao
         void pressione_continuar();
         void flash();
 
-        //void tela_cadastro_usuario();
+        void tela_cadastro_usuario();
         void tela_usuario_autenticado();
         void tela_descadastro_usuario();
         void tela_informacoes_jogo();

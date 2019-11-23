@@ -50,7 +50,6 @@ void Apresentacao::flash() {
 
 void Apresentacao::tela_inicial() {
     char op;
-    ApresentacaoUsuario usuario;
 
         cout << "***********************************************************" << endl;
         cout << "***BEM-VINDO AO PROGRAMA DE VENDA DE INGRESSOS DE JOGOS****" << endl;
@@ -78,7 +77,7 @@ void Apresentacao::tela_inicial() {
             system("cls");
             flash();
             system("cls");
-            usuario.editar();
+            this->tela_cadastro_usuario();
         }
         else if(op=='0'){
             system("cls");
@@ -124,7 +123,7 @@ void Apresentacao::tela_login() {
 }
 
 
-/*
+
 void Apresentacao::tela_cadastro_usuario() {
     string cpf,senha,numCart,cvc,validade;
     char c;
@@ -189,8 +188,9 @@ void Apresentacao::tela_cadastro_usuario() {
         }
 
 }
-*/
 
+
+/*
 void ApresentacaoUsuario::cadastrar(){
     string cpf,senha,numCart,cvc,validade;
     char c;
@@ -255,6 +255,7 @@ void ApresentacaoUsuario::cadastrar(){
         }
 
 }
+*/
 
 void Apresentacao::tela_usuario_autenticado() {
     char op;
