@@ -25,7 +25,7 @@ int main()
     //! Definição e execução da interface do programa
     Apresentacao tui;
 
-    tui.iniciar();
+    tui.tela_inicial();
 
     /*
     //!Declaração de objetos dos Dompinios

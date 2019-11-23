@@ -3,15 +3,18 @@
 
 
 #include <iostream>
+#include "Interface.h"
 
 class Apresentacao
 {
     private:
         char operacao;
+        //ApresentacaoUsuario usuario;
+        //ApresentacaoJogo jogo;
 
     public:
         Apresentacao() {}
-        static Apresentacao& pegaInstancia() {//Singleton
+        static Apresentacao& pegaInstancia() { //Singleton
             static Apresentacao instancia;
             return instancia;
         }
@@ -19,7 +22,7 @@ class Apresentacao
         Apresentacao(Apresentacao const&) = delete;//Singleton
         void operador() = delete;//Singleton
 
-        void iniciar();
+        void tela_inicial();
         void tela_login();
         void operacao_invalida();
         void programa_encerrado();
@@ -27,7 +30,7 @@ class Apresentacao
         void pressione_continuar();
         void flash();
 
-        void tela_cadastro_usuario();
+        //void tela_cadastro_usuario();
         void tela_usuario_autenticado();
         void tela_descadastro_usuario();
         void tela_informacoes_jogo();
@@ -42,6 +45,34 @@ class Apresentacao
         void jogo_edita();
         void jogo_vendas();
 
+};
+
+class ApresentacaoUsuario: public Interface
+{
+    private:
+        Apresentacao tui;
+
+    public:
+        ApresentacaoUsuario() {}
+
+        void cadastrar();
+        //void editar();
+        //void descadastrar() ;
+        //void buscarInformacao();
+};
+
+class ApresentacaoJogo: public Interface
+{
+    private:
+        Apresentacao tui;
+
+    public:
+        ApresentacaoJogo() {}
+
+        //void cadastrar();
+        //void editar();
+        //void descadastrar();
+        //void buscarInformacao();
 };
 
 #endif // APRESENTACAO_H

@@ -48,8 +48,9 @@ void Apresentacao::flash() {
     }
 }
 
-void Apresentacao::iniciar() {
+void Apresentacao::tela_inicial() {
     char op;
+    ApresentacaoUsuario usuario;
 
         cout << "***********************************************************" << endl;
         cout << "***BEM-VINDO AO PROGRAMA DE VENDA DE INGRESSOS DE JOGOS****" << endl;
@@ -77,7 +78,7 @@ void Apresentacao::iniciar() {
             system("cls");
             flash();
             system("cls");
-            this->tela_cadastro_usuario();
+            usuario.editar();
         }
         else if(op=='0'){
             system("cls");
@@ -92,7 +93,7 @@ void Apresentacao::iniciar() {
             system("cls");
             flash();
             system("cls");
-            this->iniciar();
+            this->tela_inicial();
         }
 
 
@@ -123,6 +124,7 @@ void Apresentacao::tela_login() {
 }
 
 
+/*
 void Apresentacao::tela_cadastro_usuario() {
     string cpf,senha,numCart,cvc,validade;
     char c;
@@ -172,14 +174,14 @@ void Apresentacao::tela_cadastro_usuario() {
             cout << "##############   Pode efetuar seu login   #################" << endl;
             this->pressione_continuar();
             system("cls");
-            this->iniciar();
+            this->tela_inicial();
         }
         else if (c=='n' || c=='N'){
             cout << endl;
             cout << "*****************  Usuário Não Cadastrado *****************" << endl;
             this->pressione_continuar();
             system("cls");
-            this->iniciar();
+            this->tela_inicial();
         }
         else {
             this->operacao_invalida();
@@ -187,8 +189,72 @@ void Apresentacao::tela_cadastro_usuario() {
         }
 
 }
+*/
 
+void ApresentacaoUsuario::cadastrar(){
+    string cpf,senha,numCart,cvc,validade;
+    char c;
+    tui.cabecalho();
+    cout << "       - Forneça os Dados para Realizar o Cadastro -" << endl;
+    cout << endl;
+    cout << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "---- Cadastro:" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "   cpf: ";
+    cin >> cpf;
+    cout << endl;
+    cout << "   senha: ";
+    cin >> senha;
+    cout << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "--- Agora cadastre seu Cartão de Crédito:" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "   Número do Cartão de Crédito: ";
+    cin >> numCart;
+    cout << endl;
+    cout << "   Código de Verificação: ";
+    cin >> cvc;
+    cout << endl;
+    cout << "   Validade do Cartão: ";
+    cin >> validade;
+    system("cls");
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "--- Dados do Usuário:" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << endl;
+    cout << "   cpf: " << cpf << endl;
+    cout << "   senha: " << senha << endl;
+    cout << "   Número do Cartão: " << numCart << endl;
+    cout << "   Código de Verificação: " << cvc << endl;
+    cout << "   Validade do Cartão: " << validade << endl;
 
+        confima_cadastro_usuario:cout << "-----------------------------------------------------------" << endl;
+        cout << "------------------ Confirma Dados?  (S/N)------------------" << endl;
+        cout << "-----------------------------------------------------------" << endl;
+        cin >> c;
+        if (c=='s' || c=='S') {
+            cout << endl;
+            cout << "###############   Usuário Cadastrado   ####################" << endl;
+            cout << endl;
+            cout << "##############   Pode efetuar seu login   #################" << endl;
+            tui.pressione_continuar();
+            system("cls");
+            tui.tela_inicial();
+        }
+        else if (c=='n' || c=='N'){
+            cout << endl;
+            cout << "*****************  Usuário Não Cadastrado *****************" << endl;
+            tui.pressione_continuar();
+            system("cls");
+            tui.tela_inicial();
+        }
+        else {
+            tui.operacao_invalida();
+            goto confima_cadastro_usuario;
+        }
+
+}
 
 void Apresentacao::tela_usuario_autenticado() {
     char op;
@@ -248,7 +314,7 @@ void Apresentacao::tela_usuario_autenticado() {
             system("cls");
             flash();
             system("cls");
-            this->iniciar();
+            this->tela_inicial();
         }
         else if(op=='0'){
             system("cls");
@@ -291,7 +357,7 @@ void Apresentacao::tela_descadastro_usuario() {
             cout << "#############   Voltando à tela de Início   ###############" << endl;
             this->pressione_continuar();
             system("cls");
-            this->iniciar();
+            this->tela_inicial();
         }
         else if (c=='n' || c=='N'){
             cout << endl;
