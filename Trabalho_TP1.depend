@@ -1,10 +1,8 @@
 # depslib dependency file v1.0
-1574465466 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
-	<iostream>
+1574466438 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
 	"entidades.h"
 	"dominios.h"
 	"testes.h"
-	<string>
 	<locale.h>
 	"Interface.h"
 	"Apresentacao.h"
@@ -62,15 +60,15 @@
 1574464204 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.cpp
 	"Interface.h"
 
-1574464289 c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.h
+1574468366 c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.h
 
-1574464204 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\apresentacao.cpp
+1574466438 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\apresentacao.cpp
 	"Apresentacao.h"
 	<windows.h>
 	<conio.h>
 	<ctype.h>
 	<stdlib.h>
 
-1574464289 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\apresentacao.h
+1574466438 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\apresentacao.h
 	<iostream>
 
