@@ -2,13 +2,15 @@
 //!João Paulo Vaz Mendes - Matrícula: 170002934
 //!Lucas de Moura Quadros - Matrícula: 140150668
 
-#include <iostream>
+//#include <iostream>
 #include "entidades.h"
 #include "dominios.h"
 #include "testes.h" //!inclusão dos testes de unidade no programa
-#include <string>
+//#include <string>
 #include <locale.h>
 #include "Interface.h"
+#include "Apresentacao.h"
+
 
 using namespace std;
 
@@ -16,44 +18,14 @@ int main()
 {
     setlocale(LC_ALL,"portuguese");//!permitir a impressão de caracteres em português
 
+    //!Definição e realização dos testes de Unidade no programa
+    TestesUnidade testes;
+    testes.executaTestesUnidade();
 
-    //!Declaração dos Testes de Unidade dos Domínios
-    TUData testeData;
-    TUCpf testeCpf;
-    TUHorario testeHorario;
-    TUCodigo testeCodigo;
-    TUPreco testePreco;
-    TUDisp testeDisp;
-    TUSenha testeSenha;
-    TUCodVer testeCodVer;
-    TUCodJogo testeCodJogo;
-    TUCodIng testeCodIng;
-    TUEstado testeEstado;
-    TUNumCartao testeNumCartao;
-    TUValidade testeValidade;
-    TUNomeJogo testeNomeJogo;
-    TUCidade testeCidade;
-    TUTipo testeTipo;
+    //! Definição e execução da interface do programa
+    Apresentacao tui;
 
-    cout << endl << endl;
-
-    //!Execução dos Testes de Unidade dos Domínios
-    testeData.executar();
-    testeCpf.executar();
-    testeHorario.executar();
-    testeCodigo.executar();
-    testePreco.executar();
-    testeDisp.executar();
-    testeSenha.executar();
-    testeCodVer.executar();
-    testeCodJogo.executar();
-    testeCodIng.executar();
-    testeEstado.executar();
-    testeNumCartao.executar();
-    testeValidade.executar();
-    testeNomeJogo.executar();
-    testeCidade.executar();
-    testeTipo.executar();
+    tui.iniciar();
 
     /*
     //!Declaração de objetos dos Dompinios
@@ -83,10 +55,6 @@ int main()
     Ingresso ing;
     CartaoCredito cart;
     */
-
-    Interface tui;
-
-    tui.iniciar();
 
     /*
     string cpf = "23261322110";

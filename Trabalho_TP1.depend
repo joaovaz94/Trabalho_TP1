@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # depslib dependency file v1.0
 1569619810 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
 	<iostream>
@@ -109,3 +110,81 @@
 	<locale.h>
 	"Interface.h"
 
+=======
+# depslib dependency file v1.0
+1574465466 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
+	<iostream>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
+	<string>
+	<locale.h>
+	"Interface.h"
+	"Apresentacao.h"
+
+1569608447 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\testes.cpp
+	"testes.h"
+
+1567118493 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\usuario.cpp
+	"usuario.h"
+
+1567118493 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\usuario.h
+
+1569593802 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\dominios.cpp
+	"dominios.h"
+	<sstream>
+	<stdlib.h>
+	<iostream>
+
+1569548074 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\dominios.h
+	<string>
+	<stdexcept>
+
+1569608447 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\entidades.h
+	"dominios.h"
+
+1569608447 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\testes.h
+	"dominios.h"
+	<string>
+
+1569619372 c:\users\joao paulo\documents\tp1\trabalho_tp1\dominios.h
+	<string>
+	<stdexcept>
+
+1574353486 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\dominios.cpp
+	"dominios.h"
+	<sstream>
+	<stdlib.h>
+	<iostream>
+
+1569619810 c:\users\joao paulo\documents\tp1\trabalho_tp1\entidades.h
+	"dominios.h"
+	<iostream>
+
+1574465930 c:\users\joao paulo\documents\tp1\trabalho_tp1\testes.h
+	"dominios.h"
+	<string>
+	<iostream>
+
+1574465758 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\testes.cpp
+	"testes.h"
+
+1569619407 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\entidades.cpp
+	"entidades.h"
+
+1574464204 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.cpp
+	"Interface.h"
+
+1574464289 c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.h
+
+1574464204 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\apresentacao.cpp
+	"Apresentacao.h"
+	<windows.h>
+	<conio.h>
+	<ctype.h>
+	<stdlib.h>
+
+1574464289 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\apresentacao.h
+	<iostream>
+
+>>>>>>> Camada_de_servico
