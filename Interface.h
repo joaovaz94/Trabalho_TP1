@@ -9,7 +9,7 @@ class Interface
 {
     private:
         Apresentacao tui;
-        //SGBD bancoDeDados;
+        SGBD bancoDeDados;
 
     public:
         Interface() {}

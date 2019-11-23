@@ -24,8 +24,8 @@ int main(int argc, char** argv)
     testes.executaTestesUnidade();
 
     //!Gest�o de Banco de Dados
-    SGBD bancoDeDados;
-    bancoDeDados.criarTabelas();
+    //SGBD bancoDeDados;
+    //bancoDeDados.criarTabelas();
 
     //! Defini��o e execu��o da camada de Apresentação do programa
     //Apresentacao tui;
@@ -176,6 +176,6 @@ int main(int argc, char** argv)
     //LEMBRETES DE C�DIGO
 
 
-    bancoDeDados.fechaBD(); //! Comando para fechar a conex�o do programa com o banco de dados antes de fechar o programa
+    //bancoDeDados.fechaBD(); //! Comando para fechar a conex�o do programa com o banco de dados antes de fechar o programa
     return 0;
 }
