@@ -70,44 +70,44 @@ class SGBD
         //! Salvar sql de cria��o das tabelas (s� ocorre se a tabela n�o existir antes)
         //sql = "CREATE TABLE IF NOT EXISTS PESSOAS(ID INT PRIMARY KEY NOT NULL, NOME TEXT NOT NULL);";
         sql = ("CREATE TABLE IF NOT EXISTS Usuarios ( "
-               "cpf char(11) NOT NULL, "
+               "cpf bigint NOT NULL, "
                "senha varchar(6) NOT NULL, "
                "PRIMARY KEY(cpf)); "
 
                 "CREATE TABLE IF NOT EXISTS CartaoCredito( "
-                    "numcartao char(16) NOT NULL, "
-                    "codigoverificacao char(3) NOT NULL, "
+                    "numcartao bigint NOT NULL, "
+                    "codigoverificacao int NOT NULL, "
                     "validade char(5) NOT NULL, "
-                    "usuario_cpf char(11) REFERENCES Usuario NOT NULL, "
+                    "usuario_cpf bigint REFERENCES Usuario NOT NULL, "
                     "PRIMARY KEY(numcartao), "
                     "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf)); "
 
                 "CREATE TABLE IF NOT EXISTS Jogos( "
-                    "codigojogo char(3) NOT NULL, "
+                    "codigojogo int NOT NULL, "
                     "nomejogo varchar(40) NOT NULL, "
                     "pais varchar(15) NOT NULL, "
                     "estado char(2) NOT NULL, "
                     "cidade varchar(15) NOT NULL, "
                     "estadio varchar(30) NOT NULL, "
                     "tipo integer NOT NULL, "
-                    "usuario_cpf char(11) NOT NULL, "
+                    "usuario_cpf bigint NOT NULL, "
                     "PRIMARY KEY(codigojogo), "
                     "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf)); "
 
                 "CREATE TABLE IF NOT EXISTS Partidas( "
-                    "codigopartida char(5) NOT NULL, "
+                    "codigopartida int NOT NULL, "
                     "data char(10) NOT NULL, "
                     "horario CHAR NOT NULL, "
                     "preco double precision NOT NULL, "
                     "disponibilidade integer NOT NULL, "
-                    "jogo_codigojogo char(3) NOT NULL, "
+                    "jogo_codigojogo int NOT NULL, "
                     "PRIMARY KEY(codigopartida), "
                     "FOREIGN KEY(jogo_codigojogo) REFERENCES Jogos(codigojogo)); "
 
                 "CREATE TABLE IF NOT EXISTS Ingressos( "
-                    "codigoingresso char(5) NOT NULL, "
-                    "partida_codigopartida char(5) NOT NULL, "
-                    "usuario_cpf char(11) NOT NULL, "
+                    "codigoingresso int NOT NULL, "
+                    "partida_codigopartida int NOT NULL, "
+                    "usuario_cpf bigint, "
                     "PRIMARY KEY(codigoingresso), "
                     "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf), "
                     "FOREIGN KEY(partida_codigopartida) REFERENCES Partidas(codigopartida)); "
@@ -152,6 +152,36 @@ class SGBD
 
         confereErroBD();
     }
+
+    /**Camadas de operações no banco de dados de acordo com a UML estruturada*/
+
+    //! Cadastra Usuário
+    int insereUsuarioBD (Usuario usr, CartaoCredito cart);
+
+    //! Autentica Usuario
+    int autenticaUsuario (Usuario usr);
+
+    //! Descadastra Usuário
+    int descadastraUsuario (Usuario us);
+
+    //! Retorna Informações do Jogo
+    int informaSobreJogo (Jogo& jg, Partida& part);
+
+    //! Compra Ingressos
+    int compraIngresso (Ingresso ing, int qtd, Usuario usr);
+
+    //! Cadastra Jogo
+    int insereJogo (Jogo jg, Partida part);
+
+    //! Descadastra Jogo/Partida
+    int descadastraJogo (Jogo jg, Partida part, Usuario usr);
+
+    //! Edita Jogo/Partida
+    int editaJogo (Jogo jg, Partida part, Usuario usr);
+
+    //! Retorna Informações de Venda de Jogo
+    int informaSobreVenda (Jogo& jg, Partida& part, Usuario usr);
+
 
 };
 

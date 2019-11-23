@@ -1,19 +1,19 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
+#include "Apresentacao.h"
+#include "SGBD.h"
+#include "service.h"
+
 class Interface
 {
     private:
-        //char operacao;
+        Apresentacao tui;
+        //SGBD bancoDeDados;
 
     public:
         Interface() {}
-
-        //!Classes abstratas
-        virtual void cadastrar() = 0;
-        virtual void editar() = 0;
-        virtual void descadastrar() = 0;
-        virtual void buscarInformacao() = 0;
+        void iniciarPrograma();
 };
 
 #endif // INTERFACE_H

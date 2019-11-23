@@ -23,10 +23,17 @@ int main(int argc, char** argv)
     TestesUnidade testes;
     testes.executaTestesUnidade();
 
-    //! Defini��o e execu��o da interface do programa
-    Apresentacao tui;
+    //!Gest�o de Banco de Dados
+    SGBD bancoDeDados;
+    bancoDeDados.criarTabelas();
 
-    tui.tela_inicial();
+    //! Defini��o e execu��o da camada de Apresentação do programa
+    //Apresentacao tui;
+    //tui.tela_inicial();
+
+    //! Definição e execução da Interface do programa
+    Interface interface;
+    interface.iniciarPrograma();
 
     /*
     //!Declara��o de objetos dos Dompinios
@@ -75,10 +82,6 @@ int main(int argc, char** argv)
     double prc=30.05;
     int dsp=30;
     */
-
-    //!Gest�o de Banco de Dados
-    SGBD bancoDeDados;
-    bancoDeDados.criarTabelas();
 
     /*
     //!defini��es dos dom�nios

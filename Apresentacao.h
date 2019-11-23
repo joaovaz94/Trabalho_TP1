@@ -3,7 +3,7 @@
 
 
 #include <iostream>
-#include "Interface.h"
+//#include "Interface.h"
 
 class Apresentacao
 {
@@ -47,8 +47,8 @@ class Apresentacao
 
 };
 
-class ApresentacaoUsuario: public Interface
-{
+/*
+class ApresentacaoUsuario: public Interface {
     private:
         Apresentacao tui;
 
@@ -74,5 +74,6 @@ class ApresentacaoJogo: public Interface
         //void descadastrar();
         //void buscarInformacao();
 };
+*/
 
 #endif // APRESENTACAO_H
