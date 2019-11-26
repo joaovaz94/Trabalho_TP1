@@ -84,7 +84,7 @@ class Servicos{
         SGBD bancoDados;
 
     public:
-        void AutenticarUsuario(std::string cpf, std::string senha);
+        int AutenticarUsuario(std::string cpf, std::string senha);
         void CadastrarUsuario(std::string cpf, std::string senha, std::string numCart, std::string cvc, std::string validade);
         void DescadastrarUsuario();
         void CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, std::string cod_part, std::string data, std::string hrr, double prc, int n);

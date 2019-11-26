@@ -45,13 +45,45 @@ using namespace std;
         int s = 0;
         sql = "SELECT COUNT (*) FROM Usuarios ";
         sql += "WHERE cpf = " + usr.pegaCpf().pegaCpf() + " ";
-        sql += "AND senha = " + usr.pegaCpf().pegaCpf() + "; ";
-
+        sql += "AND senha = '" + usr.pegaSenha().pegaSenha() + "'; ";
+        cout<< sql << endl;
         //! Executar operaçãoo de criar tabela
-        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+        //op = sqlite3_exec(bd, sql.c_str(), callback, &s, &cMenssagemErro);
+        op = sqlite3_prepare_v2(bd, sql.c_str(), -1, &stmt, 0);
 
-        confereErroBD();
+        if (op) {
+            printf("Selecting data from DB Failed (err_code=%d)\n", op);
+            return -1;
+        }
 
+        // for multiple results
+        while(1)
+        {
+            // fetch a row's status
+            op = sqlite3_step(stmt);
+            cout<< op << endl;
+
+            if(op == SQLITE_ROW)
+            {
+                cout<< "s1: "<<s << endl;
+                s = (int)sqlite3_column_int(stmt, 0);
+                cout<< "s2: "<<s << endl;
+                    // or other type - sqlite3_column_text etc.
+                // ... fetch other columns, if there are any
+            }
+            else if(op == SQLITE_DONE)
+            {
+                break;
+            }
+            else
+            {
+                sqlite3_finalize(stmt);
+                printf("Some error encountered\n");
+                break;
+            }
+        }
+        //confereErroBD();
+        cout<< "s3: "<<s << endl;
         return s;//retorna s>0 se o usuário e senha estiverem corretos
     }
 

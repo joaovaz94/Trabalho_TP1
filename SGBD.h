@@ -16,6 +16,8 @@ class SGBD
     sqlite3* bd;
     //! Ponteiro de caracter para salvar Mensagem de Erro
     char *cMenssagemErro;
+    //!statement
+    sqlite3_stmt* stmt = NULL;
     //! Resultado de sa�da da opera��o do sqlite3
     int op = 0;
     int r=0; // retorno de operações no banco de dados
@@ -39,7 +41,7 @@ class SGBD
     }
 
     /*
-    static int callbackRetorno(void *count, int argc, char **argv, char **azColName) {
+    extern "C"  int callbackRetorno(void *count, int argc, char **argv, char **azColName) {
         int *c = count;
         *c = atoi(argv[0]);
         return 0;
@@ -54,18 +56,19 @@ class SGBD
         return 1;
     }
 
+
     //! M�todo para conferir erros nas opera��es
     void confereErroBD() {
         //! confere retorno da opera��o
         if(op) {
             //!mosra mensagem de erro
             std::cout << "ERRO DE BANCO DE DADOS: " << sqlite3_errmsg(bd) << std::endl;
-            r = -1;
+            //r = -1;
             //! Fecha conex�o com banco de dados depois de erro identificado
             fechaBD();
         }
-        else
-          r = 1;
+        //else
+          //r = 1;
     }
 
 
@@ -81,6 +84,7 @@ class SGBD
 
     //!M�todo para fechar a conex�o com o Banco de dados
     void fechaBD() {
+        sqlite3_finalize(stmt);
         sqlite3_close(bd);
     }
 
@@ -204,6 +208,9 @@ class SGBD
 
     //!Quantidade de INgressos já vendidos
     int qtdPartidasJogo (Jogo jg);
+
+
+
 
     //! Edita Jogo/Partida
     int editaJogo (Jogo jg, Usuario usr);

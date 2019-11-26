@@ -125,20 +125,28 @@ void Apresentacao::tela_login() {
     cout << "   cpf: " << cpf << endl;
     cout << "   senha: " << senha << endl;
 
-    servicos.AutenticarUsuario(cpf,senha);
-
-    //servicos.AutenticarUsuario(string cpf, string senha);
+    int r = servicos.AutenticarUsuario(cpf,senha);
 
     /*serviço
     usr.defineCpf(cpf);
     usr.defineSenha(senha);
     */
+    if(r>0){
+        system("cls");
+        flash();
+        system("cls");
+        cout << "*****************  Login não efetuado *****************" << endl;
+        this->pressione_continuar();
+        this->tela_usuario_autenticado();
+    }
 
-    //Se bem sucedido
-    system("cls");
-    flash();
-    system("cls");
-    this->tela_usuario_autenticado();
+    else {
+            cout << endl;
+            cout << "*****************  Login não efetuado *****************" << endl;
+            this->pressione_continuar();
+            system("cls");
+            this->tela_inicial();
+    }
 }
 
 
