@@ -233,7 +233,8 @@ using namespace std;
         sql += "SELECT count(*) AS 'Quantidade de Ingressos da Partida Comprados' ";
         sql += "FROM Ingressos i, Partidas p ";
         sql += "WHERE i.usuario_cpf is not null ";
-        sql += "AND i.partida_codigopartida = " + part.pegaCodigo().pegaCodigo() + "; ";
+        sql += "AND i.partida_codigopartida = (SELECT codigopartida From Partidas "
+        sql += "WHERE jogo_codigojogo = "+ part.pegaCodigo().pegaCodigo() + "); ";
         sql += "AND p.jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
         //query para retornar os cpfs dos compradores
         sql += "SELECT i.usuario_cpf AS 'CPFs dos compradores'  ";
