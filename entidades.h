@@ -207,6 +207,14 @@ class Jogo {
     Tipo pegaTipo() const {
         return tipo;
     }
+        //!Função para definir Estádio do Jogo
+    void defineEstadio (const Estadio& est) {
+        this->estadio = est;
+    }
+    //!Função para retornar Estádio do Jogo
+    Estadio pegaEstadio() const {
+        return estadio;
+    }
     //!Função para imprimir informações de Jogo
     void imprimeJogo() {
             std::cout <<"\t== Jogo Definido ==" << std::endl;

@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+#include "SGBD.h"
 
 class Apresentacao
 {
@@ -21,7 +22,7 @@ class Apresentacao
         Apresentacao(Apresentacao const&) = delete;//Singleton
         void operador() = delete;//Singleton
 
-        void tela_inicial();
+        char tela_inicial();
         void tela_login();
         void operacao_invalida();
         void programa_encerrado();

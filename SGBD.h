@@ -18,6 +18,7 @@ class SGBD
     char *cMenssagemErro;
     //! Resultado de sa�da da opera��o do sqlite3
     int op = 0;
+    int r=0; // retorno de operações no banco de dados
     //! SQL salvo
     std::string sql;
 
@@ -43,10 +44,12 @@ class SGBD
         if(op) {
             //!mosra mensagem de erro
             std::cout << "ERRO DE BANCO DE DADOS: " << sqlite3_errmsg(bd) << std::endl;
-
+            r = -1;
             //! Fecha conex�o com banco de dados depois de erro identificado
             fechaBD();
         }
+        else
+          r = 1;
     }
 
 
@@ -55,7 +58,7 @@ class SGBD
     //! Construtor da classe / abre a conex�o com o banco de dados
     SGBD(){
         //!Salva o resultado da opera��o de abertura do banco de dados
-        op = sqlite3_open("codigoteste.db", &bd);
+        op = sqlite3_open("bancotrabalho.db", &bd);
         //! Confere se houve erro
         confereErroBD();
     }
@@ -76,7 +79,7 @@ class SGBD
 
                 "CREATE TABLE IF NOT EXISTS CartaoCredito( "
                     "numcartao bigint NOT NULL, "
-                    "codigoverificacao int NOT NULL, "
+                    "codigoverificacao char(3) NOT NULL, "
                     "validade char(5) NOT NULL, "
                     "usuario_cpf bigint REFERENCES Usuario NOT NULL, "
                     "PRIMARY KEY(numcartao), "
@@ -85,7 +88,6 @@ class SGBD
                 "CREATE TABLE IF NOT EXISTS Jogos( "
                     "codigojogo int NOT NULL, "
                     "nomejogo varchar(40) NOT NULL, "
-                    "pais varchar(15) NOT NULL, "
                     "estado char(2) NOT NULL, "
                     "cidade varchar(15) NOT NULL, "
                     "estadio varchar(30) NOT NULL, "
@@ -96,8 +98,8 @@ class SGBD
 
                 "CREATE TABLE IF NOT EXISTS Partidas( "
                     "codigopartida int NOT NULL, "
-                    "data char(10) NOT NULL, "
-                    "horario CHAR NOT NULL, "
+                    "data date NOT NULL, "
+                    "horario CHAR(5) NOT NULL, "
                     "preco double precision NOT NULL, "
                     "disponibilidade integer NOT NULL, "
                     "jogo_codigojogo int NOT NULL, "
@@ -153,6 +155,8 @@ class SGBD
         confereErroBD();
     }
 
+
+
     /**Camadas de operações no banco de dados de acordo com a UML estruturada*/
 
     //! Cadastra Usuário
@@ -168,10 +172,10 @@ class SGBD
     int informaSobreJogo (Jogo& jg, Partida& part);
 
     //! Compra Ingressos
-    int compraIngresso (Ingresso ing, int qtd, Usuario usr);
+    int compraIngresso (Ingresso ing, int qtd, Usuario usr, Partida part);
 
     //! Cadastra Jogo
-    int insereJogo (Jogo jg, Partida part);
+    int insereJogo (Jogo jg, Partida part, Usuario usr);
 
     //! Descadastra Jogo/Partida
     int descadastraJogo (Jogo jg, Partida part, Usuario usr);

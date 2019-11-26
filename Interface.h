@@ -10,10 +10,13 @@ class Interface
     private:
         Apresentacao tui;
         SGBD bancoDeDados;
+        char operacao;
 
     public:
         Interface() {}
         void iniciarPrograma();
+        void operacaoInicial(char opr);
+        void operacaoCadastro();
         void fecharPrograma();
 };
 

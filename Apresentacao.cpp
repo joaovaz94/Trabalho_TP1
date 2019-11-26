@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include "entidades.h"
 
 using namespace std;
 
@@ -48,7 +49,7 @@ void Apresentacao::flash() {
     }
 }
 
-void Apresentacao::tela_inicial() {
+char Apresentacao::tela_inicial() {
     char op;
 
         cout << "***********************************************************" << endl;
@@ -67,6 +68,8 @@ void Apresentacao::tela_inicial() {
         cout << "   Operação:";
         cin >> op;
 
+        return op;
+/*
         if(op=='1'){
             system("cls");
             flash();
@@ -94,12 +97,16 @@ void Apresentacao::tela_inicial() {
             system("cls");
             this->tela_inicial();
         }
-
+*/
 
 }
 
 void Apresentacao::tela_login() {
-    string cpf="",senha="";
+    string cpf,senha;
+    /*serviço
+    Usuario usr;
+    CartaoCredito cart;
+    */
     this->cabecalho();
     cout << "           - Para fazer operações faça o Login -" << endl;
     cout << endl;
@@ -115,6 +122,11 @@ void Apresentacao::tela_login() {
     cout << "   cpf: " << cpf << endl;
     cout << "   senha: " << senha << endl;
 
+    /*serviço
+    usr.defineCpf(cpf);
+    usr.defineSenha(senha);
+    */
+
     //Se bem sucedido
     system("cls");
     flash();
@@ -126,6 +138,15 @@ void Apresentacao::tela_login() {
 
 void Apresentacao::tela_cadastro_usuario() {
     string cpf,senha,numCart,cvc,validade;
+    /*serviço
+    Usuario usr;
+    Cpf c1;
+    Senha s1;
+    CartaoCredito cart;
+    NumCartao n1;
+    CodigoVerificacao cv1;
+    Validade v1;
+    //serviço */
     char c;
     this->cabecalho();
     cout << "       - Forneça os Dados para Realizar o Cadastro -" << endl;
@@ -168,6 +189,22 @@ void Apresentacao::tela_cadastro_usuario() {
         cin >> c;
         if (c=='s' || c=='S') {
             cout << endl;
+
+            /*Serviço
+            c1.defineCpf(cpf);
+            usr.defineCpf(c1);
+            s1.defineSenha(senha);
+            usr.defineSenha(s1);
+            n1.defineNumCartao(numCart);
+            cart.defineNumCartao(n1);
+            cv1.defineCodigo(cvc);
+            cart.defineCodVer(cv1);
+            v1.defineValidade(validade);
+            cart.defineValidade(v1);
+            //BD
+
+            //Serviço*/
+
             cout << "###############   Usuário Cadastrado   ####################" << endl;
             cout << endl;
             cout << "##############   Pode efetuar seu login   #################" << endl;
