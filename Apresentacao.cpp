@@ -4,6 +4,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include "entidades.h"
+#include "service.h"
+
+Servicos servicos;
 
 using namespace std;
 
@@ -122,6 +125,10 @@ void Apresentacao::tela_login() {
     cout << "   cpf: " << cpf << endl;
     cout << "   senha: " << senha << endl;
 
+    servicos.AutenticarUsuario(cpf,senha);
+
+    //servicos.AutenticarUsuario(string cpf, string senha);
+
     /*serviço
     usr.defineCpf(cpf);
     usr.defineSenha(senha);
@@ -204,7 +211,7 @@ void Apresentacao::tela_cadastro_usuario() {
             //BD
 
             //Serviço*/
-
+            servicos.CadastrarUsuario(cpf,senha,numCart,cvc,validade);
             cout << "###############   Usuário Cadastrado   ####################" << endl;
             cout << endl;
             cout << "##############   Pode efetuar seu login   #################" << endl;
@@ -684,7 +691,8 @@ void Apresentacao::tela_informacoes_venda(){
 }
 
 void Apresentacao::tela_cadastro_jogo(){
-    string cod_jg,Nome,cod_ing,data,hrr,prc,estadio,cidade,estado;
+    string cod_jg,Nome,cod_part,data,hrr,estadio,cidade,estado;
+    double prc;
     int n;
     char c;
     this->cabecalho();
@@ -717,8 +725,8 @@ void Apresentacao::tela_cadastro_jogo(){
     for(int i=0;i<n;i++) {
         cout << "       - Dados da Partida " << (i+1) <<" -" << endl;
         cout << endl;
-        cout << "   Código do Ingresso da Partida " <<  (i+1) <<": ";
-        cin >> cod_ing;
+        cout << "   Código da Partida " <<  (i+1) <<": ";
+        cin >> cod_part;
         cout << endl;
         cout << "   Data da Partida " <<  (i+1) <<": ";
         cin >> data;
@@ -729,6 +737,9 @@ void Apresentacao::tela_cadastro_jogo(){
         cout << "   Preço do Ingreço da Partida " <<  (i+1) <<": ";
         cin >> prc;
         cout << endl;
+
+        servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,cod_part,data,hrr,prc);
+
     }
     system("cls");
     cout << "-----------------------------------------------------------" << endl;
@@ -747,7 +758,7 @@ void Apresentacao::tela_cadastro_jogo(){
     for(int i=0;i<n;i++) {
         cout << endl;
         cout << "   --- Partida " <<  (i+1) <<": " << endl;
-        cout << "   Código do Ingresso da Partida " <<  (i+1) <<": " << cod_ing << endl;
+        cout << "   Código da Partida " <<  (i+1) <<": " << cod_part << endl;
         cout << "   Data da Partida " <<  (i+1) <<": " << data << endl;
         cout << "   Horário da Partida " <<  (i+1) <<": " << hrr << endl;
         cout << "   Preço do Ingreço da Partida " <<  (i+1) <<": " << prc << endl;

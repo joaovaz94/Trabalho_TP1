@@ -3,7 +3,9 @@
 
 #include "entidades.h"
 #include <vector>
+#include "SGBD.h"
 
+/*
 struct CartaoCreditoBD{
     std::string num;
     std::string codigoVerificacao;
@@ -63,6 +65,7 @@ class BancoDados{
         void Excluir(Jogo);
         void Editar(Jogo);
 };
+*/
 
 class Servicos{
     public:
@@ -78,15 +81,18 @@ class Servicos{
     private:
         Usuario usuario;
         Jogo jogo;
-        void CadastrarJogo();
-        void EditarJogo();
-        void DescadastrarJogo();
+        SGBD bancoDados;
 
     public:
-        void GerenciarJogo(CodigoJogo);
-        std::vector <Ingresso> ComprarIngresso(Codigo, int qtdIngComp);
-        std::vector <Jogo> ConsultaJogos(Data inicio, Data termino, Cidade, Estado);
-        void InfoVenda();
+        void AutenticarUsuario(std::string cpf, std::string senha);
+        void CadastrarUsuario(std::string cpf, std::string senha, std::string numCart, std::string cvc, std::string validade);
+        void DescadastrarUsuario();
+        void CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, std::string cod_part, std::string data, std::string hrr, double prc);
+        void EditarJogo(std::string cod_jg);
+        void DescadastrarJogo(std::string cod_jg);
+        void ComprarIngressos(std::string cod, int qtdIngComp);
+        void ConsultaJogos(std::string data_inicio, std::string data_termino, std::string cidade, std::string estado);
+        void InfoVenda(std::string cod_jg);
 };
 
 
