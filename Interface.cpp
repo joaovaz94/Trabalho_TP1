@@ -43,7 +43,7 @@ void Interface::operacaoInicial(char op) {
 }
 
 void Interface::operacaoCadastro() {
-
+    //tui.tela_cadastro_usuario();
 }
 
 void Interface::fecharPrograma() {

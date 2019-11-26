@@ -41,23 +41,26 @@ using namespace std;
 
     //! Autentica Usuario
     int SGBD::autenticaUsuario (Usuario usr){
-        r = 0;
+        int s = 0;
         sql = "SELECT COUNT (*) FROM Usuarios ";
         sql += "WHERE cpf = " + usr.pegaCpf().pegaCpf() + " ";
         sql += "AND senha = " + usr.pegaCpf().pegaCpf() + "; ";
 
         //! Executar operaçãoo de criar tabela
-        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &r, &cMenssagemErro);
+        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
 
         confereErroBD();
 
-        return r;//retorna r>0 se o usuário e senha estiverem corretos
+        return s;//retorna s>0 se o usuário e senha estiverem corretos
     }
 
     //! Descadastra Usuário
     int SGBD::descadastraUsuario (Usuario us){;
-        sql = ("DELETE FROM 'Usuarios' WHERE cpf = " + us.pegaCpf().pegaCpf() + " ; ");
-        sql += ("DELETE FROM 'CartaoCredito' WHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + " ; ");
+        sql = ("DELETE FROM Usuarios WHERE cpf = " + us.pegaCpf().pegaCpf() + " ; ");
+        sql += ("DELETE FROM CartaoCredito WHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + " ; ");
+        sql += ("DELETE FROM Jogos WHERE usuario_cpf = '" + us.pegaCpf().pegaCpf() + "'; ");
+        sql += ("DELETE FROM Partidas WHERE jogo_codigojogo = ");
+        sql += ("(SELECT codigojogo FROM Jogos wHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + "); ");
 
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
@@ -68,14 +71,14 @@ using namespace std;
     }
 
     //! Retorna Informações do Jogo
-    int SGBD::informaSobreJogo (Jogo& jg, Partida& part){
+    int SGBD::informaSobreJogo (Cidade cid, Estado est, Data dt1, Data dt2){
         sql = "SELECT j.nomejogo, p.codigopartida, p.data, p.horario, p.preco, j.estadio, p.disponibilidade ";
         sql += "FROM Jogos j, Partidas p ";
-        sql += "WHERE j.codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ";
-        sql += "AND j.codigojogo = p.jogo_codigojogo ";
-        sql += "AND j.nomejogo = '" + jg.pegaNomeJogo().pegaNome() + "' ";
-        sql += "AND j.cidade = '" + jg.pegaCidade().pegaNome() + "' ";
-        sql += "AND p.data BETWEEN '" + part.pegaData().viraStringDB() + "' AND '" + part.pegaData().viraStringDB() + "'; "; // Definir como passar datas diferente !!
+        //sql += "WHERE j.codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ";
+        sql += "WHERE j.codigojogo = p.jogo_codigojogo ";
+        sql += "AND j.nomejogo = '" + est.pegaEstado() + "' ";
+        sql += "AND j.cidade = '" + cid.pegaNome() + "' ";
+        sql += "AND p.data BETWEEN '" + dt1.viraStringDB() + "' AND '" + dt2.viraStringDB() + "'; "; // Definir como passar datas diferente !!
 
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), callback, 0, &cMenssagemErro);
@@ -110,37 +113,59 @@ using namespace std;
         return r;
     }
 
-    //! Cadastra Jogo
-    int SGBD::insereJogo (Jogo jg, Partida part, Usuario usr){
+    //!Confere se Usuário tem número máximo de jogos
+    int SGBD::ConfereMaxJogo (Usuario usr) {
+        int s = 0;
+        sql = "SELECT COUNT (*) FROM Jogos ";
+        sql += "WHERE usuario_cpf = " + usr.pegaCpf().pegaCpf() + "; ";
 
-        sql = "INSERT INTO Jogos VALUES (";
-        sql += " " + jg.pegaCodJogo().pegaCodigo() + " , ";
-        sql += "'" + jg.pegaNomeJogo().pegaNome() + "', ";
-        sql += "'" + jg.pegaEstado().pegaEstado() + "', ";
-        sql += "'" + jg.pegaCidade().pegaNome() + "', ";
-        sql += "'" + jg.pegaEstadio().pegaNome() + "', ";
-        sql += " " +  to_string(jg.pegaTipo().pegaTipo() ) + " , ";
-        sql += " " + usr.pegaCpf().pegaCpf() + " ) ";
-        sql += "INSERT INTO Partidas VALUES (";
-        sql += " " + part.pegaCodigo().pegaCodigo() + " , ";
-        sql += "'" + part.pegaData().viraStringDB() + "', ";
-        sql += "'" + part.pegaHorario().viraString() + "', ";
-        sql += " " + to_string(part.pegaPreco().pegaPreco() ) + " , ";
-        sql += "'" + to_string(part.pegaDisp().pegaDisp() ) + "', ";
-        sql += " " + jg.pegaCodJogo().pegaCodigo() + " ) ";
-
-        //! Executar operaçãoo no banco de dados
-        op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
+        //! Executar operaçãoo de criar tabela
+        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
 
         confereErroBD();
 
-        return r;
+        return s;//retorna s>0 se o usuário e senha estiverem corretos
+
+    }
+
+    //! Cadastra Jogo
+    int SGBD::insereJogo (Jogo jg, Partida part, Usuario usr){
+        int i = ConfereMaxJogo(usr);
+        if(i <= 4 ) {
+            sql = "INSERT INTO Jogos VALUES (";
+            sql += " " + jg.pegaCodJogo().pegaCodigo() + " , ";
+            sql += "'" + jg.pegaNomeJogo().pegaNome() + "', ";
+            sql += "'" + jg.pegaEstado().pegaEstado() + "', ";
+            sql += "'" + jg.pegaCidade().pegaNome() + "', ";
+            sql += "'" + jg.pegaEstadio().pegaNome() + "', ";
+            sql += " " +  to_string(jg.pegaTipo().pegaTipo() ) + " , ";
+            sql += " " + usr.pegaCpf().pegaCpf() + " ) ";
+            sql += "INSERT INTO Partidas VALUES (";
+            sql += " " + part.pegaCodigo().pegaCodigo() + " , ";
+            sql += "'" + part.pegaData().viraStringDB() + "', ";
+            sql += "'" + part.pegaHorario().viraString() + "', ";
+            sql += " " + to_string(part.pegaPreco().pegaPreco() ) + " , ";
+            sql += "'" + to_string(part.pegaDisp().pegaDisp() ) + "', ";
+            sql += " " + jg.pegaCodJogo().pegaCodigo() + " ) ";
+
+            //! Executar operaçãoo no banco de dados
+            op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
+
+            confereErroBD();
+            return r;
+        }
+        else {
+            cout << "Jogo não Cadastrado!! Usuário excedeu o limite de 5 jogos a serem cadastrados " << endl;
+            r = -1;
+            return r;
+        }
     }
 
     //! Descadastra Jogo/Partida
     int SGBD::descadastraJogo (Jogo jg, Partida part, Usuario usr){
-        sql = ("DELETE FROM 'Jogos' WHERE codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
-        sql += ("DELETE FROM 'Partidas' WHERE jogo_codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
+        sql = ("DELETE FROM Jogos WHERE codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
+        sql += ("DELETE FROM Partidas WHERE jogo_codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
+
 
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
