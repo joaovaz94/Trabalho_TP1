@@ -629,6 +629,7 @@ void Apresentacao::tela_gerenciar_jogos(){
 }
 
 void Apresentacao::tela_informacoes_venda(){
+    string cod_jg;
     char op;
     string dado="dado - exemplo";
     int n=5;
@@ -641,6 +642,9 @@ void Apresentacao::tela_informacoes_venda(){
     cout << endl;
     // Função para Pesquisar jogos associados ao usuário !!!
     cout << endl;
+    cout << "\n\nDigite o código do jogo para obter informações sobre as vendas:\n\n";
+    servicos.InfoVenda(cod_jg);
+    /*
     if(n>0) {
         for(int i=0;i<n;i++){
             cout << "   Código: " << dado << " - Nome: " << dado << endl;
@@ -690,7 +694,7 @@ void Apresentacao::tela_informacoes_venda(){
         flash();
         system("cls");
         this->tela_gerenciar_jogos();
-    }
+    }*/
 
 }
 
@@ -801,6 +805,7 @@ void Apresentacao::tela_cadastro_jogo(){
 }
 
 void Apresentacao::tela_edita_jogo(){
+    string cod_jg;
     char op;
     string dado="dado - exemplo";
     int n=2;
@@ -811,6 +816,10 @@ void Apresentacao::tela_edita_jogo(){
     cout << endl;
     cout << "           - Escolha um dos Jogos cadastrados: -" << endl;
     cout << endl;
+    cout << "\n\n Digite o código do jogo a ser editado \n\n";
+    cin >> cod_jg;
+    servicos.EditarJogo(cod_jg);
+    /*
     // Função para Pesquisar jogos associados ao usuário !!!
     cout << endl;
     if(n>0) {
@@ -862,10 +871,11 @@ void Apresentacao::tela_edita_jogo(){
         flash();
         system("cls");
         this->tela_gerenciar_jogos();
-    }
+    }*/
 }
 
 void Apresentacao::tela_descadastro_jogo(){
+    string cod_jg;
     char op;
     string dado="dado - exemplo";
     int n=3;
@@ -878,6 +888,10 @@ void Apresentacao::tela_descadastro_jogo(){
     cout << endl;
     // Função para Pesquisar jogos associados ao usuário !!!
     cout << endl;
+    cout << "\n\nDigite o código do jogo a ser descadastrado:\n\n";
+    cin >> cod_jg;
+    servicos.DescadastrarJogo(cod_jg);
+    /*
     if(n>0) {
         for(int i=0;i<n;i++){
             cout << "   Código: " << dado << " - Nome: " << dado << endl;
@@ -927,7 +941,7 @@ void Apresentacao::tela_descadastro_jogo(){
         flash();
         system("cls");
         this->tela_gerenciar_jogos();
-    }
+    }*/
 
 }
 
