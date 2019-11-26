@@ -46,7 +46,7 @@ using namespace std;
         sql = "SELECT COUNT (*) FROM Usuarios ";
         sql += "WHERE cpf = " + usr.pegaCpf().pegaCpf() + " ";
         sql += "AND senha = '" + usr.pegaSenha().pegaSenha() + "'; ";
-        cout<< sql << endl;
+        //cout<< sql << endl;
         //! Executar operaçãoo de criar tabela
         //op = sqlite3_exec(bd, sql.c_str(), callback, &s, &cMenssagemErro);
         op = sqlite3_prepare_v2(bd, sql.c_str(), -1, &stmt, 0);
@@ -61,13 +61,13 @@ using namespace std;
         {
             // fetch a row's status
             op = sqlite3_step(stmt);
-            cout<< op << endl;
+            //cout<< op << endl;
 
             if(op == SQLITE_ROW)
             {
-                cout<< "s1: "<<s << endl;
+                //cout<< "s1: "<<s << endl;
                 s = (int)sqlite3_column_int(stmt, 0);
-                cout<< "s2: "<<s << endl;
+                //cout<< "s2: "<<s << endl;
                     // or other type - sqlite3_column_text etc.
                 // ... fetch other columns, if there are any
             }
@@ -83,7 +83,7 @@ using namespace std;
             }
         }
         //confereErroBD();
-        cout<< "s3: "<<s << endl;
+        //cout<< "s3: "<<s << endl;
         return s;//retorna s>0 se o usuário e senha estiverem corretos
     }
 
@@ -109,10 +109,10 @@ using namespace std;
         sql += "FROM Jogos j, Partidas p ";
         //sql += "WHERE j.codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ";
         sql += "WHERE j.codigojogo = p.jogo_codigojogo ";
-        sql += "AND j.nomejogo = '" + est.pegaEstado() + "' ";
+        sql += "AND j.estado = '" + est.pegaEstado() + "' ";
         sql += "AND j.cidade = '" + cid.pegaNome() + "' ";
         sql += "AND p.data BETWEEN '" + dt1.viraStringDB() + "' AND '" + dt2.viraStringDB() + "'; "; // Definir como passar datas diferente !!
-
+        //cout << sql << endl;
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), callback, 0, &cMenssagemErro);
 

@@ -66,7 +66,7 @@ int Servicos::AutenticarUsuario(std::string cpf, std::string senha){
         }
     }
     */
-    cout << r << endl;
+    //cout << r << endl;
     return r;
 }
 

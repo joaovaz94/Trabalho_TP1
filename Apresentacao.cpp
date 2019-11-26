@@ -132,9 +132,7 @@ void Apresentacao::tela_login() {
     usr.defineSenha(senha);
     */
     if(r>0){
-        system("cls");
-        flash();
-        system("cls");
+        cout << endl << endl;
         cout << "*****************  Login Efetuado!! *****************" << endl;
         this->pressione_continuar();
         system("cls");
@@ -145,7 +143,7 @@ void Apresentacao::tela_login() {
 
     else {
             cout << endl;
-            cout << "*****************  Login não efetuado *****************" << endl;
+            cout << "********************  Login não efetuado ********************" << endl;
             this->pressione_continuar();
             system("cls");
             this->tela_inicial();
@@ -470,17 +468,21 @@ void Apresentacao::tela_informacoes_jogo(){
         cout << "-----------------------------------------------------------" << endl;
         cin >> c;
         if (c=='s' || c=='S') {
-            servicos.ConsultaJogos(data_inicio,data_termino,cidade,estado);
+
             cout << endl;
             cout << "######################   Buscando   #######################" << endl;
             //função buscando jogos !!!
+
             this->pressione_continuar();
 
             system("cls");
             cout << "-----------------------------------------------------------" << endl;
             cout << "--- Jogos Encontrados: " << endl;
             cout << "-----------------------------------------------------------" << endl;
+            cout << endl << endl;
             // Função para retornar jogos!!!
+            servicos.ConsultaJogos(data_inicio,data_termino,cidade,estado);
+            cout << endl << endl;
             cout << "##########   Voltando às Operações do Usuário   ###########" << endl;
             this->pressione_continuar();
             system("cls");
