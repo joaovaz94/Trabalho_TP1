@@ -137,9 +137,42 @@ using namespace std;
         sql += "WHERE partida_codigopartida = " + part.pegaCodigo().pegaCodigo() + "; ";
 
         //! Executar operaçãoo de criar tabela
-        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+        //op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+        op = sqlite3_prepare_v2(bd, sql.c_str(), -1, &stmt, 0);
 
-        confereErroBD();
+        if (op) {
+            printf("Selecting data from DB Failed (err_code=%d)\n", op);
+            return -1;
+        }
+
+        // for multiple results
+        while(1)
+        {
+            // fetch a row's status
+            op = sqlite3_step(stmt);
+            //cout<< op << endl;
+
+            if(op == SQLITE_ROW)
+            {
+                //cout<< "s1: "<<s << endl;
+                s = (int)sqlite3_column_int(stmt, 0);
+                //cout<< "s2: "<<s << endl;
+                    // or other type - sqlite3_column_text etc.
+                // ... fetch other columns, if there are any
+            }
+            else if(op == SQLITE_DONE)
+            {
+                break;
+            }
+            else
+            {
+                sqlite3_finalize(stmt);
+                printf("Some error encountered\n");
+                break;
+            }
+        }
+        //cout<< "s3: "<<s << endl;
+        //confereErroBD();
 
         return s;//retorna s>0 se o usuário e senha estiverem corretos
     }
@@ -148,11 +181,13 @@ using namespace std;
     int SGBD::compraIngresso (Usuario usr, Partida part, int qtd){
         //query para registrar ingressos comprados com cpf do usuário
         int cod = qtdIngressosVendidos(part);
+        sql = "";
         for (int i=0;i<qtd;i++) {
-            sql = "INSERT INTO Ingressos (codigoingresso, partida_codigopartida, usuario_cpf) ";
-            sql += "VALUES ('" + to_string(cod+1) + "','" + part.pegaCodigo().pegaCodigo() + "','" + usr.pegaCpf().pegaCpf() + "'); ";
+            sql += "INSERT INTO Ingressos (codigoingresso, partida_codigopartida, usuario_cpf) ";
+            sql += "VALUES ('" + part.pegaCodigo().pegaCodigo() + to_string(cod=cod+1) + "','" + part.pegaCodigo().pegaCodigo() + "','" + usr.pegaCpf().pegaCpf() + "'); ";
             //mudar código do ingresso!!!
         }
+        //cout << sql << endl;
         //! Executar operaçãoo de criar tabela
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 
@@ -162,8 +197,9 @@ using namespace std;
         sql = "SELECT codigoingresso FROM Ingressos ";
         sql += "WHERE partida_codigopartida = " + part.pegaCodigo().pegaCodigo() + " ";
         sql += "AND usuario_cpf = " + usr.pegaCpf().pegaCpf() + "; ";
+        //cout << sql << endl;
         //! Executar operaçãoo de criar tabela
-        op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
+        op = sqlite3_exec(bd, sql.c_str(), callback, 0, &cMenssagemErro);
 
         confereErroBD();
 

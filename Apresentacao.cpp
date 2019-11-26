@@ -521,7 +521,7 @@ void Apresentacao::tela_comprar_ingresso(){
     cout << "   Código da Partida: ";
     cin >> cod;
     cout << endl;
-    cout << "   Qunatidade de Ingressos: ";
+    cout << "   Quantidade de Ingressos: ";
     cin >> qtd;
 
     system("cls");
@@ -537,18 +537,19 @@ void Apresentacao::tela_comprar_ingresso(){
         cout << "-----------------------------------------------------------" << endl;
         cin >> c;
         if (c=='s' || c=='S') {
-            servicos.ComprarIngressos(cod,qtd);
-            cout << endl;
-            cout << "######################   Comprando   ######################" << endl;
-            //função gerando Ingressos !!!
-            this->pressione_continuar();
 
             system("cls");
+            cout << endl;
+            cout << "######################   Comprando   ######################" << endl;
+            cout << endl << endl;
             cout << "-----------------------------------------------------------" << endl;
             cout << "--- Ingressos Comprados: " << endl;
             cout << "-----------------------------------------------------------" << endl;
-            // Função para retornar jogos!!!
-            // Função para alterar disponibilidade!!!
+            //!função gerando Ingressos e retornando os códigos
+            servicos.ComprarIngressos(cod,qtd);
+            //this->pressione_continuar();
+
+            cout << endl << endl;
             cout << "##########   Voltando às Operações do Usuário   ###########" << endl;
             this->pressione_continuar();
             system("cls");
@@ -643,9 +644,9 @@ void Apresentacao::tela_gerenciar_jogos(){
 
 void Apresentacao::tela_informacoes_venda(){
     string cod_jg;
-    char op;
+    //char op;
     string dado="dado - exemplo";
-    int n=5;
+    //n = 5;
     this->cabecalho();
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Informações de Vendas dos Jogos:" << endl;
