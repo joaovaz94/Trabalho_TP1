@@ -135,8 +135,11 @@ void Apresentacao::tela_login() {
         system("cls");
         flash();
         system("cls");
-        cout << "*****************  Login não efetuado *****************" << endl;
+        cout << "*****************  Login Efetuado!! *****************" << endl;
         this->pressione_continuar();
+        system("cls");
+        flash();
+        system("cls");
         this->tela_usuario_autenticado();
     }
 
