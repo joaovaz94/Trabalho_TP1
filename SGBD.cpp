@@ -111,7 +111,16 @@ using namespace std;
         sql += "WHERE j.codigojogo = p.jogo_codigojogo ";
         sql += "AND j.estado = '" + est.pegaEstado() + "' ";
         sql += "AND j.cidade = '" + cid.pegaNome() + "' ";
-        sql += "AND p.data BETWEEN '" + dt1.viraStringDB() + "' AND '" + dt2.viraStringDB() + "'; "; // Definir como passar datas diferente !!
+        sql += "AND p.data BETWEEN '" + dt1.viraStringDB() + "' AND '" + dt2.viraStringDB() + "'; ";
+        /*
+        sql += "SELECT codigopartida, data, horario, preco, disponibilidade ";
+        sql += "FROM Partidas WHERE jogo_codigojogo = ";
+        sql += "(select j.codigojogo FROM Jogos j, Partidas p ";
+        sql += "WHERE j.estado = '" + est.pegaEstado() + "' ";
+        sql += "AND j.cidade = '" + cid.pegaNome() + "' ";
+        sql += "AND p.data BETWEEN '" + dt1.viraStringDB() + "' AND '" + dt2.viraStringDB() + "')  ";
+        sql += "AND data BETWEEN '" + dt1.viraStringDB()  +"' AND '" + dt2.viraStringDB() + "'; ";
+        */
         //cout << sql << endl;
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), callback, 0, &cMenssagemErro);

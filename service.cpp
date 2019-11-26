@@ -40,7 +40,7 @@ void BancoDados::Inserir(Jogo jogo, Usuario usuario, vector <Partida> partidas){
 
 int Servicos::AutenticarUsuario(std::string cpf, std::string senha){
 
-    int r;
+    int r=0;
     Cpf CPF;
     Senha SENHA;
 
@@ -52,11 +52,12 @@ int Servicos::AutenticarUsuario(std::string cpf, std::string senha){
     }
     catch(invalid_argument){
     cout << "\n\n Argumentos inválidos \n\n";
+    return -1;
     }
-    //try{
+    try{
     r = bancoDados.autenticaUsuario(usuario);
-    //}
-    /*
+    }
+
     catch(int r){
         if (r>0){
             cout <<"\n\n Usuário autenticado com sucesso. \n\n";
@@ -65,7 +66,7 @@ int Servicos::AutenticarUsuario(std::string cpf, std::string senha){
             cout <<"\n\n Usuário não autenticado \n\n";
         }
     }
-    */
+
     //cout << r << endl;
     return r;
 }
