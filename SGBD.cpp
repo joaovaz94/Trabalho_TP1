@@ -24,13 +24,14 @@ using namespace std;
 
         sql = "INSERT INTO Usuarios VALUES (";
         sql += " " + usr.pegaCpf().pegaCpf() + " , ";
-        sql += "'" + usr.pegaSenha().pegaSenha() + "') ";
+        sql += "'" + usr.pegaSenha().pegaSenha() + "') ; ";
         sql += "INSERT INTO CartaoCredito VALUES (";
         sql += " " + cart.pegaNumCartao().pegaNumCartao() + " , ";
         sql += "'" + cart.pegaCodVer().pegaCodigo() + "', ";
         sql += "'" + cart.pegaValidade().pegaValidade() + "', ";
-        sql += " " + usr.pegaCpf().pegaCpf() + " ) ";
+        sql += " " + usr.pegaCpf().pegaCpf() + " ); ";
 
+        cout << sql << endl;
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 
