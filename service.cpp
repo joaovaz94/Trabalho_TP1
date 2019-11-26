@@ -105,7 +105,7 @@ void Servicos::DescadastrarUsuario(){
 
 }
 
-void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, std::string cod_part, std::string data, std::string hrr, double prc){
+void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, std::string cod_part, std::string data, std::string hrr, double prc, int n){
 
     int r;
     Jogo jg; Partida part;
@@ -138,23 +138,99 @@ void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string e
     cout << "\n\n Argumentos inválidos \n\n";
     }
 
-    r = bancoDados.insereJogo(jg, part, usuario);
+    r = bancoDados.insereJogo(jg, part, usuario, n);
 
 }
 
 void Servicos::EditarJogo(string cod_jg){
 
+int r;
+CodigoJogo COD_JG;
+Jogo JOGO;
+try{
+COD_JG.defineCodJogo(cod_jg);
+JOGO.defineCodJogo(COD_JG);
+}
+catch(invalid_argument){
+    cout << "\n\n Argumentos inválidos \n\n";
+    }
+
+r = bancoDados.editaJogo(JOGO,usuario);
+
 }
 
 void Servicos::DescadastrarJogo(string cod_jg){
 
+    int r;
+CodigoJogo COD_JG;
+Jogo JOGO;
+try{
+COD_JG.defineCodJogo(cod_jg);
+JOGO.defineCodJogo(COD_JG);
+}
+catch(invalid_argument){
+    cout << "\n\n Argumentos inválidos \n\n";
+    }
+
+    r = bancoDados.descadastraJogo(JOGO);
+
 }
 
-void Servicos::ComprarIngressos(std::string cod, int qtdIngComp){
+void Servicos::ComprarIngressos(std::string cod_part, int qtd){
 
+    int r;
 
+    Partida part;
+    Codigo COD_PART;
+try{
+    COD_PART.defineCodigo(cod_part);
+    part.defineCodigo(COD_PART);
+}
+catch(invalid_argument){
+    cout << "\n\n Argumentos inválidos \n\n";
+    }
+
+    r = bancoDados.compraIngresso (usuario,part,qtd);
 
 }
+
+void Servicos::ConsultaJogos(std::string data_inicio, std::string data_termino, std::string cidade, std::string estado){
+
+int r;
+
+Data DATA_i, DATA_t; Cidade CIDADE; Estado ESTADO;
+
+try{
+DATA_i.defineData(data_inicio);
+DATA_t.defineData(data_termino);
+CIDADE.defineNome(cidade);
+ESTADO.defineEstado(estado);
+}
+catch(invalid_argument){
+    cout << "\n\n Argumentos inválidos \n\n";
+    }
+
+r = bancoDados.informaSobreJogo (CIDADE, ESTADO, DATA_i, DATA_t);
+
+}
+
+void Servicos::InfoVenda(string cod_jg){
+
+int r;
+CodigoJogo COD_JG;
+Jogo JOGO;
+try{
+COD_JG.defineCodJogo(cod_jg);
+JOGO.defineCodJogo(COD_JG);
+}
+catch(invalid_argument){
+    cout << "\n\n Argumentos inválidos \n\n";
+    }
+
+r = bancoDados.informaSobreVenda (JOGO, usuario);
+
+}
+
 
 
 

@@ -396,6 +396,7 @@ void Apresentacao::tela_descadastro_usuario() {
         cout << "-----------------------------------------------------------" << endl;
         cin >> c;
         if (c=='s' || c=='S') {
+            servicos.DescadastrarUsuario();
             cout << endl;
             cout << "****************  !!Usuário Descadastrado!! ***************" << endl;
             cout << endl;
@@ -458,6 +459,7 @@ void Apresentacao::tela_informacoes_jogo(){
         cout << "-----------------------------------------------------------" << endl;
         cin >> c;
         if (c=='s' || c=='S') {
+            servicos.ConsultaJogos(data_inicio,data_termino,cidade,estado);
             cout << endl;
             cout << "######################   Buscando   #######################" << endl;
             //função buscando jogos !!!
@@ -491,7 +493,8 @@ void Apresentacao::tela_informacoes_jogo(){
 
 void Apresentacao::tela_comprar_ingresso(){
     char c;
-    string cod,qtd;
+    string cod;
+    int qtd;
     this->cabecalho();
     cout << "-----------------------------------------------------------" << endl;
     cout << "------------------   Comprar Ingressos   ------------------" << endl;
@@ -521,6 +524,7 @@ void Apresentacao::tela_comprar_ingresso(){
         cout << "-----------------------------------------------------------" << endl;
         cin >> c;
         if (c=='s' || c=='S') {
+            servicos.ComprarIngressos(cod,qtd);
             cout << endl;
             cout << "######################   Comprando   ######################" << endl;
             //função gerando Ingressos !!!
@@ -738,7 +742,7 @@ void Apresentacao::tela_cadastro_jogo(){
         cin >> prc;
         cout << endl;
 
-        servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,cod_part,data,hrr,prc);
+        servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,cod_part,data,hrr,prc,n);
 
     }
     system("cls");
