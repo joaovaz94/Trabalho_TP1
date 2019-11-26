@@ -216,6 +216,15 @@ class Jogo {
             std::cout << "Estado do Jogo: " << this->pegaEstado().pegaEstado() << std::endl;
             std::cout << "Tipo do Jogo: " << this->pegaTipo().stringTipo() << std::endl;
     }
+
+    //!Função para definir Estádio do Jogo
+    void defineEstadio (const Estadio& est) {
+        this->estadio = est;
+    }
+    //!Função para retornar Estádio do Jogo
+    Estadio pegaEstadio() const {
+        return estadio;
+    }
 };
 
 #endif // ENTIDADES_H_INCLUDED
