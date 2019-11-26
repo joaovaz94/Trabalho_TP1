@@ -192,6 +192,20 @@ using namespace std;
         return r;
     }
 
+    //!Quantidade de INgressos já vendidos
+    int SGBD::qtdPartidasJogo (Jogo jg) {
+        int s = 0;
+        sql = "SELECT COUNT (*) FROM Partidas ";
+        sql += "WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
+
+        //! Executar operaçãoo de criar tabela
+        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+
+        confereErroBD();
+
+        return s;//retorna s>0 se o usuário e senha estiverem corretos
+    }
+
     //! Edita Jogo/Partida
     int SGBD::editaJogo (Jogo jg, Usuario usr){
         sql = "UPDATE Jogos SET ";

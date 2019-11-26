@@ -202,6 +202,9 @@ class SGBD
     //! Descadastra Jogo/Partida
     int descadastraJogo (Jogo jg);
 
+    //!Quantidade de INgressos já vendidos
+    int qtdPartidasJogo (Jogo jg);
+
     //! Edita Jogo/Partida
     int editaJogo (Jogo jg, Usuario usr);
 
