@@ -187,8 +187,11 @@ class SGBD
     //! Retorna Informações do Jogo
     int informaSobreJogo (Cidade cid, Estado est, Data dt1, Data dt2);
 
+    //!Quantidade de INgressos já vendidos
+    int qtdIngressosVendidos (Partida part);
+
     //! Compra Ingressos
-    int compraIngresso (Ingresso ing, int qtd, Usuario usr, Partida part);
+    int compraIngresso (Usuario usr, Partida part, int qtd);
 
     //!Confere se Usuário tem número máximo de jogos
     int ConfereMaxJogo (Usuario usr);

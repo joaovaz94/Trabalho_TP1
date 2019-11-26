@@ -89,12 +89,27 @@ using namespace std;
         return r;
     }
 
+    //!Quantidade de INgressos já vendidos
+    int SGBD::qtdIngressosVendidos (Partida part) {
+        int s = 0;
+        sql = "SELECT COUNT (*) FROM Ingressos ";
+        sql += "WHERE partida_codigopartida = " + part.pegaCodigo().pegaCodigo() + "; ";
+
+        //! Executar operaçãoo de criar tabela
+        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+
+        confereErroBD();
+
+        return s;//retorna s>0 se o usuário e senha estiverem corretos
+    }
+
     //! Compra Ingressos
-    int SGBD::compraIngresso (Ingresso ing, int qtd, Usuario usr, Partida part){
+    int SGBD::compraIngresso (Usuario usr, Partida part, int qtd){
         //query para registrar ingressos comprados com cpf do usuário
+        int cod = qtdIngressosVendidos(part);
         for (int i=0;i<qtd;i++) {
             sql = "INSERT INTO Ingressos (codigoingresso, partida_codigopartida, usuario_cpf) ";
-            sql += "VALUES ('" + ing.pegaCodIng().pegaCodigo() + "','" + part.pegaCodigo().pegaCodigo() + "','" + usr.pegaCpf().pegaCpf() + "'); ";
+            sql += "VALUES ('" + to_string(cod+1) + "','" + part.pegaCodigo().pegaCodigo() + "','" + usr.pegaCpf().pegaCpf() + "'); ";
             //mudar código do ingresso!!!
         }
         //! Executar operaçãoo de criar tabela
