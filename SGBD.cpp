@@ -41,19 +41,23 @@ using namespace std;
 
     //! Autentica Usuario
     int SGBD::autenticaUsuario (Usuario usr){
-        sql = "";
+        r = 0;
+        sql = "SELECT COUNT (*) FROM Usuarios ";
+        sql += "WHERE cpf = " + usr.pegaCpf().pegaCpf() + " ";
+        sql += "AND senha = " + usr.pegaCpf().pegaCpf() + "; ";
 
         //! Executar operaçãoo de criar tabela
-        op = sqlite3_exec(bd, sql.c_str(), callback, 0, &cMenssagemErro);
+        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &r, &cMenssagemErro);
 
         confereErroBD();
 
-        return r;
+        return r;//retorna r>0 se o usuário e senha estiverem corretos
     }
 
     //! Descadastra Usuário
     int SGBD::descadastraUsuario (Usuario us){;
-        sql = ("DELETE FROM 'Usuarios' WHERE cpf = '" + us.pegaCpf().pegaCpf() + "';");
+        sql = ("DELETE FROM 'Usuarios' WHERE cpf = " + us.pegaCpf().pegaCpf() + " ; ");
+        sql += ("DELETE FROM 'CartaoCredito' WHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + " ; ");
 
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
@@ -84,10 +88,11 @@ using namespace std;
     //! Compra Ingressos
     int SGBD::compraIngresso (Ingresso ing, int qtd, Usuario usr, Partida part){
         //query para registrar ingressos comprados com cpf do usuário
-        sql = "SELECT codigoingresso FROM Ingressos ";
-        sql += "FROM Jogos j, Partidas p ";
-        sql += "FROM Jogos j, Partidas p ";
-
+        for (int i=0;i<qtd;i++) {
+            sql = "INSERT INTO Ingressos (codigoingresso, partida_codigopartida, usuario_cpf) ";
+            sql += "VALUES ('" + ing.pegaCodIng().pegaCodigo() + "','" + part.pegaCodigo().pegaCodigo() + "','" + usr.pegaCpf().pegaCpf() + "'); ";
+            //mudar código do ingresso!!!
+        }
         //! Executar operaçãoo de criar tabela
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 

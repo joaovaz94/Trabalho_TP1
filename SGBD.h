@@ -38,6 +38,22 @@ class SGBD
         return 0;
     }
 
+    /*
+    static int callbackRetorno(void *count, int argc, char **argv, char **azColName) {
+        int *c = count;
+        *c = atoi(argv[0]);
+        return 0;
+    }
+    */
+
+    static int callbackRetorno(void* data, int count, char** rows,char**){
+        if (count == 1 && rows) {
+            *static_cast<int*>(data) = atoi(rows[0]);
+            return 0;
+        }
+        return 1;
+    }
+
     //! M�todo para conferir erros nas opera��es
     void confereErroBD() {
         //! confere retorno da opera��o
