@@ -31,7 +31,7 @@ using namespace std;
         sql += "'" + cart.pegaValidade().pegaValidade() + "', ";
         sql += " " + usr.pegaCpf().pegaCpf() + " ); ";
 
-        cout << sql << endl;
+        //cout << sql << endl;
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 
