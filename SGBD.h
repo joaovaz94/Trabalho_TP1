@@ -185,10 +185,13 @@ class SGBD
     int descadastraUsuario (Usuario us);
 
     //! Retorna Informações do Jogo
-    int informaSobreJogo (Jogo& jg, Partida& part);
+    int informaSobreJogo (Cidade cid, Estado est, Data dt1, Data dt2);
 
     //! Compra Ingressos
     int compraIngresso (Ingresso ing, int qtd, Usuario usr, Partida part);
+
+    //!Confere se Usuário tem número máximo de jogos
+    int ConfereMaxJogo (Usuario usr);
 
     //! Cadastra Jogo
     int insereJogo (Jogo jg, Partida part, Usuario usr);
