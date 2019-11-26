@@ -54,6 +54,12 @@ string Data::viraString() {
     return aux.str();
 }
 
+string Data::viraStringDB() {
+    ostringstream aux;
+    aux << ano << "-" << trataNum(mes) << "-" << trataNum(dia);
+    return aux.str();
+}
+
 //!Função para tratar números de dia e mês
 string  Data::trataNum(int num) {
     ostringstream aux;
@@ -577,4 +583,31 @@ void Estadio::validaCapacidade (int capacidade) throw(std::invalid_argument){
         throw(invalid_argument)("\n\n Capacidade inválida: deve ser um número entre 1000 e 100000 pessoas \n\n");
     }
 
+}
+
+void Estadio::validaNome(string n) throw (std::invalid_argument){
+
+    if(n.length() > 40)
+        throw(invalid_argument)("\n\n Erro: Nome do Estádio pode ter no máximo 40 caracteres. \n\n");
+    bool flag_letra=false;
+    int comp = n.length();
+    for(int i=0;i<comp;i++){
+
+        if( ( isalpha( n[i] ) )!=0 ) {
+            flag_letra=true;
+        }
+
+        else if( ( ( isalnum( n[i] ) )==0 ) && ( n[i]!=' ' ) ){
+            throw(invalid_argument)("\n\n Caracter inválido: deve ser alfanumérico oe espaço. \n\n");
+        }
+
+        else if( ( n[i]==' ' ) && ( n[i+1]==' ' ) ){
+            throw(invalid_argument)("\n\n Erro: espaço não pode ser seguido de outro. \n\n");
+            }
+
+    }
+
+    if ( !(flag_letra) ){
+        throw(invalid_argument)("\n\n Erro: não há letra no nome do Estádio. \n\n");
+    }
 }

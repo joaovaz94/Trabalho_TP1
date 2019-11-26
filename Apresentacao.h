@@ -3,7 +3,7 @@
 
 
 #include <iostream>
-#include "Interface.h"
+#include "SGBD.h"
 
 class Apresentacao
 {
@@ -22,7 +22,7 @@ class Apresentacao
         Apresentacao(Apresentacao const&) = delete;//Singleton
         void operador() = delete;//Singleton
 
-        void tela_inicial();
+        char tela_inicial();
         void tela_login();
         void operacao_invalida();
         void programa_encerrado();
@@ -47,8 +47,8 @@ class Apresentacao
 
 };
 
-class ApresentacaoUsuario: public Interface
-{
+/*
+class ApresentacaoUsuario: public Interface {
     private:
         Apresentacao tui;
 
@@ -74,5 +74,6 @@ class ApresentacaoJogo: public Interface
         //void descadastrar();
         //void buscarInformacao();
 };
+*/
 
 #endif // APRESENTACAO_H

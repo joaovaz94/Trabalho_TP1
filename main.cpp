@@ -3,14 +3,14 @@
 //!Lucas de Moura Quadros - Matr�cula: 140150668
 
 //#include <iostream>
-#include "entidades.h"
-#include "dominios.h"
+//#include "entidades.h"
+//#include "dominios.h"
 #include "testes.h" //!inclus�o dos testes de unidade no programa
 //#include <string>
 #include <locale.h>
-#include "SGBD.h"
+//#include "SGBD.h"
 #include "Interface.h"
-#include "Apresentacao.h"
+//#include "Apresentacao.h"
 
 
 using namespace std;
@@ -23,10 +23,18 @@ int main(int argc, char** argv)
     TestesUnidade testes;
     testes.executaTestesUnidade();
 
-    //! Defini��o e execu��o da interface do programa
-    Apresentacao tui;
+    //!Gest�o de Banco de Dados
+    //SGBD bancoDeDados;
+    //bancoDeDados.criarTabelas();
 
-    tui.tela_inicial();
+    //! Defini��o e execu��o da camada de Apresentação do programa
+    //Apresentacao tui;
+    //tui.tela_inicial();
+
+    //! Definição e execução da Interface do programa
+    Interface interface;
+    interface.iniciarPrograma();
+    interface.fecharPrograma();
 
     /*
     //!Declara��o de objetos dos Dompinios
@@ -75,10 +83,6 @@ int main(int argc, char** argv)
     double prc=30.05;
     int dsp=30;
     */
-
-    //!Gest�o de Banco de Dados
-    SGBD bancoDeDados;
-    bancoDeDados.criarTabelas();
 
     /*
     //!defini��es dos dom�nios
@@ -173,6 +177,6 @@ int main(int argc, char** argv)
     //LEMBRETES DE C�DIGO
 
 
-    bancoDeDados.fechaBD(); //! Comando para fechar a conex�o do programa com o banco de dados antes de fechar o programa
+    //bancoDeDados.fechaBD(); //! Comando para fechar a conex�o do programa com o banco de dados antes de fechar o programa
     return 0;
 }

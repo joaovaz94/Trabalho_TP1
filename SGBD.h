@@ -18,6 +18,7 @@ class SGBD
     char *cMenssagemErro;
     //! Resultado de sa�da da opera��o do sqlite3
     int op = 0;
+    int r=0; // retorno de operações no banco de dados
     //! SQL salvo
     std::string sql;
 
@@ -37,16 +38,34 @@ class SGBD
         return 0;
     }
 
+    /*
+    static int callbackRetorno(void *count, int argc, char **argv, char **azColName) {
+        int *c = count;
+        *c = atoi(argv[0]);
+        return 0;
+    }
+    */
+
+    static int callbackRetorno(void* data, int count, char** rows,char**){
+        if (count == 1 && rows) {
+            *static_cast<int*>(data) = atoi(rows[0]);
+            return 0;
+        }
+        return 1;
+    }
+
     //! M�todo para conferir erros nas opera��es
     void confereErroBD() {
         //! confere retorno da opera��o
         if(op) {
             //!mosra mensagem de erro
             std::cout << "ERRO DE BANCO DE DADOS: " << sqlite3_errmsg(bd) << std::endl;
-
+            r = -1;
             //! Fecha conex�o com banco de dados depois de erro identificado
             fechaBD();
         }
+        else
+          r = 1;
     }
 
 
@@ -55,7 +74,7 @@ class SGBD
     //! Construtor da classe / abre a conex�o com o banco de dados
     SGBD(){
         //!Salva o resultado da opera��o de abertura do banco de dados
-        op = sqlite3_open("codigoteste.db", &bd);
+        op = sqlite3_open("bancotrabalho.db", &bd);
         //! Confere se houve erro
         confereErroBD();
     }
@@ -70,44 +89,43 @@ class SGBD
         //! Salvar sql de cria��o das tabelas (s� ocorre se a tabela n�o existir antes)
         //sql = "CREATE TABLE IF NOT EXISTS PESSOAS(ID INT PRIMARY KEY NOT NULL, NOME TEXT NOT NULL);";
         sql = ("CREATE TABLE IF NOT EXISTS Usuarios ( "
-               "cpf char(11) NOT NULL, "
+               "cpf bigint NOT NULL, "
                "senha varchar(6) NOT NULL, "
                "PRIMARY KEY(cpf)); "
 
                 "CREATE TABLE IF NOT EXISTS CartaoCredito( "
-                    "numcartao char(16) NOT NULL, "
+                    "numcartao bigint NOT NULL, "
                     "codigoverificacao char(3) NOT NULL, "
                     "validade char(5) NOT NULL, "
-                    "usuario_cpf char(11) REFERENCES Usuario NOT NULL, "
+                    "usuario_cpf bigint NOT NULL, "
                     "PRIMARY KEY(numcartao), "
                     "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf)); "
 
                 "CREATE TABLE IF NOT EXISTS Jogos( "
-                    "codigojogo char(3) NOT NULL, "
+                    "codigojogo int NOT NULL, "
                     "nomejogo varchar(40) NOT NULL, "
-                    "pais varchar(15) NOT NULL, "
                     "estado char(2) NOT NULL, "
                     "cidade varchar(15) NOT NULL, "
                     "estadio varchar(30) NOT NULL, "
                     "tipo integer NOT NULL, "
-                    "usuario_cpf char(11) NOT NULL, "
+                    "usuario_cpf bigint NOT NULL, "
                     "PRIMARY KEY(codigojogo), "
                     "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf)); "
 
                 "CREATE TABLE IF NOT EXISTS Partidas( "
-                    "codigopartida char(5) NOT NULL, "
-                    "data char(10) NOT NULL, "
-                    "horario CHAR NOT NULL, "
+                    "codigopartida int NOT NULL, "
+                    "data date NOT NULL, "
+                    "horario CHAR(5) NOT NULL, "
                     "preco double precision NOT NULL, "
                     "disponibilidade integer NOT NULL, "
-                    "jogo_codigojogo char(3) NOT NULL, "
+                    "jogo_codigojogo int NOT NULL, "
                     "PRIMARY KEY(codigopartida), "
                     "FOREIGN KEY(jogo_codigojogo) REFERENCES Jogos(codigojogo)); "
 
                 "CREATE TABLE IF NOT EXISTS Ingressos( "
-                    "codigoingresso char(5) NOT NULL, "
-                    "partida_codigopartida char(5) NOT NULL, "
-                    "usuario_cpf char(11) NOT NULL, "
+                    "codigoingresso int NOT NULL, "
+                    "partida_codigopartida int NOT NULL, "
+                    "usuario_cpf bigint, "
                     "PRIMARY KEY(codigoingresso), "
                     "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf), "
                     "FOREIGN KEY(partida_codigopartida) REFERENCES Partidas(codigopartida)); "
@@ -152,6 +170,38 @@ class SGBD
 
         confereErroBD();
     }
+
+
+
+    /**Camadas de operações no banco de dados de acordo com a UML estruturada*/
+
+    //! Cadastra Usuário
+    int insereUsuarioBD (Usuario usr, CartaoCredito cart);
+
+    //! Autentica Usuario
+    int autenticaUsuario (Usuario usr);
+
+    //! Descadastra Usuário
+    int descadastraUsuario (Usuario us);
+
+    //! Retorna Informações do Jogo
+    int informaSobreJogo (Jogo& jg, Partida& part);
+
+    //! Compra Ingressos
+    int compraIngresso (Ingresso ing, int qtd, Usuario usr, Partida part);
+
+    //! Cadastra Jogo
+    int insereJogo (Jogo jg, Partida part, Usuario usr);
+
+    //! Descadastra Jogo/Partida
+    int descadastraJogo (Jogo jg, Partida part, Usuario usr);
+
+    //! Edita Jogo/Partida
+    int editaJogo (Jogo jg, Partida part, Usuario usr);
+
+    //! Retorna Informações de Venda de Jogo
+    int informaSobreVenda (Jogo& jg, Partida& part, Usuario usr);
+
 
 };
 
