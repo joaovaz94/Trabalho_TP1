@@ -97,7 +97,7 @@ class SGBD
                     "numcartao bigint NOT NULL, "
                     "codigoverificacao char(3) NOT NULL, "
                     "validade char(5) NOT NULL, "
-                    "usuario_cpf bigint REFERENCES Usuario NOT NULL, "
+                    "usuario_cpf bigint NOT NULL, "
                     "PRIMARY KEY(numcartao), "
                     "FOREIGN KEY(usuario_cpf) REFERENCES Usuarios(cpf)); "
 
