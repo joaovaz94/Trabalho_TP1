@@ -4,43 +4,89 @@
 #include "entidades.h"
 #include <vector>
 
-std::vector <Usuario> usuarios;
-std::vector <CartaoCredito> cartoes;
-std::vector <Jogo> jogos;
-std::vector <Partida> partidas;
+struct CartaoCreditoBD{
+    std::string num;
+    std::string codigoVerificacao;
+    std::string validade;
+};
 
-class Sistema;
+struct EstadioBD{
+    std::string nome;
+};
 
-class LidarUsuario{
+struct IngressoBD{
+    std::string codigo;
+    std::string codigoPartida;
+    std::string CPF;
+};
 
-    friend class Sistema;
+struct PartidaBD{
+    std::string codigo;
+    Data data;
+    std::string horario;
+    double preco;
+    int disponibilidade;
+    std::string codigoJogo;
+    std::vector <IngressoBD> ingressos;
+};
+
+struct JogoBD{
+    std::string codigo;
+    std::string nome;
+    std::string estado;
+    std::string cidade;
+    EstadioBD estadio;
+    int tipo;
+    //std::string CPF;
+    std::vector <PartidaBD> partidas;
+};
+
+struct UsuarioBD{
+    std::string CPF;
+    std::string senha;
+    CartaoCreditoBD cartao;
+    std::vector <JogoBD> jogos;
+};
+
+class BancoDados{
+    private:
+        std::vector <UsuarioBD> usuarios;
+        std::vector <JogoBD> jogos;
+    public:
+        void checaId(Usuario);
+        void checaCod(Partida);
+        void checaCod(Jogo);
+        void Inserir(Usuario, CartaoCredito);
+        void Exlcuir(Usuario);
+        void Editar(Usuario);
+        void Inserir(Jogo, Usuario, std::vector <Partida>);
+        void Excluir(Jogo);
+        void Editar(Jogo);
+};
+
+class Servicos{
+    public:
+        Servicos() {}
+        static Servicos& pegaInstancia() { //Singleton
+            static Servicos instancia;
+            return instancia;
+        }
+
+        Servicos(Servicos const&) = delete;//Singleton
+        void operador() = delete;//Singleton
 
     private:
         Usuario usuario;
-        CartaoCredito cartao;
-        std::vector <Jogo> jogosUsuario;
-
-    public:
-        void CadastrarUsuario(Usuario usuario, CartaoCredito cartao);
-        void AutenticarUsuario(Usuario usuario);
-        void DescadastrarUsuario(Usuario, std::vector <Jogo> jogosUsuario);
-
-};
-
-class Sistema{
-
-    private:
         Jogo jogo;
-        std::vector <Partida> partidasJogo;
+        void CadastrarJogo();
+        void EditarJogo();
+        void DescadastrarJogo();
 
     public:
-        std::vector <Ingresso> ComprarIngresso(Partida, int qtdIngComp);
+        void GerenciarJogo(CodigoJogo);
+        std::vector <Ingresso> ComprarIngresso(Codigo, int qtdIngComp);
         std::vector <Jogo> ConsultaJogos(Data inicio, Data termino, Cidade, Estado);
-        void CadastrarJogo(Jogo jogo, Partida partida);
-        void EditarJogo(Jogo jogo);
-        void DescadastrarJogo(Jogo jogo);
-        void InfoVenda(Jogo jogo, Partida* partida, Usuario* usuario);
-
+        void InfoVenda();
 };
 
 

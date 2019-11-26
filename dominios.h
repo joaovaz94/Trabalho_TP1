@@ -227,11 +227,14 @@ class Tipo{
         int digito;
 };
 
-class Estadio{
+class Estadio: public Nome{
+ private:
     int capacidade;
-    std::string nome;
+    //std::string nome;
     void validaCapacidade(int capacidade) throw(std::invalid_argument);
-
+    void validaNome(std::string) throw (std::invalid_argument);
+ public:
+     virtual ~Estadio() {}
 };
 
 
