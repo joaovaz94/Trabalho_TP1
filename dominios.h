@@ -8,7 +8,6 @@
 #include <string>
 #include <stdexcept>
 
-
 class Data {
     public:
         //!construtor da classe Data
