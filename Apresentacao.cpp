@@ -52,7 +52,7 @@ void Apresentacao::flash() {
     }
 }
 
-char Apresentacao::tela_inicial() {
+void Apresentacao::tela_inicial() {
     char op;
 
         cout << "***********************************************************" << endl;
@@ -71,8 +71,8 @@ char Apresentacao::tela_inicial() {
         cout << "   Operação:";
         cin >> op;
 
-        return op;
-/*
+        //return op;
+
         if(op=='1'){
             system("cls");
             flash();
@@ -100,7 +100,7 @@ char Apresentacao::tela_inicial() {
             system("cls");
             this->tela_inicial();
         }
-*/
+
 
 }
 

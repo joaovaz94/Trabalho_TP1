@@ -145,7 +145,7 @@ using namespace std;
     }
 
     //! Cadastra Jogo
-    int SGBD::insereJogo (Jogo jg, Partida part, Usuario usr){
+    int SGBD::insereJogo (Jogo jg, Partida part, Usuario usr, int qtd){
         int i = ConfereMaxJogo(usr);
         if(i <= 4 ) {
             sql = "INSERT INTO Jogos VALUES (";
@@ -155,15 +155,16 @@ using namespace std;
             sql += "'" + jg.pegaCidade().pegaNome() + "', ";
             sql += "'" + jg.pegaEstadio().pegaNome() + "', ";
             sql += " " +  to_string(jg.pegaTipo().pegaTipo() ) + " , ";
-            sql += " " + usr.pegaCpf().pegaCpf() + " ) ";
-            sql += "INSERT INTO Partidas VALUES (";
-            sql += " " + part.pegaCodigo().pegaCodigo() + " , ";
-            sql += "'" + part.pegaData().viraStringDB() + "', ";
-            sql += "'" + part.pegaHorario().viraString() + "', ";
-            sql += " " + to_string(part.pegaPreco().pegaPreco() ) + " , ";
-            sql += "'" + to_string(part.pegaDisp().pegaDisp() ) + "', ";
-            sql += " " + jg.pegaCodJogo().pegaCodigo() + " ) ";
-
+            sql += " " + usr.pegaCpf().pegaCpf() + " ); ";
+            for (int cont=0;cont<qtd;cont++) {
+                sql += "INSERT INTO Partidas VALUES (";
+                sql += " " + part.pegaCodigo().pegaCodigo() + " , ";
+                sql += "'" + part.pegaData().viraStringDB() + "', ";
+                sql += "'" + part.pegaHorario().viraString() + "', ";
+                sql += " " + to_string(part.pegaPreco().pegaPreco() ) + " , ";
+                sql += "'" + to_string(part.pegaDisp().pegaDisp() ) + "', ";
+                sql += " " + jg.pegaCodJogo().pegaCodigo() + " ); ";
+            }
             //! Executar operaçãoo no banco de dados
             op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 
@@ -178,7 +179,7 @@ using namespace std;
     }
 
     //! Descadastra Jogo/Partida
-    int SGBD::descadastraJogo (Jogo jg, Partida part, Usuario usr){
+    int SGBD::descadastraJogo (Jogo jg){
         sql = ("DELETE FROM Jogos WHERE codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
         sql += ("DELETE FROM Partidas WHERE jogo_codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
 
@@ -192,7 +193,7 @@ using namespace std;
     }
 
     //! Edita Jogo/Partida
-    int SGBD::editaJogo (Jogo jg, Partida part, Usuario usr){
+    int SGBD::editaJogo (Jogo jg, Usuario usr){
         sql = "UPDATE Jogos SET ";
         sql += "codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " , ";
         sql += "nomejogo = '" + jg.pegaNomeJogo().pegaNome() + "', ";
@@ -223,7 +224,7 @@ using namespace std;
     }
 
     //! Retorna Informações de Venda de Jogo
-    int SGBD::informaSobreVenda (Jogo& jg, Partida& part, Usuario usr){
+    int SGBD::informaSobreVenda (Jogo& jg, Usuario usr){
         //Query para
         sql = "SELECT  j.nomejogo, p.codigopartida, p.disponibilidade as 'Ingressos Disponíveis' ";
         sql += "FROM Jogos j, Partidas p ";

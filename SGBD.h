@@ -197,16 +197,16 @@ class SGBD
     int ConfereMaxJogo (Usuario usr);
 
     //! Cadastra Jogo
-    int insereJogo (Jogo jg, Partida part, Usuario usr);
+    int insereJogo (Jogo jg, Partida part, Usuario usr, int qtd);
 
     //! Descadastra Jogo/Partida
-    int descadastraJogo (Jogo jg, Partida part, Usuario usr);
+    int descadastraJogo (Jogo jg);
 
     //! Edita Jogo/Partida
-    int editaJogo (Jogo jg, Partida part, Usuario usr);
+    int editaJogo (Jogo jg, Usuario usr);
 
     //! Retorna Informações de Venda de Jogo
-    int informaSobreVenda (Jogo& jg, Partida& part, Usuario usr);
+    int informaSobreVenda (Jogo& jg, Usuario usr);
 
 
 };

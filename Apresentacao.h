@@ -9,6 +9,7 @@ class Apresentacao
 {
     private:
         char operacao;
+
         //ApresentacaoUsuario usuario;
         //ApresentacaoJogo jogo;
 
@@ -22,7 +23,7 @@ class Apresentacao
         Apresentacao(Apresentacao const&) = delete;//Singleton
         void operador() = delete;//Singleton
 
-        char tela_inicial();
+        void tela_inicial();
         void tela_login();
         void operacao_invalida();
         void programa_encerrado();
