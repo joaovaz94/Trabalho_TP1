@@ -591,7 +591,7 @@ void Apresentacao::tela_gerenciar_jogos(){
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Fechar Programa: Digite '0'" << endl;
     cout << "-----------------------------------------------------------" << endl;
-    cout << "   Operação:";
+    cout << "   Operação: ";
     cin >> op;
 
     if(op=='1'){
@@ -644,7 +644,7 @@ void Apresentacao::tela_gerenciar_jogos(){
 
 void Apresentacao::tela_informacoes_venda(){
     string cod_jg;
-    //char op;
+    //char c;
     string dado="dado - exemplo";
     //n = 5;
     this->cabecalho();
@@ -654,13 +654,22 @@ void Apresentacao::tela_informacoes_venda(){
     cout << endl;
     cout << "  - Digite o Código do Jogo que deseja informações das vendas: ";
     cin >> cod_jg;
+
+    system("cls");
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "--- Dados do Jogo:" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << endl;
+    cout << "   Código do Jogo: " << cod_jg << endl;
     servicos.InfoVenda(cod_jg);
 
-    cout << endl << endl;
-    cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
-    this->pressione_continuar();
-    system("cls");
-    this->tela_gerenciar_jogos();
+            cout << endl;
+            cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
+            this->pressione_continuar();
+            system("cls");
+            flash();
+            system("cls");
+            this->tela_gerenciar_jogos();
 
     /*
     if(n>0) {
@@ -994,7 +1003,7 @@ void Apresentacao::tela_edita_jogo(){
 
 void Apresentacao::tela_descadastro_jogo(){
     string cod_jg;
-    //char op;
+    char c;
     string dado="dado - exemplo";
     //int n=3;
     this->cabecalho();
@@ -1002,13 +1011,52 @@ void Apresentacao::tela_descadastro_jogo(){
     cout << "--- Descadastrar Jogos:" << endl;
     cout << "-----------------------------------------------------------" << endl;
     cout << endl;
-    cout << "           - Escolha um dos Jogos cadastrados: -" << endl;
+    //cout << "           - Escolha um dos Jogos cadastrados: -" << endl;
     cout << endl;
     // Função para Pesquisar jogos associados ao usuário !!!
     cout << endl;
-    cout << "\n\nDigite o código do jogo a ser descadastrado:\n\n";
+    cout << "\n\nDigite o código do jogo a ser descadastrado: ";
     cin >> cod_jg;
-    servicos.DescadastrarJogo(cod_jg);
+
+    system("cls");
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "--- Dados do Jogo:" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << endl;
+    cout << "   Código do Jogo: " << cod_jg << endl;
+
+    jogo_descadastro:cout << "-----------------------------------------------------------" << endl;
+        cout << "--------------- Confirmar Descadastro?  (S/N) -------------" << endl;
+        cout << "-----------------------------------------------------------" << endl;
+        cin >> c;
+        if (c=='s' || c=='S') {
+            //Função de descadastro do jogo
+            servicos.DescadastrarJogo(cod_jg);
+            cout << endl;
+            cout << "****************  !!Jogo Descadastrado!! ***************" << endl;
+            cout << endl;
+            cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
+            this->pressione_continuar();
+            system("cls");
+            flash();
+            system("cls");
+            this->tela_gerenciar_jogos();
+        }
+        else if (c=='n' || c=='N'){
+            cout << endl;
+            cout << "*******************  Operação Cancelada *******************" << endl;
+            cout << endl;
+            cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
+            this->pressione_continuar();
+            system("cls");
+            flash();
+            system("cls");
+            this->tela_gerenciar_jogos();
+        }
+        else {
+            this->operacao_invalida();
+            goto jogo_descadastro;
+        }
     /*
     if(n>0) {
         for(int i=0;i<n;i++){
@@ -1079,7 +1127,7 @@ void Apresentacao::jogo_descadastra(){
     cout << "   Tipo: " << dado << endl;
 
 
-    jogo_descadastro:cout << "-----------------------------------------------------------" << endl;
+    //jogo_descadastro:cout << "-----------------------------------------------------------" << endl;
         cout << "--------------- Confirmar Descadastro?  (S/N) -------------" << endl;
         cout << "-----------------------------------------------------------" << endl;
         cin >> c;
@@ -1108,7 +1156,7 @@ void Apresentacao::jogo_descadastra(){
         }
         else {
             this->operacao_invalida();
-            goto jogo_descadastro;
+            //goto jogo_descadastro;
         }
 }
 

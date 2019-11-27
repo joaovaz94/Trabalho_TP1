@@ -203,6 +203,9 @@ class SGBD
     //! Cadastra Jogo
     int insereJogo (Jogo jg, Partida part[], Usuario usr, int qtd);
 
+    //!Quantidade de INgressos já vendidos a partir de um Jogo
+    int qtdIngressosVendidosJogo (Jogo jg);
+
     //! Descadastra Jogo/Partida
     int descadastraJogo (Jogo jg);
 

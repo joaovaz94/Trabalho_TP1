@@ -298,18 +298,73 @@ using namespace std;
         }
     }
 
+    //!Quantidade de INgressos já vendidos a partir de um Jogo
+    int SGBD::qtdIngressosVendidosJogo (Jogo jg) {
+        int s = 0;
+        sql = "SELECT COUNT (*) FROM Ingressos WHERE partida_codigopartida in  ";
+        sql += "(SELECT codigopartida FROM Partidas WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "); ";
+        //cout << sql << endl;
+        //! Executar operaçãoo de criar tabela
+        //op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+        op = sqlite3_prepare_v2(bd, sql.c_str(), -1, &stmt, 0);
+
+        if (op) {
+            printf("Selecting data from DB Failed (err_code=%d)\n", op);
+            return -1;
+        }
+
+        // for multiple results
+        while(1)
+        {
+            // fetch a row's status
+            op = sqlite3_step(stmt);
+            //cout<< op << endl;
+
+            if(op == SQLITE_ROW)
+            {
+                //cout<< "s1: "<<s << endl;
+                s = (int)sqlite3_column_int(stmt, 0);
+                //cout<< "s2: "<<s << endl;
+                    // or other type - sqlite3_column_text etc.
+                // ... fetch other columns, if there are any
+            }
+            else if(op == SQLITE_DONE)
+            {
+                break;
+            }
+            else
+            {
+                sqlite3_finalize(stmt);
+                printf("Some error encountered\n");
+                break;
+            }
+        }
+        //cout<< "s3: "<<s << endl;
+        //confereErroBD();
+
+        return s;//retorna s>0 se o usuário e senha estiverem corretos
+    }
+
     //! Descadastra Jogo/Partida
     int SGBD::descadastraJogo (Jogo jg){
-        sql = ("DELETE FROM Jogos WHERE codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
-        sql += ("DELETE FROM Partidas WHERE jogo_codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
 
+        int n = qtdIngressosVendidosJogo(jg);
+        if (n <= 0) {
+            sql = ("DELETE FROM Jogos WHERE codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
+            sql += ("DELETE FROM Partidas WHERE jogo_codigojogo = '" + jg.pegaCodJogo().pegaCodigo() + "'; ");
 
-        //! Executar operaçãoo no banco de dados
-        op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
+            //! Executar operaçãoo no banco de dados
+            op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 
-        confereErroBD();
+            confereErroBD();
 
-        return r;
+            return r;
+        }
+        else {
+            cout << "Jogo não pode ser Descadastrado!! o Jogo já vendeu Ingressos " << endl;
+            r = -1;
+            return r;
+        }
     }
 
     //!Quantidade de INgressos já vendidos
