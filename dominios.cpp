@@ -269,8 +269,8 @@ void Disponibilidade::defineDisp (int dsp){
 }
 //!Função para validar Disponibilidade
 void Disponibilidade::validaDisp (int& dsp) throw (invalid_argument){
-    if (dsp < 1000 || dsp > 100000)
-        throw invalid_argument("Argumento Inválido: a disponibilidade deve ser um valor de 1000 a 100000");
+    if (dsp < 1 || dsp > 100000)
+        throw invalid_argument("Argumento Inválido: a disponibilidade deve ser um valor de 1 a 100000");
 }
 
 /**

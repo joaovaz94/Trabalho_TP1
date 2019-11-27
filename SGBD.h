@@ -201,7 +201,7 @@ class SGBD
     int ConfereMaxJogo (Usuario usr);
 
     //! Cadastra Jogo
-    int insereJogo (Jogo jg, Partida part, Usuario usr, int qtd);
+    int insereJogo (Jogo jg, Partida part[], Usuario usr, int qtd);
 
     //! Descadastra Jogo/Partida
     int descadastraJogo (Jogo jg);

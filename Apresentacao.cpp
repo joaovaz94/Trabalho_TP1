@@ -720,8 +720,9 @@ void Apresentacao::tela_informacoes_venda(){
 void Apresentacao::tela_cadastro_jogo(){
     string cod_jg,Nome,cod_part,data,hrr,estadio,cidade,estado;
     double prc;
-    int n;
+    int n,dis,argInvalido = 0;
     char c;
+
     this->cabecalho();
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Cadastrar Jogo ---" << endl;
@@ -732,15 +733,20 @@ void Apresentacao::tela_cadastro_jogo(){
     cout << endl;
     cout << "   Código do Jogo: ";
     cin >> cod_jg;
+    cin.ignore();
     cout << endl;
     cout << "   Nome do Jogo: ";
-    cin >> Nome;
+    //cin >> Nome;
+    //getch();
+    getline (cin,Nome);
     cout << endl;
     cout << "   Estádio: ";
-    cin >> estadio;
+    //cin >> estadio;
+    getline (cin,estadio);
     cout << endl;
     cout << "   Cidade: ";
-    cin >> cidade;
+    //cin >> cidade;
+    getline (cin,cidade);
     cout << endl;
     cout << "   Estado: ";
     cin >> estado;
@@ -749,25 +755,80 @@ void Apresentacao::tela_cadastro_jogo(){
     cin >> n;
     cout << endl;
 
+    Partida part[n];
+    Codigo cod[n];
+    Data dt[n];
+    Disponibilidade dsp[n];
+    Horario hr[n];
+    Preco pr1[n];
+
     for(int i=0;i<n;i++) {
         cout << "       - Dados da Partida " << (i+1) <<" -" << endl;
         cout << endl;
         cout << "   Código da Partida " <<  (i+1) <<": ";
         cin >> cod_part;
+        try{
+            cod[i].defineCodigo(cod_part);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento código da partida inválido \n\n";}
         cout << endl;
         cout << "   Data da Partida " <<  (i+1) <<": ";
         cin >> data;
+        try {
+            dt[i].defineData(data);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento data inválido \n\n";}
         cout << endl;
         cout << "   Horário da Partida " <<  (i+1) <<": ";
         cin >> hrr;
+        try {
+            hr[i].defineHorario(hrr);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento horario inválido \n\n";}
         cout << endl;
-        cout << "   Preço do Ingreço da Partida " <<  (i+1) <<": ";
+        cout << "   Disponibilidade da Partida " <<  (i+1) <<": ";
+        cin >> dis;
+        try {
+            dsp[i].defineDisp(dis);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento disponibilidade inválido \n\n";}
+        cout << endl;
+        cout << "   Preço do Ingresso da Partida " <<  (i+1) <<": ";
         cin >> prc;
+        try {
+            pr1[i].definePreco(prc);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento preço inválido \n\n";}
         cout << endl;
 
-        servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,cod_part,data,hrr,prc,n);
+
+        //servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,cod_part,data,hrr,prc,n);
 
     }
+        if (argInvalido > 0) {
+            cout << endl;
+            cout << "************  Argumentos Inválidos no Cadastro ************" << endl;
+            cout << endl;
+            cout << "*******************  Jogo Não Cadastrado ******************" << endl;
+            cout << endl;
+            cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
+            this->pressione_continuar();
+            system("cls");
+            flash();
+            system("cls");
+            this->tela_gerenciar_jogos();
+    }
+
     system("cls");
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Dados do Jogo:" << endl;
@@ -785,17 +846,55 @@ void Apresentacao::tela_cadastro_jogo(){
     for(int i=0;i<n;i++) {
         cout << endl;
         cout << "   --- Partida " <<  (i+1) <<": " << endl;
-        cout << "   Código da Partida " <<  (i+1) <<": " << cod_part << endl;
-        cout << "   Data da Partida " <<  (i+1) <<": " << data << endl;
-        cout << "   Horário da Partida " <<  (i+1) <<": " << hrr << endl;
-        cout << "   Preço do Ingreço da Partida " <<  (i+1) <<": " << prc << endl;
+        //cout << "   Código da Partida " <<  (i+1) <<": " << cod_part << endl;
+
+        try{
+            part[i].defineCodigo(cod[i]);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento código da partida inválido \n\n";}
+        cout << "   Código da Partida " <<  (i+1) <<": " << part[i].pegaCodigo().pegaCodigo() << endl;
+        try {
+            part[i].defineData(dt[i]);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento data inválido \n\n";}
+        //cout << "   Data da Partida " <<  (i+1) <<": " << data << endl;
+        cout << "   Data da Partida " <<  (i+1) <<": " << part[i].pegaData().viraString() << endl;
+        try {
+            part[i].defineHorario(hr[i]);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento horario inválido \n\n";}
+        //cout << "   Horário da Partida " <<  (i+1) <<": " << hrr << endl;
+        cout << "   Horário da Partida " <<  (i+1) <<": " << part[i].pegaHorario().viraString() << endl;
+        try {
+            part[i].defineDisp(dsp[i]);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento disponibilidade inválido \n\n";}
+        cout << "   Disponibilidade da Partida " <<  (i+1) <<": " << part[i].pegaDisp().pegaDisp() << endl;
+        try {
+            part[i].definePreco(pr1[i]);
+        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento preço inválido \n\n";}
+        //cout << "   Preço do Ingreço da Partida " <<  (i+1) <<": " << prc << endl;
+        cout << "   Preço do Ingreço da Partida " <<  (i+1) <<": " << part[i].pegaPreco().pegaPreco() << endl;
     }
+
 
         confima_cadastro_jogo:cout << "-----------------------------------------------------------" << endl;
         cout << "------------------ Confirma Dados?  (S/N)------------------" << endl;
         cout << "-----------------------------------------------------------" << endl;
         cin >> c;
         if (c=='s' || c=='S') {
+            servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,part,n);
             cout << endl;
             cout << "#################   Jogo Cadastrado   #####################" << endl;
             cout << endl;

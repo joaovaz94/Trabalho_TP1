@@ -87,7 +87,7 @@ class Servicos{
         int AutenticarUsuario(std::string cpf, std::string senha);
         void CadastrarUsuario(std::string cpf, std::string senha, std::string numCart, std::string cvc, std::string validade);
         void DescadastrarUsuario();
-        void CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, std::string cod_part, std::string data, std::string hrr, double prc, int n);
+        void CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, Partida part[], int n);
         void EditarJogo(std::string cod_jg);
         void DescadastrarJogo(std::string cod_jg);
         void ComprarIngressos(std::string cod_part, int qtdIngComp);

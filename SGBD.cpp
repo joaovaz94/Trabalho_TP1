@@ -218,17 +218,50 @@ using namespace std;
         sql += "WHERE usuario_cpf = " + usr.pegaCpf().pegaCpf() + "; ";
 
         //! Executar operaçãoo de criar tabela
-        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+        //op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+        op = sqlite3_prepare_v2(bd, sql.c_str(), -1, &stmt, 0);
 
-        confereErroBD();
+        if (op) {
+            printf("Selecting data from DB Failed (err_code=%d)\n", op);
+            return -1;
+        }
+
+        // for multiple results
+        while(1)
+        {
+            // fetch a row's status
+            op = sqlite3_step(stmt);
+            //cout<< op << endl;
+
+            if(op == SQLITE_ROW)
+            {
+                //cout<< "s1: "<<s << endl;
+                s = (int)sqlite3_column_int(stmt, 0);
+                //cout<< "s2: "<<s << endl;
+                    // or other type - sqlite3_column_text etc.
+                // ... fetch other columns, if there are any
+            }
+            else if(op == SQLITE_DONE)
+            {
+                break;
+            }
+            else
+            {
+                sqlite3_finalize(stmt);
+                printf("Some error encountered\n");
+                break;
+            }
+        }
+        //confereErroBD();
 
         return s;//retorna s>0 se o usuário e senha estiverem corretos
 
     }
 
     //! Cadastra Jogo
-    int SGBD::insereJogo (Jogo jg, Partida part, Usuario usr, int qtd){
+    int SGBD::insereJogo (Jogo jg, Partida part[], Usuario usr, int qtd){
         int i = ConfereMaxJogo(usr);
+
         if(i <= 4 ) {
             sql = "INSERT INTO Jogos VALUES (";
             sql += " " + jg.pegaCodJogo().pegaCodigo() + " , ";
@@ -238,15 +271,20 @@ using namespace std;
             sql += "'" + jg.pegaEstadio().pegaNome() + "', ";
             sql += " " +  to_string(jg.pegaTipo().pegaTipo() ) + " , ";
             sql += " " + usr.pegaCpf().pegaCpf() + " ); ";
-            for (int cont=0;cont<qtd;cont++) {
+            for (int c=0;c<qtd;c++) {
                 sql += "INSERT INTO Partidas VALUES (";
-                sql += " " + part.pegaCodigo().pegaCodigo() + " , ";
-                sql += "'" + part.pegaData().viraStringDB() + "', ";
-                sql += "'" + part.pegaHorario().viraString() + "', ";
-                sql += " " + to_string(part.pegaPreco().pegaPreco() ) + " , ";
-                sql += "'" + to_string(part.pegaDisp().pegaDisp() ) + "', ";
+                sql += " " + part[c].pegaCodigo().pegaCodigo() + " , ";
+                sql += "'" + part[c].pegaData().viraStringDB() + "', ";
+                sql += "'" + part[c].pegaHorario().viraString() + "', ";
+                //ostringstream preco;
+                //preco << part[c].pegaPreco().pegaPreco();
+                //string preco = to_string(float part[c].pegaPreco().pegaPreco())
+                //sql += " " + preco + " , ";
+                sql += " '" + to_string( part[c].pegaPreco().pegaPreco()) + "' , ";
+                sql += "'" + to_string(part[c].pegaDisp().pegaDisp() ) + "', ";
                 sql += " " + jg.pegaCodJogo().pegaCodigo() + " ); ";
             }
+            //cout << sql << endl;
             //! Executar operaçãoo no banco de dados
             op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 

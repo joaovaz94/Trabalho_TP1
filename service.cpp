@@ -110,10 +110,10 @@ void Servicos::DescadastrarUsuario(){
 
 }
 
-void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, std::string cod_part, std::string data, std::string hrr, double prc, int n){
+void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, Partida part[], int n){
 
-    int r;
-    Jogo jg; Partida part;
+    //int r;
+    Jogo jg; //Partida part;
     CodigoJogo COD_JG; NomeJogo NOME; Estadio ESTADIO; Cidade CIDADE; Estado ESTADO;
     Codigo COD_PART; Data DATA; Horario HRR; Preco PRC; Disponibilidade DISP;
 
@@ -129,6 +129,7 @@ void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string e
     jg.defineCidade(CIDADE);
     jg.defineEstado(ESTADO);
 
+    /*
     COD_PART.defineCodigo(cod_part);
     DATA.defineData(data);
     HRR.defineHorario(hrr);
@@ -138,12 +139,13 @@ void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string e
     part.defineData(DATA);
     part.defineHorario(HRR);
     part.definePreco(PRC);
+    */
     }
     catch(invalid_argument){
     cout << "\n\n Argumentos inválidos \n\n";
     }
 
-    r = bancoDados.insereJogo(jg, part, usuario, n);
+    bancoDados.insereJogo(jg, part, usuario, n);
 
 }
 
