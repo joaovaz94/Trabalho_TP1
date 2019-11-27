@@ -319,20 +319,22 @@ using namespace std;
         //Query para
         sql = "SELECT  j.nomejogo, p.codigopartida, p.disponibilidade as 'Ingressos Disponíveis' ";
         sql += "FROM Jogos j, Partidas p ";
-        sql += "WHERE  p.jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
+        sql += "WHERE  p.jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ";
+        sql += "AND j.codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
         //Query para retornar quantidade de ingressos vendidos
-        sql += "SELECT count(*) AS 'Quantidade de Ingressos da Partida Comprados' ";
-        sql += "FROM Ingressos i, Partidas p ";
-        sql += "WHERE i.usuario_cpf is not null ";
-        sql += "AND i.partida_codigopartida = (SELECT codigopartida From Partidas ";
-        sql += "WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "); ";
+        sql += "SELECT  count(*) AS 'Quantidade de Ingressos da Partida Comprados' ";
+        sql += "From Ingressos i INNER JOIN Partidas p ";
+        sql += "on i.partida_codigopartida = p.codigopartida ";
+        sql += "where i.usuario_cpf is not null ";
         sql += "AND p.jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
         //query para retornar os cpfs dos compradores
-        sql += "SELECT i.usuario_cpf AS 'CPFs dos compradores'  ";
-        sql += "FROM Ingressos i, Partidas p ";
-        sql += "WHERE  i.usuario_cpf is not null ";
-        sql += "AND p.jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
+        sql += "SELECT  p.codigopartida, i.usuario_cpf AS 'CPFs dos compradores' ";
+        sql += "From Ingressos i INNER JOIN Partidas p ";
+        sql += "on i.partida_codigopartida = p.codigopartida ";
+        sql += "WHERE p.jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ";
+        sql += "AND i.usuario_cpf is not null ;";
 
+        //cout << sql << endl;
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), callback, 0, &cMenssagemErro);
 

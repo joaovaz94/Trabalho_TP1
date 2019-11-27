@@ -652,12 +652,16 @@ void Apresentacao::tela_informacoes_venda(){
     cout << "--- Informações de Vendas dos Jogos:" << endl;
     cout << "-----------------------------------------------------------" << endl;
     cout << endl;
-    cout << "           - Escolha um dos Jogos cadastrados: -" << endl;
-    cout << endl;
-    // Função para Pesquisar jogos associados ao usuário !!!
-    cout << endl;
-    cout << "\n\nDigite o código do jogo para obter informações sobre as vendas:\n\n";
+    cout << "  - Digite o Código do Jogo que deseja informações das vendas: ";
+    cin >> cod_jg;
     servicos.InfoVenda(cod_jg);
+
+    cout << endl << endl;
+    cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
+    this->pressione_continuar();
+    system("cls");
+    this->tela_gerenciar_jogos();
+
     /*
     if(n>0) {
         for(int i=0;i<n;i++){
@@ -708,7 +712,8 @@ void Apresentacao::tela_informacoes_venda(){
         flash();
         system("cls");
         this->tela_gerenciar_jogos();
-    }*/
+    }
+    */
 
 }
 
@@ -820,9 +825,9 @@ void Apresentacao::tela_cadastro_jogo(){
 
 void Apresentacao::tela_edita_jogo(){
     string cod_jg;
-    char op;
+    //char op;
     string dado="dado - exemplo";
-    int n=2;
+    //int n=2;
     this->cabecalho();
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Editar seus Jogos:" << endl;
@@ -890,9 +895,9 @@ void Apresentacao::tela_edita_jogo(){
 
 void Apresentacao::tela_descadastro_jogo(){
     string cod_jg;
-    char op;
+    //char op;
     string dado="dado - exemplo";
-    int n=3;
+    //int n=3;
     this->cabecalho();
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Descadastrar Jogos:" << endl;
