@@ -88,7 +88,8 @@ using namespace std;
     }
 
     //! Descadastra Usuário
-    int SGBD::descadastraUsuario (Usuario us){;
+    int SGBD::descadastraUsuario (Usuario us){
+        sql = "";
         sql = ("DELETE FROM Usuarios WHERE cpf = " + us.pegaCpf().pegaCpf() + " ; ");
         sql += ("DELETE FROM CartaoCredito WHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + " ; ");
         sql += ("DELETE FROM Jogos WHERE usuario_cpf = '" + us.pegaCpf().pegaCpf() + "'; ");
@@ -105,6 +106,7 @@ using namespace std;
 
     //! Retorna Informações do Jogo
     int SGBD::informaSobreJogo (Cidade cid, Estado est, Data dt1, Data dt2){
+        sql = "";
         sql = "SELECT j.nomejogo, p.codigopartida, p.data, p.horario, p.preco, j.estadio, p.disponibilidade ";
         sql += "FROM Jogos j, Partidas p ";
         //sql += "WHERE j.codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ";
@@ -187,7 +189,10 @@ using namespace std;
             sql += "VALUES ('" + part.pegaCodigo().pegaCodigo() + to_string(cod=cod+1) + "','" + part.pegaCodigo().pegaCodigo() + "','" + usr.pegaCpf().pegaCpf() + "'); ";
             //mudar código do ingresso!!!
         }
-        //cout << sql << endl;
+
+        sql += "UPDATE Partidas SET disponibilidade =  disponibilidade - " + to_string(qtd) + " ";
+        sql += "WHERE codigopartida = " + part.pegaCodigo().pegaCodigo() + "; ";
+        cout << sql << endl;
         //! Executar operaçãoo de criar tabela
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 
@@ -272,6 +277,7 @@ using namespace std;
     //!Quantidade de INgressos já vendidos
     int SGBD::qtdPartidasJogo (Jogo jg) {
         int s = 0;
+        sql = "";
         sql = "SELECT COUNT (*) FROM Partidas ";
         sql += "WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
 
@@ -316,13 +322,14 @@ using namespace std;
 
     //! Retorna Informações de Venda de Jogo
     int SGBD::informaSobreVenda (Jogo& jg, Usuario usr){
+        sql = "";
         //Query para
         sql = "SELECT  j.nomejogo, p.codigopartida, p.disponibilidade as 'Ingressos Disponíveis' ";
         sql += "FROM Jogos j, Partidas p ";
         sql += "WHERE  p.jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ";
         sql += "AND j.codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
         //Query para retornar quantidade de ingressos vendidos
-        sql += "SELECT  count(*) AS 'Quantidade de Ingressos da Partida Comprados' ";
+        sql += "SELECT  count(*) AS 'Quantidade de Ingressos do Jogo Comprados' ";
         sql += "From Ingressos i INNER JOIN Partidas p ";
         sql += "on i.partida_codigopartida = p.codigopartida ";
         sql += "where i.usuario_cpf is not null ";
