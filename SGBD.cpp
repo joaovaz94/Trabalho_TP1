@@ -121,7 +121,7 @@ using namespace std;
     //! Retorna Dados de Usuário
     int SGBD::mostraJogo (Jogo jg){
         sql = "";
-        sql = ("Select * FROM Jogos WHERE cpf = " + jg.pegaCodJogo().pegaCodigo() + " ; ");
+        sql = ("Select * FROM Jogos WHERE codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ; ");
         sql += ("SELECT * FROM Partidas WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ; ");
 
         //! Executar operaçãoo no banco de dados
