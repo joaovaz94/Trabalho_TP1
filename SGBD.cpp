@@ -93,11 +93,25 @@ using namespace std;
         sql = ("DELETE FROM Usuarios WHERE cpf = " + us.pegaCpf().pegaCpf() + " ; ");
         sql += ("DELETE FROM CartaoCredito WHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + " ; ");
         sql += ("DELETE FROM Jogos WHERE usuario_cpf = '" + us.pegaCpf().pegaCpf() + "'; ");
-        sql += ("DELETE FROM Partidas WHERE jogo_codigojogo = ");
-        sql += ("(SELECT codigojogo FROM Jogos wHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + "); ");
+        sql += ("DELETE FROM Partidas WHERE jogo_codigojogo in ");
+        sql += ("(SELECT codigojogo FROM Jogos WHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + "); ");
 
         //! Executar operaçãoo no banco de dados
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
+
+        confereErroBD();
+
+        return r;
+    }
+
+    //! Retorna Dados de Usuário
+    int SGBD::mostraUsuario (Usuario us){
+        sql = "";
+        sql = ("Select * FROM Usuarios WHERE cpf = " + us.pegaCpf().pegaCpf() + " ; ");
+        sql += ("SELECT * FROM CartaoCredito WHERE usuario_cpf = " + us.pegaCpf().pegaCpf() + " ; ");
+
+        //! Executar operaçãoo no banco de dados
+        op = sqlite3_exec(bd, sql.c_str(), callback, 0, &cMenssagemErro);
 
         confereErroBD();
 
@@ -192,7 +206,7 @@ using namespace std;
 
         sql += "UPDATE Partidas SET disponibilidade =  disponibilidade - " + to_string(qtd) + " ";
         sql += "WHERE codigopartida = " + part.pegaCodigo().pegaCodigo() + "; ";
-        cout << sql << endl;
+        //cout << sql << endl;
         //! Executar operaçãoo de criar tabela
         op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 

@@ -102,6 +102,14 @@ void Servicos::CadastrarUsuario(std::string cpf, std::string senha, std::string 
 
 }
 
+void Servicos::MostrarUsuario(){
+
+    int r;
+
+    r = bancoDados.mostraUsuario(usuario);
+
+}
+
 void Servicos::DescadastrarUsuario(){
 
     int r;
@@ -110,7 +118,7 @@ void Servicos::DescadastrarUsuario(){
 
 }
 
-void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, Partida part[], int n){
+void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, int tipo, Partida part[], int n){
 
     //int r;
     Jogo jg; //Partida part;
@@ -119,7 +127,8 @@ void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string e
     Estadio ESTADIO;
     Cidade CIDADE;
     Estado ESTADO;
-    Codigo COD_PART;
+    Tipo TIPO;
+    //Codigo COD_PART;
     //Data DATA;
     //Horario HRR;
     //Preco PRC;
@@ -132,11 +141,13 @@ void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string e
         ESTADIO.defineNome(estadio);
         CIDADE.defineNome(cidade);
         ESTADO.defineEstado(estado);
+        TIPO.defineTipo(tipo);
         jg.defineCodJogo(COD_JG);
         jg.defineNomeJogo(NOME);
         jg.defineEstadio(ESTADIO);
         jg.defineCidade(CIDADE);
         jg.defineEstado(ESTADO);
+        jg.defineTipo(TIPO);
 
         /*
         COD_PART.defineCodigo(cod_part);

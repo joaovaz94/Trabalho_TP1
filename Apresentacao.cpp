@@ -394,18 +394,13 @@ void Apresentacao::tela_usuario_autenticado() {
 
 void Apresentacao::tela_descadastro_usuario() {
     char c;
-    string dado="dado - exemplo";
+    //string dado="dado - exemplo";
     this->cabecalho();
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Dados do Usuário:" << endl;
     cout << "-----------------------------------------------------------" << endl;
     //mostrar informações do usuario !!!
-    cout << endl;
-    cout << "   cpf: " << dado << endl;
-    cout << "   senha: " << dado << endl;
-    cout << "   Número do Cartão: " << dado << endl;
-    cout << "   Código de Verificação: " << dado << endl;
-    cout << "   Validade do Cartão: " << dado << endl;
+    servicos.MostrarUsuario();
 
     confima_descadastro_usuario:cout << "-----------------------------------------------------------" << endl;
         cout << "-------------- Confirma Descadastro?  (S/N) ---------------" << endl;
@@ -736,7 +731,7 @@ void Apresentacao::tela_informacoes_venda(){
 void Apresentacao::tela_cadastro_jogo(){
     string cod_jg,Nome,cod_part,data,hrr,estadio,cidade,estado;
     double prc;
-    int n,dis,argInvalido = 0;
+    int n,dis,tipo,argInvalido = 0;
     char c;
 
     this->cabecalho();
@@ -766,6 +761,9 @@ void Apresentacao::tela_cadastro_jogo(){
     cout << endl;
     cout << "   Estado: ";
     cin >> estado;
+    cout << endl;
+    cout << "   Tipo do Jogo: ";
+    cin >> tipo;
     cout << endl;
     cout << "   Quantidade de Partidas do Jogo: ";
     cin >> n;
@@ -855,6 +853,7 @@ void Apresentacao::tela_cadastro_jogo(){
     cout << "   Estádio: " << estadio << endl;
     cout << "   Cidade: " << cidade << endl;
     cout << "   Estado: " << estado << endl;
+    cout << "   Tipo: " << tipo << endl;
     cout << "   Quantidade de Partidas do Jogo: " << n << endl;
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Dados das Partidas:" << endl;
@@ -910,7 +909,7 @@ void Apresentacao::tela_cadastro_jogo(){
         cout << "-----------------------------------------------------------" << endl;
         cin >> c;
         if (c=='s' || c=='S') {
-            servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,part,n);
+            servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,tipo,part,n);
             cout << endl;
             cout << "#################   Jogo Cadastrado   #####################" << endl;
             cout << endl;
