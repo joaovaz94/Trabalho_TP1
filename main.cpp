@@ -24,17 +24,17 @@ int main(int argc, char** argv)
     testes.executaTestesUnidade();
 
     //!Gest�o de Banco de Dados
-    //SGBD bancoDeDados;
-    //bancoDeDados.criarTabelas();
+    SGBD bancoDeDados;
+    bancoDeDados.criarTabelas();
 
     //! Defini��o e execu��o da camada de Apresentação do programa
-    //Apresentacao tui;
-    //tui.tela_inicial();
+    Apresentacao tui;
+    tui.tela_inicial();
 
     //! Definição e execução da Interface do programa
-    Interface interface;
-    interface.iniciarPrograma();
-    interface.fecharPrograma();
+    //Interface interface;
+    //interface.iniciarPrograma();
+    //interface.fecharPrograma();
 
     /*
     //!Declara��o de objetos dos Dompinios
@@ -177,6 +177,6 @@ int main(int argc, char** argv)
     //LEMBRETES DE C�DIGO
 
 
-    //bancoDeDados.fechaBD(); //! Comando para fechar a conex�o do programa com o banco de dados antes de fechar o programa
+    bancoDeDados.fechaBD(); //! Comando para fechar a conex�o do programa com o banco de dados antes de fechar o programa
     return 0;
 }

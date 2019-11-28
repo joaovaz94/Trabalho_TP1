@@ -3,14 +3,15 @@
 using namespace std;
 
 void Interface::iniciarPrograma() {
-    bancoDeDados.criarTabelas();
-    operacao = tui.tela_inicial();
-    this->operacaoInicial(operacao);
+    //bancoDeDados.criarTabelas();
+    //operacao = tui.tela_inicial();
+    //this->operacaoInicial(operacao);
 
     //bancoDeDados.fechaBD(); //! Comando para fechar a conex�o do programa com o banco de dados antes de fechar o programa
 }
 
 void Interface::operacaoInicial(char op) {
+        /*
         cout << "ok" << endl;
         if(op=='1'){
             system("cls");
@@ -40,10 +41,11 @@ void Interface::operacaoInicial(char op) {
             system("cls");
             tui.tela_inicial();
         }
+        */
 }
 
 void Interface::operacaoCadastro() {
-
+    //tui.tela_cadastro_usuario();
 }
 
 void Interface::fecharPrograma() {
