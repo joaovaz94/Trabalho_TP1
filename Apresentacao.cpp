@@ -932,10 +932,10 @@ void Apresentacao::tela_cadastro_jogo(){
 }
 
 void Apresentacao::tela_edita_jogo(){
-    string cod_jg;
-    //char op;
-    string dado="dado - exemplo";
-    //int n=2;
+    string cod_jg,Nome,cod_part,data,hrr,estadio,cidade,estado;
+    double prc;
+    int n,dis,argInvalido = 0;
+    char c;
     this->cabecalho();
     cout << "-----------------------------------------------------------" << endl;
     cout << "--- Editar seus Jogos:" << endl;
@@ -943,54 +943,194 @@ void Apresentacao::tela_edita_jogo(){
     cout << endl;
     cout << "           - Escolha um dos Jogos cadastrados: -" << endl;
     cout << endl;
-    cout << "\n\n Digite o código do jogo a ser editado \n\n";
+    cout << "\n\n Digite o código do jogo a ser editado: ";
     cin >> cod_jg;
-    servicos.EditarJogo(cod_jg);
-    /*
-    // Função para Pesquisar jogos associados ao usuário !!!
+    //servicos.EditarJogo(cod_jg);
+
     cout << endl;
-    if(n>0) {
-        for(int i=0;i<n;i++){
-            cout << "   Código: " << dado << " - Nome: " << dado << endl;
-            cout << "   Digite '" << (i+1) << "'" << endl;
-            cout << endl;
-        }
-        cout << "   Para voltar ao menu de Gerenciamento de Jogos " << endl;
-        cout << "   Digite '0'" << endl;
+    cout << "       - Forneça os Dados para Realizar a Edição do Jogo -" << endl;
+    cout << endl;
+    cout << endl;
+    cout << "   Código do Jogo: " << cod_jg;
+
+    cin.ignore();
+    cout << endl;
+    cout << "   Nome do Jogo: ";
+    //cin >> Nome;
+    //getch();
+    getline (cin,Nome);
+    cout << endl;
+    cout << "   Estádio: ";
+    //cin >> estadio;
+    getline (cin,estadio);
+    cout << endl;
+    cout << "   Cidade: ";
+    //cin >> cidade;
+    getline (cin,cidade);
+    cout << endl;
+    cout << "   Estado: ";
+    cin >> estado;
+    cout << endl;
+    cout << "   Quantidade de Partidas do Jogo que deseja Editar: ";
+    cin >> n;
+    cout << endl;
+
+    Partida part[n];
+    Codigo cod[n];
+    Data dt[n];
+    Disponibilidade dsp[n];
+    Horario hr[n];
+    Preco pr1[n];
+
+    for(int i=0;i<n;i++) {
+        cout << "       - Dados da Partida " << (i+1) <<" -" << endl;
         cout << endl;
-        escolhe_jogo_vendas:cout << "   Escolha um Jogo para editar: ";
-        cin >> op;
-        if(op == '0'){
-            cout << endl;
-            cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
-            this->pressione_continuar();
-            system("cls");
-            flash();
-            system("cls");
-            this->tela_gerenciar_jogos();
+        cout << "   Código da Partida " <<  (i+1) <<": ";
+        cin >> cod_part;
+        try{
+            cod[i].defineCodigo(cod_part);
         }
-        else if( (op=='1') && (n>=1))  {
-            this->jogo_edita();
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento código da partida inválido \n\n";}
+        cout << endl;
+        cout << "   Data da Partida " <<  (i+1) <<": ";
+        cin >> data;
+        try {
+            dt[i].defineData(data);
         }
-        else if( (op=='2') && (n>=2))  {
-            this->jogo_edita();
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento data inválido \n\n";}
+        cout << endl;
+        cout << "   Horário da Partida " <<  (i+1) <<": ";
+        cin >> hrr;
+        try {
+            hr[i].defineHorario(hrr);
         }
-        else if( (op=='3') && (n>=3))  {
-            this->jogo_edita();
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento horario inválido \n\n";}
+        cout << endl;
+        cout << "   Disponibilidade da Partida " <<  (i+1) <<": ";
+        cin >> dis;
+        try {
+            dsp[i].defineDisp(dis);
         }
-        else if( (op=='4') && (n>=4))  {
-            this->jogo_edita();
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento disponibilidade inválido \n\n";}
+        cout << endl;
+        cout << "   Preço do Ingresso da Partida " <<  (i+1) <<": ";
+        cin >> prc;
+        try {
+            pr1[i].definePreco(prc);
         }
-        else if( (op=='5') && (n==5))  {
-            this->jogo_edita();
-        }
-        else {
-            this->operacao_invalida();
-            goto escolhe_jogo_vendas;
-        }
+        catch(invalid_argument) {
+            argInvalido++;
+            cout<< "\n\n Argumento preço inválido \n\n";}
+        cout << endl;
     }
-    else {
-        cout << "   Nenhum Jogo Cadastrado" << endl;
+
+    if (argInvalido > 0){
+        cout << endl;
+        cout << "*************  Argumentos Inválidos na Edição *************" << endl;
+        cout << endl;
+        cout << "*********************  Jogo Não Editado *******************" << endl;
+        cout << endl;
+        cout << "###########   Voltando às Operações de Jogos   ############" << endl;
+        this->pressione_continuar();
+        system("cls");
+        flash();
+        system("cls");
+        this->tela_gerenciar_jogos();
+    }
+
+    system("cls");
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "--- Dados do Jogo Se confirmada a Edição:" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << endl;
+    cout << "   Código do Jogo: " << cod_jg << endl;
+    cout << "   Nome do Jogo: " << Nome << endl;
+    cout << "   Estádio: " << estadio << endl;
+    cout << "   Cidade: " << cidade << endl;
+    cout << "   Estado: " << estado << endl;
+    cout << "   Quantidade de Partidas do Jogo: " << n << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "--- Dados das Partidas Se confirmada a Edição:" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    for(int i=0; i<n; i++)
+    {
+        cout << endl;
+        cout << "   --- Partida " <<  (i+1) <<": " << endl;
+        //cout << "   Código da Partida " <<  (i+1) <<": " << cod_part << endl;
+
+        try
+        {
+            part[i].defineCodigo(cod[i]);
+        }
+        catch(invalid_argument)
+        {
+            argInvalido++;
+            cout<< "\n\n Argumento código da partida inválido \n\n";
+        }
+        cout << "   Código da Partida " <<  (i+1) <<": " << part[i].pegaCodigo().pegaCodigo() << endl;
+        try
+        {
+            part[i].defineData(dt[i]);
+        }
+        catch(invalid_argument)
+        {
+            argInvalido++;
+            cout<< "\n\n Argumento data inválido \n\n";
+        }
+        //cout << "   Data da Partida " <<  (i+1) <<": " << data << endl;
+        cout << "   Data da Partida " <<  (i+1) <<": " << part[i].pegaData().viraString() << endl;
+        try
+        {
+            part[i].defineHorario(hr[i]);
+        }
+        catch(invalid_argument)
+        {
+            argInvalido++;
+            cout<< "\n\n Argumento horario inválido \n\n";
+        }
+        //cout << "   Horário da Partida " <<  (i+1) <<": " << hrr << endl;
+        cout << "   Horário da Partida " <<  (i+1) <<": " << part[i].pegaHorario().viraString() << endl;
+        try
+        {
+            part[i].defineDisp(dsp[i]);
+        }
+        catch(invalid_argument)
+        {
+            argInvalido++;
+            cout<< "\n\n Argumento disponibilidade inválido \n\n";
+        }
+        cout << "   Disponibilidade da Partida " <<  (i+1) <<": " << part[i].pegaDisp().pegaDisp() << endl;
+        try
+        {
+            part[i].definePreco(pr1[i]);
+        }
+        catch(invalid_argument)
+        {
+            argInvalido++;
+            cout<< "\n\n Argumento preço inválido \n\n";
+        }
+        //cout << "   Preço do Ingreço da Partida " <<  (i+1) <<": " << prc << endl;
+        cout << "   Preço do Ingreço da Partida " <<  (i+1) <<": " << part[i].pegaPreco().pegaPreco() << endl;
+    }
+
+confima_edita_jogo:cout << "-----------------------------------------------------------" << endl;
+    cout << "---------- Confirma Dados e Editar Jogo?  (S/N) -----------" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cin >> c;
+    if (c=='s' || c=='S')
+    {
+        servicos.EditarJogo(cod_jg,Nome,estadio,cidade,estado,part,n);
+        //servicos.CadastrarJogo(cod_jg,Nome,estadio,cidade,estado,part,n);
+        cout << endl;
+        cout << "##################   Jogo Editado   #####################" << endl;
         cout << endl;
         cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
         this->pressione_continuar();
@@ -998,7 +1138,25 @@ void Apresentacao::tela_edita_jogo(){
         flash();
         system("cls");
         this->tela_gerenciar_jogos();
-    }*/
+    }
+    else if (c=='n' || c=='N')
+    {
+        cout << endl;
+        cout << "*******************  Jogo Não Editado ******************" << endl;
+        cout << endl;
+        cout << "##########   Voltando às Operações de Jogos   ###########" << endl;
+        this->pressione_continuar();
+        system("cls");
+        flash();
+        system("cls");
+        this->tela_gerenciar_jogos();
+    }
+    else
+    {
+        this->operacao_invalida();
+        goto confima_edita_jogo;
+    }
+
 }
 
 void Apresentacao::tela_descadastro_jogo(){

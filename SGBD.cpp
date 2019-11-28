@@ -367,7 +367,7 @@ using namespace std;
         }
     }
 
-    //!Quantidade de INgressos já vendidos
+    //!Quantidade de Partidas que um jogo possui
     int SGBD::qtdPartidasJogo (Jogo jg) {
         int s = 0;
         sql = "";
@@ -375,15 +375,52 @@ using namespace std;
         sql += "WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "; ";
 
         //! Executar operaçãoo de criar tabela
-        op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+        //op = sqlite3_exec(bd, sql.c_str(), callbackRetorno, &s, &cMenssagemErro);
+        op = sqlite3_prepare_v2(bd, sql.c_str(), -1, &stmt, 0);
 
-        confereErroBD();
+        if (op)
+        {
+            printf("Selecting data from DB Failed (err_code=%d)\n", op);
+            return -1;
+        }
+
+        // for multiple results
+        while(1)
+        {
+            // fetch a row's status
+            op = sqlite3_step(stmt);
+            //cout<< op << endl;
+
+            if(op == SQLITE_ROW)
+            {
+                //cout<< "s1: "<<s << endl;
+                s = (int)sqlite3_column_int(stmt, 0);
+                //cout<< "s2: "<<s << endl;
+                // or other type - sqlite3_column_text etc.
+                // ... fetch other columns, if there are any
+            }
+            else if(op == SQLITE_DONE)
+            {
+                break;
+            }
+            else
+            {
+                sqlite3_finalize(stmt);
+                printf("Some error encountered\n");
+                break;
+            }
+        }
+
+        //confereErroBD();
 
         return s;//retorna s>0 se o usuário e senha estiverem corretos
     }
 
     //! Edita Jogo/Partida
-    int SGBD::editaJogo (Jogo jg, Usuario usr){
+    int SGBD::editaJogo (Jogo jg, Partida part[], Usuario usr, int qtd){
+        int n = qtdIngressosVendidosJogo(jg);
+        int np = qtdPartidasJogo(jg);
+    if (n <= 0){
         sql = "UPDATE Jogos SET ";
         sql += "codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " , ";
         sql += "nomejogo = '" + jg.pegaNomeJogo().pegaNome() + "', ";
@@ -392,25 +429,64 @@ using namespace std;
         sql += "estadio = '" + jg.pegaEstadio().pegaNome() + "', ";
         sql += "tipo = " +  to_string(jg.pegaTipo().pegaTipo() ) + " , ";
         sql += "usuario_cpf = " + usr.pegaCpf().pegaCpf() + "  ";
-        sql += "WHERE codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "  ";
-        /* Edição de partidas
-        sql += "UPDATE Partidas SET ";
-        sql += "codigopartida = " + part.pegaCodigo().pegaCodigo() + " , ";
-        sql += "data = '" + part.pegaData().viraString() + "', ";
-        sql += "horario = '" + part.pegaHorario().viraStringDB() + "', ";
-        sql += "preco = " + to_string(part.pegaPreco().pegaPreco() ) + " , ";
-        sql += "disponibilidade = '" + to_string(part.pegaDisp().pegaDisp() ) + "', ";
-        sql += " " + jg.pegaCodJogo().pegaCodigo() + "  ";
-        sql += "WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "  ";
-        */
+        sql += "WHERE codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ; ";
+        // Edição de partidas
+        if (qtd > np)
+        {
+            for (int c=0; c<np; c++)
+            {
+                sql += "UPDATE Partidas SET ";
+                sql += "codigopartida = " + part[c].pegaCodigo().pegaCodigo() + " , ";
+                sql += "data = '" + part[c].pegaData().viraStringDB() + "', ";
+                sql += "horario = '" + part[c].pegaHorario().viraString() + "', ";
+                sql += "preco = '" + to_string(part[c].pegaPreco().pegaPreco() ) + "' , ";
+                sql += "disponibilidade = '" + to_string(part[c].pegaDisp().pegaDisp() ) + "', ";
+                sql += " jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "  ";
+                sql += "WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "  ";
+                sql += "AND codigopartida = " + part[c].pegaCodigo().pegaCodigo() + " ; ";
+            }
+            for (int c=0; c<(qtd-np); c++)
+            {
+                sql += "INSERT INTO Partidas VALUES (";
+                sql += " " + part[c].pegaCodigo().pegaCodigo() + " , ";
+                sql += "'" + part[c].pegaData().viraStringDB() + "', ";
+                sql += "'" + part[c].pegaHorario().viraString() + "', ";
+                sql += " '" + to_string( part[c].pegaPreco().pegaPreco()) + "' , ";
+                sql += "'" + to_string(part[c].pegaDisp().pegaDisp() ) + "', ";
+                sql += " " + jg.pegaCodJogo().pegaCodigo() + " ); ";
+            }
+
+        }
+        else
+        {
+            for (int c=0; c<qtd; c++)
+            {
+                sql += "UPDATE Partidas SET ";
+                sql += "codigopartida = " + part[c].pegaCodigo().pegaCodigo() + " , ";
+                sql += "data = '" + part[c].pegaData().viraStringDB() + "', ";
+                sql += "horario = '" + part[c].pegaHorario().viraString() + "', ";
+                sql += "preco = '" + to_string(part[c].pegaPreco().pegaPreco() ) + "' , ";
+                sql += "disponibilidade = '" + to_string(part[c].pegaDisp().pegaDisp() ) + "', ";
+                sql += " jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "  ";
+                sql += "WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + "  ";
+                sql += "AND codigopartida = " + part[c].pegaCodigo().pegaCodigo() + " ; ";
+            }
+        }
 
 
-        //! Executar operaçãoo no banco de dados
-        op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
+            // Talvez precise criar partidas!!!
+            //! Executar operaçãoo no banco de dados
+            op = sqlite3_exec(bd, sql.c_str(), NULL, 0, &cMenssagemErro);
 
-        confereErroBD();
+            confereErroBD();
 
-        return r;
+            return r;
+        }
+        else {
+            cout << "Jogo não pode ser Editado!! o Jogo já vendeu Ingressos " << endl;
+            r = -1;
+            return r;
+        }
     }
 
     //! Retorna Informações de Venda de Jogo

@@ -209,14 +209,14 @@ class SGBD
     //! Descadastra Jogo/Partida
     int descadastraJogo (Jogo jg);
 
-    //!Quantidade de INgressos já vendidos
+    //!Quantidade de Partidas que um jogo possui
     int qtdPartidasJogo (Jogo jg);
 
 
 
 
     //! Edita Jogo/Partida
-    int editaJogo (Jogo jg, Usuario usr);
+    int editaJogo (Jogo jg, Partida part[], Usuario usr, int qtd);
 
     //! Retorna Informações de Venda de Jogo
     int informaSobreVenda (Jogo& jg, Usuario usr);

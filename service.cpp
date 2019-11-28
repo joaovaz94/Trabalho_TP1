@@ -114,55 +114,84 @@ void Servicos::CadastrarJogo(std::string cod_jg, std::string Nome, std::string e
 
     //int r;
     Jogo jg; //Partida part;
-    CodigoJogo COD_JG; NomeJogo NOME; Estadio ESTADIO; Cidade CIDADE; Estado ESTADO;
-    Codigo COD_PART; Data DATA; Horario HRR; Preco PRC; Disponibilidade DISP;
+    CodigoJogo COD_JG;
+    NomeJogo NOME;
+    Estadio ESTADIO;
+    Cidade CIDADE;
+    Estado ESTADO;
+    Codigo COD_PART;
+    //Data DATA;
+    //Horario HRR;
+    //Preco PRC;
+    //Disponibilidade DISP;
 
-    try{
-    COD_JG.defineCodJogo(cod_jg);
-    NOME.defineNome(Nome);
-    ESTADIO.defineNome(estadio);
-    CIDADE.defineNome(cidade);
-    ESTADO.defineEstado(estado);
-    jg.defineCodJogo(COD_JG);
-    jg.defineNomeJogo(NOME);
-    jg.defineEstadio(ESTADIO);
-    jg.defineCidade(CIDADE);
-    jg.defineEstado(ESTADO);
+    try
+    {
+        COD_JG.defineCodJogo(cod_jg);
+        NOME.defineNome(Nome);
+        ESTADIO.defineNome(estadio);
+        CIDADE.defineNome(cidade);
+        ESTADO.defineEstado(estado);
+        jg.defineCodJogo(COD_JG);
+        jg.defineNomeJogo(NOME);
+        jg.defineEstadio(ESTADIO);
+        jg.defineCidade(CIDADE);
+        jg.defineEstado(ESTADO);
 
-    /*
-    COD_PART.defineCodigo(cod_part);
-    DATA.defineData(data);
-    HRR.defineHorario(hrr);
-    PRC.definePreco(prc);
-    DISP.defineDisp(250);
-    part.defineCodigo(COD_PART);
-    part.defineData(DATA);
-    part.defineHorario(HRR);
-    part.definePreco(PRC);
-    */
+        /*
+        COD_PART.defineCodigo(cod_part);
+        DATA.defineData(data);
+        HRR.defineHorario(hrr);
+        PRC.definePreco(prc);
+        DISP.defineDisp(250);
+        part.defineCodigo(COD_PART);
+        part.defineData(DATA);
+        part.defineHorario(HRR);
+        part.definePreco(PRC);
+        */
     }
-    catch(invalid_argument){
-    cout << "\n\n Argumentos inválidos \n\n";
+    catch(invalid_argument)
+    {
+        cout << "\n\n Argumentos inválidos \n\n";
     }
 
     bancoDados.insereJogo(jg, part, usuario, n);
 
 }
 
-void Servicos::EditarJogo(string cod_jg){
+void Servicos::EditarJogo(std::string cod_jg, std::string Nome, std::string estadio, std::string cidade, std::string estado, Partida part[], int n){
 
-int r;
-CodigoJogo COD_JG;
-Jogo JOGO;
-try{
-COD_JG.defineCodJogo(cod_jg);
-JOGO.defineCodJogo(COD_JG);
-}
-catch(invalid_argument){
-    cout << "\n\n Argumentos inválidos \n\n";
+    Jogo jg; //Partida part;
+    CodigoJogo COD_JG;
+    NomeJogo NOME;
+    Estadio ESTADIO;
+    Cidade CIDADE;
+    Estado ESTADO;
+    //Codigo COD_PART;
+    //Data DATA;
+    //Horario HRR;
+    //Preco PRC;
+    //Disponibilidade DISP;
+
+    try
+    {
+        COD_JG.defineCodJogo(cod_jg);
+        NOME.defineNome(Nome);
+        ESTADIO.defineNome(estadio);
+        CIDADE.defineNome(cidade);
+        ESTADO.defineEstado(estado);
+        jg.defineCodJogo(COD_JG);
+        jg.defineNomeJogo(NOME);
+        jg.defineEstadio(ESTADIO);
+        jg.defineCidade(CIDADE);
+        jg.defineEstado(ESTADO);
+    }
+    catch(invalid_argument)
+    {
+        cout << "\n\n Argumentos inválidos \n\n";
     }
 
-r = bancoDados.editaJogo(JOGO,usuario);
+    bancoDados.editaJogo(jg, part, usuario, n);
 
 }
 
