@@ -8,13 +8,14 @@
 #include <string>
 #include <stdexcept>
 
-
 class Data {
     public:
         //!construtor da classe Data
         Data (int d=1,int m=1,int a=2000);
         //!função para retornar data como string
         std::string viraString();
+        //!função para retornar data como string nos moldes do tipo date de SQL
+        std::string viraStringDB();
         //!função para definir os valores de data
         void defineData(int d,int m,int a);
         //!função para definir data a partir de string
@@ -226,6 +227,16 @@ class Tipo{
         void validaDigito(int)throw (std::invalid_argument);
         Id  tp;
         int digito;
+};
+
+class Estadio: public Nome{
+ private:
+    int capacidade;
+    //std::string nome;
+    void validaCapacidade(int capacidade) throw(std::invalid_argument);
+    void validaNome(std::string) throw (std::invalid_argument);
+ public:
+     virtual ~Estadio() {}
 };
 
 

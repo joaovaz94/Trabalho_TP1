@@ -54,6 +54,12 @@ string Data::viraString() {
     return aux.str();
 }
 
+string Data::viraStringDB() {
+    ostringstream aux;
+    aux << ano << "-" << trataNum(mes) << "-" << trataNum(dia);
+    return aux.str();
+}
+
 //!Função para tratar números de dia e mês
 string  Data::trataNum(int num) {
     ostringstream aux;
@@ -263,8 +269,8 @@ void Disponibilidade::defineDisp (int dsp){
 }
 //!Função para validar Disponibilidade
 void Disponibilidade::validaDisp (int& dsp) throw (invalid_argument){
-    if (dsp < 0 || dsp > 300)
-        throw invalid_argument("Argumento Inválido: a disponibilidade deve ser um valor de 0 a 300");
+    if (dsp < 1 || dsp > 100000)
+        throw invalid_argument("Argumento Inválido: a disponibilidade deve ser um valor de 1 a 100000");
 }
 
 /**
@@ -350,7 +356,7 @@ void CodigoJogo::defineCodJogo (string cod){
 //!Função para validar Codigo do Ingresso
 void CodigoIngresso::validaCodIng (string& cod) throw (invalid_argument){
     validaCodigo(cod);
-    //!lança exceção se o Código do jogo não tiver 3 dígitos
+    //!lança exceção se o Código do ingresso não tiver 5 dígitos
     if ( cod.length() != 5)
       throw invalid_argument("Argumento Inválido: o Código do Ingresso deve ter 5 dígitos");
 }
@@ -571,3 +577,38 @@ string Tipo::stringTipo () {
     }
     return tipo;
 }
+
+void Estadio::validaNome(string n) throw (std::invalid_argument){
+
+    if(n.length() > 40)
+        throw(invalid_argument)("\n\n Erro: Nome do Estádio pode ter no máximo 40 caracteres. \n\n");
+    bool flag_letra=false;
+    int comp = n.length();
+    for(int i=0;i<comp;i++){
+
+        if( ( isalpha( n[i] ) )!=0 ) {
+            flag_letra=true;
+        }
+
+        else if( ( ( isalnum( n[i] ) )==0 ) && ( n[i]!=' ' ) ){
+            throw(invalid_argument)("\n\n Caracter inválido: deve ser alfanumérico oe espaço. \n\n");
+        }
+
+        else if( ( n[i]==' ' ) && ( n[i+1]==' ' ) ){
+            throw(invalid_argument)("\n\n Erro: espaço não pode ser seguido de outro. \n\n");
+            }
+
+    }
+
+    if ( !(flag_letra) ){
+        throw(invalid_argument)("\n\n Erro: não há letra no nome do Estádio. \n\n");
+    }
+}
+
+void Estadio::validaCapacidade (int capacidade) throw(std::invalid_argument){
+    if( (capacidade<1000) || (capacidade>100000) ){
+        throw(invalid_argument)("\n\n Capacidade inválida: deve ser um número entre 1000 e 100000 pessoas \n\n");
+    }
+
+}
+

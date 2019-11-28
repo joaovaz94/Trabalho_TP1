@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+#Code::Blocks
+*.layout
+*.depend
+bin/
+obj/
+
+
+vector_stl_modifiers.cpp

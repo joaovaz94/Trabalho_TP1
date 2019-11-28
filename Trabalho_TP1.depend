@@ -1,11 +1,127 @@
+<<<<<<< HEAD
+# depslib dependency file v1.0
+1569619810 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
+	<iostream>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
+	<string>
+	<locale.h>
+
+1569608447 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\testes.cpp
+	"testes.h"
+
+1567118493 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\usuario.cpp
+	"usuario.h"
+
+1567118493 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\usuario.h
+
+1569593802 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\dominios.cpp
+	"dominios.h"
+	<sstream>
+	<stdlib.h>
+	<iostream>
+
+1569548074 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\dominios.h
+	<string>
+	<stdexcept>
+
+1569608447 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\entidades.h
+	"dominios.h"
+
+1569608447 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\testes.h
+	"dominios.h"
+	<string>
+
+1569619372 c:\users\joao paulo\documents\tp1\trabalho_tp1\dominios.h
+	<string>
+	<stdexcept>
+
+1574340333 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\dominios.cpp
+	"dominios.h"
+	<sstream>
+	<stdlib.h>
+	<iostream>
+
+1569619810 c:\users\joao paulo\documents\tp1\trabalho_tp1\entidades.h
+	"dominios.h"
+	<iostream>
+
+1569619581 c:\users\joao paulo\documents\tp1\trabalho_tp1\testes.h
+	"dominios.h"
+	<string>
+
+1569619833 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\testes.cpp
+	"testes.h"
+
+1569619407 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\entidades.cpp
+	"entidades.h"
+
+1574294719 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.cpp
+	"Interface.h"
+	<windows.h>
+	<conio.h>
+	<ctype.h>
+	<stdlib.h>
+
+1574284021 c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.h
+	<iostream>
+
+1574466414 source:c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\dominios.cpp
+	"dominios.h"
+	<sstream>
+	<stdlib.h>
+	<iostream>
+
+1574466359 c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\dominios.h
+	<string>
+	<stdexcept>
+
+1573735865 source:c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\entidades.cpp
+	"entidades.h"
+
+1573735865 c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\entidades.h
+	"dominios.h"
+	<iostream>
+
+1573735865 source:c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\testes.cpp
+	"testes.h"
+
+1573735865 c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\testes.h
+	"dominios.h"
+	<string>
+
+1574379550 source:c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\interface.cpp
+	"Interface.h"
+	<windows.h>
+	<conio.h>
+	<ctype.h>
+	<stdlib.h>
+
+1574379550 c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\interface.h
+	<iostream>
+
+1574379550 source:c:\unb\estudo\cic\t�cnicas de programa��o 1\t1\trabalho_tp1\main.cpp
+	<iostream>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
+	<string>
+	<locale.h>
+	"Interface.h"
+
+=======
 # depslib dependency file v1.0
-1569619810 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
+1574466438 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
+1574026019 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\main.cpp
 	<iostream>
 	"entidades.h"
 	"dominios.h"
 	"testes.h"
-	<string>
 	<locale.h>
+	"Interface.h"
+	"Apresentacao.h"
+	"SGBD.h"
 
 1569608447 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\testes.cpp
 	"testes.h"
@@ -36,7 +152,8 @@
 	<string>
 	<stdexcept>
 
-1569619348 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\dominios.cpp
+1574353486 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\dominios.cpp
+1573737660 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\dominios.cpp
 	"dominios.h"
 	<sstream>
 	<stdlib.h>
@@ -46,13 +163,102 @@
 	"dominios.h"
 	<iostream>
 
-1569619581 c:\users\joao paulo\documents\tp1\trabalho_tp1\testes.h
+1574465930 c:\users\joao paulo\documents\tp1\trabalho_tp1\testes.h
 	"dominios.h"
 	<string>
+	<iostream>
 
-1569619833 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\testes.cpp
+1574465758 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\testes.cpp
 	"testes.h"
 
 1569619407 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\entidades.cpp
 	"entidades.h"
+
+1574464204 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.cpp
+	"Interface.h"
+1562782020 c:\users\joao paulo\documents\tp1\trabalho_tp1\sqlite3.h
+	<stdarg.h>
+
+1574468366 c:\users\joao paulo\documents\tp1\trabalho_tp1\interface.h
+
+1574466438 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\src\apresentacao.cpp
+	"Apresentacao.h"
+	<windows.h>
+	<conio.h>
+	<ctype.h>
+	<stdlib.h>
+
+1574466438 c:\users\joao paulo\documents\tp1\trabalho_tp1\include\apresentacao.h
+	<iostream>
+
+>>>>>>> Camada_de_servico
+
+1562782020 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\sqlite3.c
+	"config.h"
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	"sqlite_tcl.h"
+	"tcl.h"
+	<ctype.h>
+	"sqlite3rtree.h"
+	<ctype.h>
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<math.h>
+
+1574027259 c:\users\joao paulo\documents\tp1\trabalho_tp1\sgbd.h
+	<iostream>
+	<stdio.h>
+	<string>
+	"sqlite3.h"
+	"entidades.h"
+
+1574027150 source:c:\users\joao paulo\documents\tp1\trabalho_tp1\sgbd.cpp
+	"SGBD.h"
 
