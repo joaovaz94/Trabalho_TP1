@@ -29,6 +29,7 @@ class Apresentacao
         void programa_encerrado();
         void cabecalho();
         void pressione_continuar();
+        void estrela();
         void flash();
 
         void tela_cadastro_usuario();
