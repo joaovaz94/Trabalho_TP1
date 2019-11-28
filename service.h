@@ -5,7 +5,6 @@
 #include <vector>
 #include "SGBD.h"
 
-/*
 struct CartaoCreditoBD{
     std::string num;
     std::string codigoVerificacao;
@@ -24,7 +23,7 @@ struct IngressoBD{
 
 struct PartidaBD{
     std::string codigo;
-    Data data;
+    std::string data;
     std::string horario;
     double preco;
     int disponibilidade;
@@ -65,7 +64,6 @@ class BancoDados{
         void Excluir(Jogo);
         void Editar(Jogo);
 };
-*/
 
 class Servicos{
     public:

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/*void BancoDados::Inserir(Usuario usuario, CartaoCredito cartao){
+void BancoDados::Inserir(Usuario usuario, CartaoCredito cartao){
 
     UsuarioBD usuarioBD;
 
@@ -33,10 +33,15 @@ void BancoDados::Inserir(Jogo jogo, Usuario usuario, vector <Partida> partidas){
 
     for(int i=0; i<partidas.size(); i++){
         partidaBD.codigo = partidas[i].pegaCodigo().pegaCodigo();
+        partidaBD.codigoJogo = jogo.pegaCodJogo().pegaCodigo();
+        partidaBD.data = partidas[i].pegaData().viraString();
+        partidaBD.disponibilidade = partidas[i].pegaDisp().pegaDisp();
+        partidaBD.horario = partidas[i].pegaHorario().viraString();
+        partidaBD.preco = partidas[i].pegaPreco().pegaPreco();
+        jogoBD.partidas.push_back(partidaBD);
     }
 
 }
-*/
 
 int Servicos::AutenticarUsuario(std::string cpf, std::string senha){
 
