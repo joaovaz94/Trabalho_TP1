@@ -206,6 +206,25 @@ void Servicos::EditarJogo(std::string cod_jg, std::string Nome, std::string esta
 
 }
 
+void Servicos::MostrarJogo(string cod_jg){
+
+    Jogo jg;
+    CodigoJogo COD_JG;
+    int r;
+
+    try {
+        COD_JG.defineCodJogo(cod_jg);
+        jg.defineCodJogo(COD_JG);
+    }
+    catch(invalid_argument)
+    {
+        cout << "\n\n Argumentos inválidos \n\n";
+    }
+
+    r = bancoDados.mostraJogo(jg);
+
+}
+
 void Servicos::DescadastrarJogo(string cod_jg){
 
     int r;

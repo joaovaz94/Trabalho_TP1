@@ -445,15 +445,18 @@ void Apresentacao::tela_informacoes_jogo(){
     cout << "-----------------------------------------------------------" << endl;
     cout << "   Estado: ";
     cin >> estado;
+    cin.ignore();
     cout << endl;
     cout << "   Cidade: ";
-    cin >> cidade;
+    //cin >> cidade;
+    getline (cin,cidade);
     cout << endl;
     cout << "   data de início da busca: ";
     cin >> data_inicio;
     cout << endl;
     cout << "   data de final da busca: ";
     cin >> data_termino;
+
 
     system("cls");
     cout << "-----------------------------------------------------------" << endl;
@@ -951,7 +954,7 @@ void Apresentacao::tela_edita_jogo(){
     cout << endl;
     cout << "\n\n Digite o código do jogo a ser editado: ";
     cin >> cod_jg;
-    //servicos.EditarJogo(cod_jg);
+    servicos.MostrarJogo(cod_jg);
 
     cout << endl;
     cout << "       - Forneça os Dados para Realizar a Edição do Jogo -" << endl;

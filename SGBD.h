@@ -191,6 +191,9 @@ class SGBD
     //! Retorna Dados de Usuário
     int mostraUsuario (Usuario us);
 
+    //! Retorna Dados de Usuário
+    int mostraJogo (Jogo jg);
+
     //! Retorna Informações do Jogo
     int informaSobreJogo (Cidade cid, Estado est, Data dt1, Data dt2);
 

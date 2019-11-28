@@ -118,6 +118,20 @@ using namespace std;
         return r;
     }
 
+    //! Retorna Dados de Usuário
+    int SGBD::mostraJogo (Jogo jg){
+        sql = "";
+        sql = ("Select * FROM Jogos WHERE cpf = " + jg.pegaCodJogo().pegaCodigo() + " ; ");
+        sql += ("SELECT * FROM Partidas WHERE jogo_codigojogo = " + jg.pegaCodJogo().pegaCodigo() + " ; ");
+
+        //! Executar operaçãoo no banco de dados
+        op = sqlite3_exec(bd, sql.c_str(), callback, 0, &cMenssagemErro);
+
+        confereErroBD();
+
+        return r;
+    }
+
     //! Retorna Informações do Jogo
     int SGBD::informaSobreJogo (Cidade cid, Estado est, Data dt1, Data dt2){
         sql = "";
